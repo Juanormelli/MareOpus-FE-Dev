@@ -14,32 +14,40 @@ export default function Header() {
     <>
       <header className={styles.headerContainer}>
         <div className={styles.headerContent}>
-          <img src="/img/Logo.svg" alt="Logo" />
-          <nav>
-            <ActiveLink activateClassname={styles.active} href="/">
-              <a>Home</a>
-            </ActiveLink>
-            <ActiveLink activateClassname={styles.active} href="/posts">
-              <a>Posts</a>
-            </ActiveLink>
-          </nav>
-          <ul className={styles.access}>
-            <a className={styles.navbar_link}>
-              <img src="/icon/entar.svg" alt="entrar" />
-              ENTRAR
-            </a>
-            <button type="button" className={styles.signinButton}>
-              <a>REGISTRAR</a>
-            </button>
-            <a className={styles.lengButton}>
-              <img src="/icon/PORTUGUES.svg" alt="Portugues" />
-            </a>
-            <a className={styles.lengButton}>
-              <img src="/icon/INGLES.svg" alt="Inglês" />
-            </a>
-            <a className={styles.lengButton}>
-              <img src="/icon/ESPANHOL.svg" alt="Espanhol" />
-            </a>
+          <img src="/img/Logo.svg" alt="Logo" className={styles.imgLogin} />
+          <ul className="navigation">
+            <li>
+              <ActiveLink activateClassname={styles.active} href="/">
+                <a>Home</a>
+              </ActiveLink>
+            </li>
+            <li>
+              <ActiveLink activateClassname={styles.active} href="/planos">
+                <a>Planos</a>
+              </ActiveLink>
+            </li>
+            <li>
+              <a className={styles.navbar_link}>
+                <img src="/icon/entar.svg" alt="entrar" />
+                ENTRAR
+              </a>
+            </li>
+            <li>
+              <button type="button" className={styles.signinButton}>
+                <a>REGISTRAR</a>
+              </button>
+            </li>
+            <li>
+              <a className={styles.lengButton}>
+                <img src="/icon/PORTUGUES.svg" alt="Portugues" />
+              </a>
+              <a className={styles.lengButton}>
+                <img src="/icon/INGLES.svg" alt="Inglês" />
+              </a>
+              <a className={styles.lengButton}>
+                <img src="/icon/ESPANHOL.svg" alt="Espanhol" />
+              </a>
+            </li>
           </ul>
         </div>
       </header>

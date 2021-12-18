@@ -1,6 +1,6 @@
 .pageConteiner {
   min-height: 100vh;
-  padding: 4rem 0;
+  padding: 3rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -8,22 +8,95 @@
   align-items: center;
 }
 .Conteiner {
+  position: relative;
   width: 100%;
+  min-height: 100vh;
+  padding: 3rem 8rem;
+  display: flex;
+  justify-self: flex-start;
+  align-items: center;
 }
 .CallToActionSection {
-  width: 100%;
+  position: relative;
+  display: flex;
 }
 .TitleConteriner {
-  width: 100%;
+  position: relative;
+  max-width: 27rem;
 }
 .textStyles {
-  font-size: 56px;
+  display: flexbox;
+  width: 30rem;
+  margin-bottom: 1rem;
+  line-height: 3rem;
+  font-size: 3.5rem;
+  font-weight: 700;
 }
+
+.dynamicText {
+  padding: 0;
+  line-height: 5.6rem;
+  height: 5.6rem;
+  overflow: hidden;
+}
+
 .dynamicText li {
   list-style: none;
-  background: -webkit-linear-gradient(var(--green-500), var(--cyan-500));
+  background: -webkit-linear-gradient(
+    160deg,
+    var(--cyan-600) 80%,
+    var(--green-500) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 4.5rem;
+  top: 0;
+  position: relative;
+  animation: slide 18s steps(3) infinite;
+}
+
+@keyframes slide {
+  100% {
+    top: -18.5rem;
+  }
+}
+.dynamicText li {
+  position: relative;
+}
+
+.button {
+  position: relative;
+  padding-left: 4rem;
+  padding-top: 1rem;
+  margin-top: 8rem;
+  width: 23rem;
+  height: 3.5rem;
+  border-radius: 8px;
+  display: flex;
+  background: linear-gradient(
+    278deg,
+    var(--green-500) 10%,
+    var(--cyan-600) 100%
+  );
+  transition: 0.2s ease-in-out;
+  .ArrowRight {
+    position: absolute;
+    top: 0.7rem;
+    right: 1rem;
+    width: 2.2rem;
+    height: 2.2rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background: var(--green-600);
+  }
+  &:hover {
+    filter: contrast(0.8);
+    transform: translateY(-0.6rem);
+    box-shadow: 0.2rem 0.6rem 0.9rem var(--green-600);
+  }
 }
 
 .footer {
@@ -40,4 +113,24 @@
   justify-content: center;
   align-items: center;
   flex-grow: 1;
+}
+
+/* RESPONSIVIDADE*/
+
+@media (max-width: 1200px) {
+  .Conteiner {
+    padding: 10rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .Conteiner {
+    padding: 10rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .Conteiner {
+    padding: 5rem;
+  }
 }

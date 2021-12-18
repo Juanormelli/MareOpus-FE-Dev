@@ -12,6 +12,8 @@ a {
 }
 
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -28,9 +30,10 @@ a {
   --gray-900: #000000;
 
   --cyan-500: #00f0e2;
+  --cyan-600: #485bff;
   --yellow-500: #eba417;
   --green-500: #04d361;
-  --green-600: #33cc95;
+  --green-600: #00bd55;
 }
 
 @media (max-width: 1080px) {
