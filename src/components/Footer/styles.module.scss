@@ -1,0 +1,59 @@
+.FooterConteiner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: var(--gray-900);
+}
+
+.Container {
+  flex-direction: column;
+}
+
+.Content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Left {
+  flex-direction: column;
+}
+
+.Right {
+  max-width: 40rem;
+}
+.Bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 9.37rem;
+}
+
+.Social {
+  grid-gap: 8px;
+  gap: 8px;
+  display: grid;
+  padding: 1rem;
+  width: 5rem;
+  height: 5rem;
+  li {
+    display: flex;
+    justify-content: center;
+  }
+  .Icons {
+    padding: 1rem;
+  }
+  .SocialIcon {
+    align-items: center;
+    border-radius: 5px;
+    background: var(--gray-700);
+    grid-template-columns: repeat(2, 1fr);
+    transition: all 0.3s ease;
+  }
+  @media (min-width: 576px) {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  @media (min-width: 320px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

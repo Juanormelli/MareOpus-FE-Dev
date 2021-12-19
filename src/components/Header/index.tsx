@@ -4,17 +4,19 @@ import { GoPerson } from 'react-icons/go';
 import { MdLogin } from 'react-icons/md';
 import styles from './styles.module.scss';
 import { ActiveLink } from '../ActiveLink';
+import { useTranslation } from 'next-i18next';
 
 export default function Header() {
   interface HeaderProps {
     onOpenLoginModal: () => void;
   }
-
+  const { t, i18n } = useTranslation();
   return (
     <>
       <header className={styles.headerContainer}>
         <div className={styles.headerContent}>
           <img src="/img/Logo.svg" alt="Logo" className={styles.imgLogin} />
+          <div className={styles.toggle}></div>
           <ul className="navigation">
             <li>
               <ActiveLink activateClassname={styles.active} href="/">
@@ -23,7 +25,7 @@ export default function Header() {
             </li>
             <li>
               <ActiveLink activateClassname={styles.active} href="/planos">
-                <a>Planos</a>
+                <a>{t('planos')}</a>
               </ActiveLink>
             </li>
             <li>

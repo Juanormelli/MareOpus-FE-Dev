@@ -1,0 +1,69 @@
+.SectionContaine {
+  min-height: 100vh;
+  padding: 3rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Container {
+  width: 46rem;
+  padding-top: 8rem;
+  margin-left: 25%;
+  flex-direction: column;
+}
+.Title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 3.75rem;
+  max-width: 37rem;
+  margin-bottom: 2.5rem;
+  color: var(--white);
+}
+
+.Content {
+  font-size: 1.1rem;
+  line-height: 2rem;
+  text-align: justify;
+  p {
+    color: var(--gray-100);
+  }
+  ol {
+    counter-reset: item;
+    margin-top: 1.25rem;
+    li {
+      position: relative;
+      color: var(--gray-100);
+      display: block;
+      text-indent: 0;
+      .letra {
+        list-style-type: upper-roman;
+      }
+    }
+    li {
+      margin-top: 1.25rem;
+    }
+    li::before {
+      content: counters(item, '.') '. ';
+      counter-increment: item;
+      position: absolute;
+      left: -2.5rem;
+    }
+  }
+}
+
+.bemvindo {
+  margin-top: 4rem;
+  padding-left: 2.5rem;
+  border-left: 3px solid var(--green-500);
+  margin-bottom: 5rem;
+}
+
+.subtitle {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 2.6rem;
+  color: var(--white);
+}

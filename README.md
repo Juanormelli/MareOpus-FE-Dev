@@ -1,6 +1,34 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+  <a href="https://github.com/GuilhermeSanchesS/">
+    <img src="https://i.giphy.com/media/dWesBcTLavkZuG35MI/giphy.webp"  alt="Dev Web" />
+  </a>
+</p>
 
-## Getting Started
+<h1 align="center">MAREO</h1>
+<p align="center">Projeto realizado de criar e desnvolver Web plataforma</p>
+
+<p align="center">
+  <img src="https://img.shields.io/static/v1?label=next&message=6.14.6&color=C53534&style=flat-square&logo=next"/>
+  <img src="https://img.shields.io/static/v1?label=typescript&message=^4.17.1&color=000000&style=flat-square&logo=typescript"/>
+  <img src="https://img.shields.io/static/v1?label=scss&message=^3.6.5&color=94C10C&style=flat-square&logo=scss"/>
+  <img src="https://img.shields.io/static/v1?label=nodemon&message=^2.0.7&color=76d04b&style=flat-square&logo=nodemon"/>
+</p>
+
+<p align="center">
+ <a href="#-sobre">Sobre</a> •
+ <a href="#-tecnologias">Tecnologias</a> • 
+ <a href="#-instalação">Instalação</a>
+</p>
+
+# 📖 Sobre
+<p>Este repoistorio tem como objetivo criar uma plataforma de estudos e treinamento para profissionais da aréa da tecinologia da informação:</p>
+
+<h1>🛠 Tecnologias</h1>
+- Front-end:
+  - Typescript
+- Back-end:
+  - ?
+## Instalação
 
 First, run the development server:
 
