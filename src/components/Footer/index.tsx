@@ -16,7 +16,20 @@ export default function Footer() {
     <footer className={styles.FooterConteiner}>
       <div className={styles.Container}>
         <div className={styles.Content}>
-          <div className={styles.Left}></div>
+          <div className={styles.Left}>
+            <a>
+              <div className={styles.Logo}>
+                <img src="/img/iconeLogo.svg" alt="Logo" />
+                <h1>
+                  Treinamentos <br />
+                  <span> A R E O</span>
+                </h1>
+              </div>
+              <span className={styles.copy}>
+                Mareo 2021 <br /> Todos os direitos reservados
+              </span>
+            </a>
+          </div>
           <nav className={styles.Right}>
             <ul>
               <span>Programas</span>
@@ -83,32 +96,32 @@ export default function Footer() {
           <div className={styles.Social}>
             <li className={styles.SocialIcon}>
               <ActiveLink activateClassname={styles.Icons} href="/planos">
-                <IoLogoYoutube size={30} color="var(--green-600)" />
+                <IoLogoYoutube size={30} />
               </ActiveLink>
             </li>
             <li className={styles.SocialIcon}>
               <ActiveLink activateClassname={styles.Icons} href="/planos">
-                <AiFillInstagram size={30} color="var(--green-600)" />
+                <AiFillInstagram size={30} />
               </ActiveLink>
             </li>
             <li className={styles.SocialIcon}>
               <ActiveLink activateClassname={styles.Icons} href="/planos">
-                <AiFillFacebook size={30} color="var(--green-600)" />
+                <AiFillFacebook size={30} />
               </ActiveLink>
             </li>
             <li className={styles.SocialIcon}>
               <ActiveLink activateClassname={styles.Icons} href="/planos">
-                <AiOutlineTwitter size={30} color="var(--green-500)" />
+                <AiOutlineTwitter size={30} />
               </ActiveLink>
             </li>
             <li className={styles.SocialIcon}>
               <ActiveLink activateClassname={styles.Icons} href="/planos">
-                <AiOutlineGithub size={30} color="var(--green-500)" />
+                <AiOutlineGithub size={30} />
               </ActiveLink>
             </li>
             <li className={styles.SocialIcon}>
               <ActiveLink activateClassname={styles.Icons} href="/planos">
-                <AiFillLinkedin size={30} color="var(--green-500)" />
+                <AiFillLinkedin size={30} />
               </ActiveLink>
             </li>
           </div>
