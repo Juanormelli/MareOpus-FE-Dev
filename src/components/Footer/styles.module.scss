@@ -110,10 +110,23 @@
     display: flex;
     border-radius: 5px;
     color: var(--white);
+    animation: up 2s infinite;
     transition: all 0.3s ease;
     &:hover {
       filter: contrast(0.6);
       transform: translateY(-0.2rem);
+    }
+    @keyframes up {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-1rem);
+      }
     }
   }
 }
