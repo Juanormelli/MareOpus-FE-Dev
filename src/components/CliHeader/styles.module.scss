@@ -1,0 +1,225 @@
+.Container {
+  aside {
+    background: var(--gray-800);
+    width: 16.25rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow-y: hidden;
+    margin-top: 4.68rem;
+    transition: 0.5s;
+  }
+  aside:hover {
+    overflow-y: auto;
+  }
+
+  aside::-webkit-scrollbar {
+    width: 0.4rem;
+  }
+
+  aside::-webkit-scrollbar-thumb {
+    border-radius: 3rem;
+    background: linear-gradient(
+      180deg,
+      var(--green-600) 10%,
+      var(--cyan-600) 100%
+    );
+  }
+  .desplegar {
+    transform: translateX(-100%);
+  }
+}
+.navigation {
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .space {
+    margin-left: 4rem;
+    a {
+      display: inline-block;
+      position: relative;
+      padding: 0.3rem 0.8rem;
+      color: var(--gray-200);
+      transition: 0.5s;
+      text-decoration: none;
+      user-select: none;
+
+      &:hover {
+        color: var(--white);
+        background: var(--gray-900);
+        border-radius: 0.5rem;
+        transform: translateY(-0.2rem);
+      }
+      & + a {
+        margin-left: auto;
+        font-weight: 300;
+      }
+
+      &.active {
+        color: var(--gray-300);
+        font-weight: 700;
+      }
+
+      &.active::after {
+        content: '';
+        height: 5px;
+        border-radius: 3px 3px 0 0;
+
+        width: 100%;
+        position: absolute;
+        bottom: -1.5rem;
+        left: 0;
+        background: linear-gradient(to left, var(--green-500), var(--cyan-500));
+      }
+    }
+  }
+  li {
+    list-style-type: none;
+    margin-left: 1rem;
+    img {
+      padding: 0;
+      border-radius: 50%;
+      border: 0.2rem solid var(--gray-800);
+      outline: 0.2rem solid var(--gray-700);
+      transition: 1s;
+      height: 3.5rem;
+      width: 3.5rem;
+    }
+    img:hover {
+      outline: 0.2rem solid var(--green-600);
+    }
+    b {
+      display: inline-block;
+      position: relative;
+      padding: 0.3rem 0.8rem;
+      color: var(--gray-200);
+      transition: color 0.2s;
+      text-decoration: none;
+      user-select: none;
+      &:hover {
+        color: var(--white);
+      }
+      & + b {
+        margin-left: auto;
+        font-weight: 300;
+      }
+
+      &.active {
+        color: var(--white);
+        font-weight: 700;
+      }
+      &.active::after {
+        content: '';
+        height: 5px;
+        border-radius: 3px 3px 0 0;
+
+        width: 100%;
+        position: absolute;
+        bottom: -1.5rem;
+        left: 0;
+        background: linear-gradient(to left, var(--green-500), var(--cyan-500));
+      }
+    }
+  }
+}
+
+.top {
+  background: var(--gray-800);
+  display: flex;
+  width: 100%;
+  padding: 0.6rem 1.25rem;
+  position: fixed;
+}
+
+.logo {
+  display: flex;
+  margin-left: 1.25rem;
+  gap: 0.1rem;
+  img {
+    width: 4rem;
+    height: 4rem;
+  }
+  h2 {
+    margin-top: 1rem;
+    font-size: 2rem;
+    color: var(--white);
+  }
+}
+
+.close {
+  color: var(--white);
+  cursor: pointer;
+}
+
+.profilePhoto {
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+/*========== SIDEBAR ===========*/
+
+.sidebar {
+  background: var(--gray-800);
+  display: flex;
+  flex-direction: column;
+  height: 86vh;
+  position: relative;
+  top: 3rem;
+  a {
+    display: flex;
+    color: var(--gray-300);
+    margin-left: 2rem;
+    gap: 1rem;
+    align-items: center;
+    position: relative;
+    height: 3rem;
+    transition: all 300ms ease;
+    line-height: 5rem;
+    text-decoration: none;
+    user-select: none;
+    transition: all 300ms ease;
+  }
+  a:last-child {
+    position: absolute;
+    bottom: 0.5rem;
+    width: 100%;
+    filter: opacity(0.5);
+  }
+
+  a:hover {
+    color: var(--white);
+    background: var(--gray-850);
+    filter: opacity(1);
+    margin-left: 1rem;
+  }
+
+  a.active {
+    background: var(--gray-800);
+    color: var(--white);
+    margin-left: 0;
+  }
+
+  a.active::before {
+    content: '';
+    width: 6px;
+    height: 100%;
+    background: linear-gradient(to left, var(--green-500), var(--cyan-500));
+  }
+
+  h3 {
+    font-weight: 500;
+  }
+}
+
+.materialIconsSharp {
+  background: var(--green-600);
+  color: var(--white);
+  padding: 0.1rem 0.6rem;
+  margin-left: 1rem;
+  font-size: 0.7rem;
+  border-radius: 0.4rem;
+}

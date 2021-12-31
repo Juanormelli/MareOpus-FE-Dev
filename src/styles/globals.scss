@@ -6,6 +6,29 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+h1 {
+  font-size: 1.8rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+}
+
+h3 {
+  font-size: 0.87rem;
+}
+
+h4 {
+  font-size: 0.8rem;
+}
+
+h5 {
+  font-size: 0.77rem;
+}
+
+small {
+  font-size: 0.75rem;
+}
 a {
   color: inherit;
   text-decoration: none;
@@ -20,13 +43,15 @@ a {
 :root {
   --white: #ffffff;
   --gray-100: #b2b6bb;
-  --gray-200: #b2b6bb;
+  --gray-200: #a8a8b3;
   --gray-300: #b2b6bb;
-  --gray-400: #b2b6bb;
+  --gray-400: #1a1a1d;
   --gray-500: #121214;
   --gray-600: #121314;
   --gray-700: #343a3d;
+  --gray-750: #202020;
   --gray-800: #0b0c0d;
+  --gray-850: #141414;
   --gray-900: #000000;
 
   --cyan-500: #00f0e2;

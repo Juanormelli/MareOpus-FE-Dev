@@ -17,7 +17,7 @@ export default function Header() {
         <div className={styles.headerContent}>
           <img src="/img/Logo.svg" alt="Logo" className={styles.imgLogin} />
           <div className={styles.toggle}></div>
-          <ul className="navigation">
+          <ul className={styles.navigation}>
             <li>
               <ActiveLink activateClassname={styles.active} href="/">
                 <a>Home</a>
