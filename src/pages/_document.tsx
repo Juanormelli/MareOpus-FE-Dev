@@ -13,6 +13,10 @@ export default class MyDocument extends Document {
             rel="stylesheet"
           ></link>
 
+          <link
+            href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;800&family=Montserrat:wght@400;600;700&display=swap"
+            rel="stylesheet"
+          ></link>
           <link rel="shortcut icon" href="/icon/favicon.ico" />
         </Head>
 
