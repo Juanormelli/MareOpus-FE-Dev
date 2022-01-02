@@ -23,12 +23,14 @@
 # 📖 Sobre
 <p>Este repoistorio tem como objetivo criar uma plataforma de estudos e treinamento para profissionais da aréa da tecinologia da informação:</p>
 
-<h1>🛠 Tecnologias</h1>
+<h1>🛠 Tecnologias</h1    
+
 - Front-end:
   - Typescript
 - Back-end:
   - ?
-## Instalação
+  
+# Instalação
 
 First, run the development server:
 

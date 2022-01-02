@@ -73,4 +73,12 @@ const Home: NextPage = () => {
   );
 };
 
+export async function getServerSideProps() {
+  await new Promise((resolve) => {
+    setTimeout(resolve, 5000);
+  });
+  return {
+    props: {},
+  };
+}
 export default Home;
