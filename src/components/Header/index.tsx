@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 
 interface HeaderProps {
   onOpenLoginModal: () => void;
+  onOpenSession: () => void;
 }
 
 export default function Header(props: HeaderProps) {
@@ -35,13 +36,20 @@ export default function Header(props: HeaderProps) {
               </ActiveLink>
             </li>
             <li>
-              <a className={styles.navbar_link}>
+              <a
+                className={styles.navbar_link}
+                onClick={props.onOpenLoginModal}
+              >
                 <img src="/icon/entar.svg" alt="entrar" />
                 ENTRAR
               </a>
             </li>
             <li>
-              <button type="button" className={styles.signinButton}>
+              <button
+                type="button"
+                className={styles.signinButton}
+                onClick={props.onOpenSession}
+              >
                 <a>REGISTRAR</a>
               </button>
             </li>

@@ -1,14 +1,19 @@
 /* ERRO 404 */
 .content404 {
-  width: 100vw;
-  height: 100vh;
-  background-color: var(--gray-900);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
   background: radial-gradient(at 50% -20%, var(--gray-700), var(--gray-900))
     fixed;
 }
 
 .Conteiner {
-  padding: 5rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
   h1 {
     text-align: center;
     font-size: 3rem;
@@ -211,38 +216,36 @@
 }
 .linkContainer {
   text-align: center;
-}
-a.moreLink {
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  background: linear-gradient(
-    278deg,
-    var(--green-600) 10%,
-    var(--cyan-600) 100%
-  );
-  padding: 0.8rem 1.5rem;
-  border-radius: 5rem;
-  color: var(--white);
-  display: inline-block;
-  margin-right: 5px;
-  margin-bottom: 5px;
-  line-height: 1.5;
-  text-decoration: none;
-  margin-top: 50px;
-  letter-spacing: 1px;
-  transition: all 0.3s ease;
-  &:hover {
-    background: transparent;
-    color: var(--green-600);
-    border: 0.1rem solid var(--green-600);
-    filter: drop-shadow(0.2rem 0.2rem 1rem var(--green-500));
-    transform: translateY(-0.2rem);
-  }
-  &:focus {
-    background: transparent;
-    color: var(--cyan-600);
-    border: 0.1rem solid var(--cyan-600);
-    filter: drop-shadow(0.2rem 0.2rem 1rem var(--cyan-550));
-    transform: translateY(-0.2rem);
+  a.moreLink {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    background: linear-gradient(
+      278deg,
+      var(--green-600) 10%,
+      var(--cyan-600) 100%
+    );
+    padding: 0.8rem 1.5rem;
+    border-radius: 5rem;
+    color: var(--white);
+    display: inline-block;
+    margin-right: 5px;
+    line-height: 1.5;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    &:hover {
+      background: transparent;
+      color: var(--green-600);
+      border: 0.1rem solid var(--green-600);
+      filter: drop-shadow(0.2rem 0.2rem 1rem var(--green-500));
+      transform: translateY(-0.2rem);
+    }
+    &:focus {
+      background: transparent;
+      color: var(--cyan-600);
+      border: 0.1rem solid var(--cyan-600);
+      filter: drop-shadow(0.2rem 0.2rem 1rem var(--cyan-550));
+      transform: translateY(-0.2rem);
+    }
   }
 }

@@ -3,8 +3,6 @@ import type { GetStaticPropsContext, NextPage } from 'next';
 import Head from 'next/head';
 import React from 'react';
 import { AiOutlineArrowRight } from 'react-icons/ai';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
 //import { ActiveLink } from '../components/ActiveLink';
 import styles from '../styles/Home.module.scss';
 
@@ -27,7 +25,6 @@ const Home: NextPage = () => {
       <Head>
         <title>MAREO</title>
       </Head>
-      <Header></Header>
       <main className={styles.pageConteiner}>
         <section className={styles.Conteiner} id="hero">
           <section className={styles.CallToActionSection}>
@@ -68,7 +65,6 @@ const Home: NextPage = () => {
           <h1>tetste</h1>
         </section>
       </main>
-      <Footer></Footer>
     </>
   );
 };

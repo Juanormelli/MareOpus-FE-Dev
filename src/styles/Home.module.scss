@@ -89,6 +89,10 @@
             padding: 0.5rem;
             border-radius: 0.5rem;
             background: var(--green-600);
+            transition: all 0.3s ease;
+            &:hover {
+              transform: translateX(0.5rem);
+            }
           }
           &:hover {
             filter: contrast(0.8);
@@ -102,7 +106,7 @@
 }
 
 /* RESPONSIVIDADE*/
-
+/*
 @media (max-width: 1200px) {
   .Conteiner {
     padding: 10rem;
@@ -119,4 +123,4 @@
   .Conteiner {
     padding: 5rem;
   }
-}
+}*/

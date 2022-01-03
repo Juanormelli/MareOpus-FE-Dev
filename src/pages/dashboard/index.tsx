@@ -4,7 +4,6 @@ import styles from '../../styles/Dashboard.module.scss';
 export default function Dashboard() {
   return (
     <>
-      <CliHeader></CliHeader>
       <main className={styles.pageConteiner}>
         <br />
         <div className={styles.status}>

@@ -4,11 +4,16 @@
   top: 0;
   height: 100vh;
   width: 100vw;
-  background: rgba(18, 18, 20, 0.7);
+  z-index: 1000;
+  background: rgba(18, 18, 20, 0.95);
   img {
     display: inline-block;
+    filter: drop-shadow(0 0 5rem rgba(18, 18, 20, 0.95)) blur(3px)
+      contrast(200%);
+    border-radius: 5rem;
     margin: auto;
     width: 20.62rem;
     height: 15.5rem;
+    z-index: 999;
   }
 }

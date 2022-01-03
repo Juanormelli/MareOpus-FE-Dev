@@ -1,6 +1,5 @@
 import Modal from 'react-modal';
 import { useEffect, useState } from 'react';
-import { signIn, useSession } from 'next-auth/client';
 
 import style from '../Modal/styles.module.scss';
 import { consumers } from 'stream';
@@ -23,7 +22,7 @@ export default function ModalLogin(props: ModalProps) {
     setMessage('');
   }
 
-  function handleLogin() {
+  /*function handleLogin() {
     signIn('credentials', {
       redirect: false,
       username: user,
@@ -37,7 +36,7 @@ export default function ModalLogin(props: ModalProps) {
         return true;
       }
     });
-  }
+  }*/
 
   const [message, setMessage] = useState('');
 
@@ -79,9 +78,7 @@ export default function ModalLogin(props: ModalProps) {
             placeholder="Senha"
           />
           <small className={style['error']}>{messageError}</small>
-          <button onClick={handleLogin} className={style['loginError']}>
-            Login
-          </button>
+          <button className={style['loginError']}>Login</button>
           <div>
             <p>Nao possui cadastro ainda? Clique aqui</p>
             <button className={style['register-button']}>Cadastre-se</button>
@@ -124,7 +121,7 @@ export default function ModalLogin(props: ModalProps) {
             }}
             placeholder="Senha"
           />
-          <button onClick={handleLogin}>Login</button>
+          <button>Login</button>
           <div>
             <p>Nao possui cadastro ainda? Clique aqui</p>
             <button

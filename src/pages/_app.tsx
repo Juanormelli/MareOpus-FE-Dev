@@ -4,13 +4,40 @@ import type { AppProps } from 'next/app';
 import { NextIntlProvider } from 'next-intl';
 //import Footer from '../components/Footer';
 import Router from 'next/router';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Loader from '../components/Loader';
+import Header from '../components/Header';
+import CliHeader from '../components/CliHeader';
+import Footer from '../components/Footer';
+import Modal from '../components/Modal';
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const [session, setsession] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [isNewLoginModalOpen, setIsNewLoginModalOpen] = useState(false);
+  const [isNewRegisterModalOpen, setIsNewRegisterModalOpen] = useState(false);
+
+  function handleOpenNewLoginModal() {
+    setIsNewLoginModalOpen(true);
+  }
+
+  function handleCloseNewLoginModal() {
+    setIsNewLoginModalOpen(false);
+  }
+
+  function handleOpenNewRegisterModal() {
+    setIsNewRegisterModalOpen(true);
+  }
+
+  function handleCloseNewRegisterModal() {
+    setIsNewRegisterModalOpen(false);
+  }
+
+  useEffect(() => {
+    console.log(session);
+  }, [session]);
   Router.events.on('routeChangeStart', (url) => {
-    console.log('testenado o loading...');
+    console.log('testenado o loading...', url);
     setLoading(true);
   });
 
@@ -18,14 +45,41 @@ function MyApp({ Component, pageProps }: AppProps) {
     console.log('testenado o loading completo...');
     setLoading(false);
   });
-  return (
-    <>
-      <NextIntlProvider messages={pageProps.messages}>
-        {loading && <Loader />}
-        <Component {...pageProps} />
-      </NextIntlProvider>
-    </>
-  );
+
+  function onOpenSession() {
+    setsession(true);
+  }
+  if (session) {
+    return (
+      <>
+        <NextIntlProvider messages={pageProps.messages}>
+          {loading && <Loader />}
+          <CliHeader></CliHeader>
+          <Component {...pageProps} />
+          <Footer />
+        </NextIntlProvider>
+      </>
+    );
+  } else {
+    return (
+      <>
+        <NextIntlProvider messages={pageProps.messages}>
+          {loading && <Loader />}
+          <Header
+            onOpenSession={onOpenSession}
+            onOpenLoginModal={handleOpenNewLoginModal}
+          ></Header>
+          <Component {...pageProps} />
+          <Modal
+            isOpen={isNewLoginModalOpen}
+            onRequestClose={handleCloseNewLoginModal}
+            onOpenRegisterModal={handleOpenNewRegisterModal}
+          />
+          <Footer />
+        </NextIntlProvider>
+      </>
+    );
+  }
 }
 
 export default MyApp;

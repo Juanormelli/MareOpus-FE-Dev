@@ -23,7 +23,7 @@ export default function Custom404() {
           </section>
           <p className={styles.zoomArea}>
             <b>ERRO: </b> Não conseguimos encontrar a página que você está
-            procurando...{' '}
+            procurando...
           </p>
           <div className={styles.linkContainer}>
             <Link href="/">

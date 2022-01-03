@@ -1,4 +1,16 @@
+.headerContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 100vh;
+}
+
 .Container {
+  z-index: 1000;
+  height: 5rem;
+  border-bottom: 1px solid var(--gray-900);
   aside {
     background: var(--gray-800);
     width: 16.25rem;
@@ -131,7 +143,7 @@
   display: flex;
   width: 100%;
   padding: 0.6rem 1.25rem;
-  position: fixed;
+  position: absolute;
 }
 
 .logo {
