@@ -3,6 +3,9 @@ import { useEffect, useState } from 'react';
 
 import style from '../Modal/styles.module.scss';
 import { consumers } from 'stream';
+import { signIn } from 'next-auth/client';
+import { HiArrowNarrowLeft } from 'react-icons/hi';
+import { BsGoogle } from 'react-icons/bs';
 
 interface ModalProps {
   onOpenRegisterModal: () => void;
@@ -19,7 +22,7 @@ export default function ModalLogin(props: ModalProps) {
   function openModalClear() {
     setPassword('');
     setUser('');
-    setMessage('');
+    setMessage('Usuario não conseguio logar');
   }
 
   /*function handleLogin() {
@@ -38,7 +41,7 @@ export default function ModalLogin(props: ModalProps) {
     });
   }*/
 
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState('Usuraio não consegui logar');
 
   useEffect(() => {}, [message]);
 
@@ -53,35 +56,61 @@ export default function ModalLogin(props: ModalProps) {
         ariaHideApp={false}
       >
         <div className={style['modal-container']}>
-          <button
-            className={style['modal-close']}
-            type="submit"
-            onClick={props.onRequestClose}
-          >
-            ✖
-          </button>
-          <h1>Login</h1>
-          <input
-            type="text"
-            value={user}
-            onChange={(event) => {
-              setUser(event.target.value);
-            }}
-            placeholder="Usuario"
-          />
-          <input
-            type="password"
-            value={password}
-            onChange={(event) => {
-              setPassword(event.target.value);
-            }}
-            placeholder="Senha"
-          />
-          <small className={style['error']}>{messageError}</small>
-          <button className={style['loginError']}>Login</button>
-          <div>
-            <p>Nao possui cadastro ainda? Clique aqui</p>
-            <button className={style['register-button']}>Cadastre-se</button>
+          <div className={style['content-left']}>
+            <h1>LOGIN</h1>
+            <button
+              className={style['google']}
+              type="submit"
+              onClick={() => signIn('google')}
+            >
+              <div className={style['logoGoogle']}>
+                <BsGoogle size={29} color="#FFFFFF" />
+              </div>
+              <b>Entar com Google</b>
+            </button>
+            <span>
+              <b>ou</b>
+            </span>
+            <input
+              type="text"
+              value={user}
+              onChange={(event) => {
+                setUser(event.target.value);
+              }}
+              placeholder="Usuario"
+            />
+            <input
+              type="password"
+              value={password}
+              onChange={(event) => {
+                setPassword(event.target.value);
+              }}
+              placeholder="Senha"
+            />
+            <small className={style['error']}>{messageError}</small>
+            <br />
+            <a> Esqueci minha senha</a>
+            <button className={style['loginError']}>ENTRAR</button>
+          </div>
+          <div className={style['content-right']}>
+            <button
+              className={style['modal-close']}
+              type="submit"
+              onClick={props.onRequestClose}
+            >
+              ✖
+            </button>
+            <img src="/img/Logo.svg" alt="Logo" className={style['imgLogin']} />
+            <h2>Bem-vindo</h2>
+            <img src="/img/group.svg" alt="Grupo" className={style['grupo']} />
+            <p>Aqui cressemos juntos no seu carreira profissional.</p>
+
+            <button className={style['register-button']}>
+              <div className={style['ArrowLeft']}>
+                <HiArrowNarrowLeft size={20} />
+              </div>
+              Cadastre-se
+            </button>
           </div>
         </div>
       </Modal>

@@ -44,24 +44,39 @@ a {
   --white: #ffffff;
   --gray-100: #b2b6bb;
   --gray-200: #a8a8b3;
+  --gray-250: rgba(11, 11, 240, 0.7);
   --gray-300: #b2b6bb;
   --gray-400: #1a1a1d;
   --gray-500: #121214;
   --gray-600: #121314;
   --gray-700: #343a3d;
   --gray-750: #202020;
+  --gray-760: #202024;
   --gray-800: #0b0c0d;
+  --gray-840: #131315;
   --gray-850: #141414;
   --gray-900: #000000;
 
-  --cyan-400: #02ffc8;
   --cyan-500: #00f0e2;
-  --cyan-550: #6574ff;
   --cyan-600: #485bff;
-  --yellow-500: #eba417;
-  --green-400: #02ff74;
+
+  --yellow-400: #fff200;
+  --yellow-500: #f7ad19;
+  --yellow-600: #eba417;
+  --yellow-700: #d19215;
+
+  --green-400: #00c95b;
   --green-500: #04d361;
   --green-600: #00bd55;
+  --green-700: #003d1c;
+
+  --red-500: #dc3f3f;
+
+  --lilac-500: #b23cfd;
+
+  --black-500: #424242;
+
+  --blue-500: #1266f1;
 }
 
 @media (max-width: 1080px) {
@@ -135,10 +150,14 @@ ul {
 
 ::-webkit-scrollbar,
 ::-webkit-scrollbar-track {
-  background: var(--gray-600);
+  background: linear-gradient(
+    180deg,
+    var(--gray-600) 10%,
+    var(--gray-900) 100%
+  );
 }
 .react-modal-overlay {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.9);
 
   position: fixed;
   top: 0;
@@ -152,11 +171,11 @@ ul {
 }
 
 .react-modal-content {
-  width: 25rem;
-  max-width: 520px;
+  width: 44rem;
+  min-width: 400px;
   background: var(--gray-700);
-  padding: 3rem;
-  position: relative;
 
+  position: relative;
+  border: none;
   border-radius: 0.7rem;
 }

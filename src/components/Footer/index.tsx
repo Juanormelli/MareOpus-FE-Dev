@@ -72,7 +72,7 @@ export default function Footer() {
                 </ActiveLink>
               </li>
               <li>
-                <Link href="/planos">
+                <Link href="/privacy">
                   <a>Políticas de privacidade</a>
                 </Link>
               </li>
