@@ -76,7 +76,9 @@ a {
 
   --black-500: #424242;
 
-  --blue-500: #1266f1;
+  --blue-500: #121314;
+
+  height: 100%;
 }
 
 @media (max-width: 1080px) {
@@ -140,6 +142,15 @@ a {
     var(--gray-600) 10%,
     var(--gray-900) 100%
   );
+}
+
+@mixin breakpoint($point) {
+  @if $point == md {
+    // 768px
+    @media (min-width: 48em) {
+      @content;
+    }
+  }
 }
 .react-modal-overlay {
   background: rgba(0, 0, 0, 0.9);

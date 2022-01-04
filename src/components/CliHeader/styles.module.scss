@@ -228,13 +228,13 @@
     }
     &:hover {
       h2 {
-        filter: blur(0.4rem) opacity(0);
+        filter: opacity(1);
       }
     }
     h2 {
       margin-top: 1rem;
       font-size: 2rem;
-      filter: opacity(1);
+      filter: opacity(0);
       color: var(--white);
     }
   }

@@ -1,0 +1,12 @@
+@mixin breakpoint($point) {
+  @if $point == md {
+    // 768px
+    @media (min-width: 48em) {
+      @content;
+    }
+  }
+}
+
+// spacing
+$spacing-md: 16px;
+$spacing-lg: 32px;
