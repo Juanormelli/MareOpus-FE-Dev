@@ -48,6 +48,7 @@ a {
   --gray-300: #b2b6bb;
   --gray-400: #1a1a1d;
   --gray-500: #121214;
+  --gray-510: #080808;
   --gray-600: #121314;
   --gray-700: #343a3d;
   --gray-750: #202020;
@@ -65,7 +66,7 @@ a {
   --yellow-600: #eba417;
   --yellow-700: #d19215;
 
-  --green-400: #00c95b;
+  --green-400: #02e96a;
   --green-500: #04d361;
   --green-600: #00bd55;
   --green-700: #003d1c;
@@ -76,9 +77,7 @@ a {
 
   --black-500: #424242;
 
-  --blue-500: #121314;
-
-  height: 100%;
+  --blue-500: #1266f1;
 }
 
 @media (max-width: 1080px) {
@@ -148,7 +147,6 @@ a {
   @if $point == md {
     // 768px
     @media (min-width: 48em) {
-      @content;
     }
   }
 }

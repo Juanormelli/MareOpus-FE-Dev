@@ -1,0 +1,145 @@
+.pageConteiner {
+  height: 100vh;
+  .Conteiner {
+    min-height: 20rem;
+    width: 10rem;
+    height: auto;
+    padding: 0;
+    .CallToActionSection {
+      position: relative;
+      display: flex;
+      width: 100vw;
+      padding: 4rem 0 0 10rem;
+      background: var(--gray-500);
+      border-bottom: 1px solid var(--gray-850);
+      .Hidden {
+        width: 40rem;
+        top: 0;
+        position: relative;
+        img {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .TitleConteriner {
+        position: relative;
+        max-width: 40rem;
+        .Missao {
+          display: flex;
+          font-size: 1.5rem;
+          font-weight: 400;
+          margin-bottom: 2rem;
+
+          .IconTeacher {
+            width: 5rem;
+            height: 5rem;
+            padding: 1.3rem;
+            background: var(--gray-900);
+            border-radius: 0.5rem;
+            border: 2px solid var(--gray-700);
+            transition: 0.3s;
+            svg {
+              color: var(--green-600);
+            }
+          }
+          .IconTeacher:hover {
+            background: var(--gray-600);
+            filter: drop-shadow(1rem 16px 2rem var(--gray-700));
+            transform: translateY(-0.1rem);
+            svg {
+              color: var(--green-400);
+            }
+          }
+          h3 {
+            padding-top: 0.8rem;
+            margin-left: 2rem;
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--gray-200);
+            b {
+              color: var(--white);
+            }
+          }
+        }
+        .textStyles {
+          display: flexbox;
+          width: 45rem;
+          margin-bottom: 3rem;
+          line-height: 3rem;
+          font-size: 4.5rem;
+          font-family: Roboto;
+          font-style: normal;
+          font-weight: 700;
+          span {
+            background: -webkit-linear-gradient(
+              160deg,
+              var(--cyan-600) 10%,
+              var(--green-600) 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 3.2rem;
+          }
+        }
+        p {
+          font-size: 1.3rem;
+          color: var(--gray-200);
+        }
+        .button {
+          position: relative;
+          padding-left: 3.2rem;
+          padding-top: 1.2rem;
+          margin-top: 3rem;
+          width: 10rem;
+          height: 3.5rem;
+
+          border-radius: 8px;
+          display: flex;
+          background: transparent;
+          transition: 0.2s ease-in-out;
+          .ArrowDown {
+            position: absolute;
+            top: 0.3rem;
+            left: 0.5rem;
+            width: 2.2rem;
+            height: 2.2rem;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            background: transparent;
+            transition: all 0.3s ease;
+            animation: down 2s infinite;
+            svg {
+              color: var(--green-600);
+            }
+            &:hover {
+              transform: translateY(0.5rem);
+            }
+            @keyframes down {
+              0% {
+                opacity: 0.5;
+              }
+              50% {
+                opacity: 1;
+              }
+              100% {
+                opacity: 0;
+                transform: translateY(0.5rem);
+              }
+            }
+          }
+          &:hover {
+            background: var(--gray-850);
+            color: var(--green-600);
+            svg {
+              color: var(--white);
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -6,7 +6,7 @@
   z-index: 1000;
 
   background: var(--gray-800);
-  border-bottom: 1px solid var(--gray-900);
+  border-bottom: 1px solid var(--gray-760);
   @include breakpoint(md) {
     padding: 0 5rem;
   }
@@ -67,7 +67,7 @@
           a {
             display: inline-block;
             position: relative;
-            padding: 1rem 0.5rem;
+            padding: 0.75rem 1.25rem;
             height: 5rem;
             line-height: 5rem;
             color: var(--gray-300);
@@ -78,8 +78,9 @@
             &:hover {
               color: var(--white);
             }
+
             & + a {
-              margin-left: auto;
+              margin-left: 3rem;
             }
 
             &.active {
@@ -89,7 +90,7 @@
 
             &.active::after {
               content: '';
-              height: 3px;
+              height: 5px;
               border-radius: 0.8rem 0.8rem 0 0;
 
               width: 100%;
@@ -109,7 +110,7 @@
         width: 100%;
         height: 2.8rem;
         padding: 0 3rem;
-        margin-right: 2rem;
+        margin-left: 4rem;
         cursor: pointer;
 
         font-size: 12px;
@@ -132,12 +133,31 @@
         }
       }
 
+      .lengButton {
+        border-radius: 50%;
+        margin-left: 5px;
+        transition: 0.2s;
+        cursor: pointer;
+
+        img {
+          width: 40px;
+          height: 40px;
+          filter: grayscale(1);
+          &:hover {
+            filter: grayscale(0);
+          }
+          &:active {
+            filter: grayscale(0);
+          }
+        }
+      }
       .signinButton {
         height: 2.8rem;
         width: 100%;
         max-width: 12rem;
-        padding: 0 2rem;
+        padding: 0 0.3rem;
         cursor: pointer;
+
         margin-right: 2rem;
         border: 0;
         border: 0.6rem solid;
@@ -149,6 +169,7 @@
           var(--cyan-500)
         );
         background: var(--gray-800);
+
         display: flex;
         align-items: center;
         justify-content: center;
@@ -162,7 +183,7 @@
         -webkit-transition: all 0.3s ease;
         transition: all 0.3s ease;
         a {
-          margin-bottom: 2rem;
+          margin-bottom: 1.5rem;
         }
 
         img {
@@ -188,25 +209,6 @@
           color: var(--gray-800);
         }
       }
-
-      .lengButton {
-        border-radius: 50%;
-        margin-left: 5px;
-        transition: 0.2s;
-        cursor: pointer;
-        img {
-          width: 40px;
-          height: 40px;
-          filter: grayscale(1);
-          &:hover {
-            filter: grayscale(0);
-          }
-          &:active {
-            filter: grayscale(0);
-          }
-        }
-      }
-
       &.isMenu {
         transform: translate(100%);
       }
@@ -215,7 +217,7 @@
       cursor: pointer;
       display: flex;
       align-items: center;
-      width: 2rem;
+      font-size: 2rem;
       transition: 0.3s ease all;
       position: relative;
 

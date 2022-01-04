@@ -4,12 +4,14 @@
     width: 10rem;
     height: auto;
     padding: 0;
-    background: var(--gray-500);
+
     .CallToActionSection {
       position: relative;
       display: flex;
-      justify-content: space-between;
-      padding: 1rem 10rem;
+      width: 100vw;
+      padding: 4rem 0 0 10rem;
+      background: var(--gray-500);
+
       .TitleConteriner {
         position: relative;
         max-width: 27rem;
@@ -92,6 +94,21 @@
             box-shadow: 0.2rem 0.6rem 0.9rem var(--green-600);
           }
         }
+      }
+    }
+    .Content {
+      position: relative;
+      display: flex;
+      width: 100vw;
+      height: 20vh;
+      padding: 3rem 0 0 10rem;
+      background: var(--gray-510);
+      border-bottom: 1px solid var(--gray-750);
+      .Title {
+        text-align: center;
+        position: absolute;
+        justify-content: center;
+        align-items: center;
       }
     }
   }

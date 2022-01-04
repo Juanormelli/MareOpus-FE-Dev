@@ -61,8 +61,12 @@ const Home: NextPage = () => {
           </section>
         </section>
 
-        <section className={styles.section}>
-          <h1>tetste</h1>
+        <section className={styles.Conteiner}>
+          <section className={styles.Content}>
+            <div className={styles.Title}>
+              <h1>teste</h1>
+            </div>
+          </section>
         </section>
       </main>
     </>

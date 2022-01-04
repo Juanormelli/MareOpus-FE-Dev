@@ -70,6 +70,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           <Header
             onOpenSession={onOpenSession}
             onOpenLoginModal={handleOpenNewLoginModal}
+            onOpenRegisterModal={handleOpenNewRegisterModal}
           ></Header>
           <Component {...pageProps} />
           <Modal

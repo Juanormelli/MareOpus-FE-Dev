@@ -11,6 +11,7 @@ import { AiOutlineClose } from 'react-icons/ai';
 
 interface HeaderProps {
   onOpenLoginModal: () => void;
+  onOpenRegisterModal: () => void;
   onOpenSession: () => void;
 }
 
@@ -19,8 +20,8 @@ export default function Header(props: HeaderProps) {
   //const history = useHistory();
   const [menuOpen, setMenuOpen] = useState(false);
   const [size, setSize] = useState({
-    width: undefined,
-    height: undefined,
+    width: 0,
+    height: 0,
   });
   useEffect(() => {
     const handleResize = () => {
@@ -74,6 +75,20 @@ export default function Header(props: HeaderProps) {
                   </ActiveLink>
                 </li>
                 <li>
+                  <ActiveLink
+                    activateClassname={styles.active}
+                    href="/dashboard"
+                  >
+                    <a>Aceleração</a>
+                  </ActiveLink>
+                </li>
+
+                <li>
+                  <ActiveLink activateClassname={styles.active} href="/sobre">
+                    <a>O Mareo</a>
+                  </ActiveLink>
+                </li>
+                <li>
                   <a
                     className={styles.navbar_link}
                     onClick={props.onOpenLoginModal}
@@ -86,7 +101,7 @@ export default function Header(props: HeaderProps) {
                   <button
                     type="button"
                     className={styles.signinButton}
-                    onClick={() => signOut()}
+                    onClick={props.onOpenRegisterModal}
                   >
                     <a>REGISTRAR</a>
                   </button>
@@ -137,6 +152,19 @@ export default function Header(props: HeaderProps) {
                   </ActiveLink>
                 </li>
                 <li>
+                  <ActiveLink
+                    activateClassname={styles.active}
+                    href="/dashboard"
+                  >
+                    <a>Aceleração</a>
+                  </ActiveLink>
+                </li>
+                <li>
+                  <ActiveLink activateClassname={styles.active} href="/sobre">
+                    <a>O Mareo</a>
+                  </ActiveLink>
+                </li>
+                <li>
                   <a
                     className={styles.navbar_link}
                     onClick={props.onOpenLoginModal}
@@ -146,7 +174,11 @@ export default function Header(props: HeaderProps) {
                   </a>
                 </li>
                 <li>
-                  <button type="button" className={styles.signinButton}>
+                  <button
+                    type="button"
+                    onClick={props.onOpenRegisterModal}
+                    className={styles.signinButton}
+                  >
                     <a>REGISTRAR</a>
                   </button>
                 </li>

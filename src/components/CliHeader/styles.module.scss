@@ -12,7 +12,9 @@
   position: fixed;
   height: 100%;
   left: -16.25rem;
-
+  .Container::after {
+    left: 0;
+  }
   nav {
     background: var(--gray-800);
     width: 16.25rem;
