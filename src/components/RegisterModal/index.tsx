@@ -1,51 +1,89 @@
-import Modal from 'react-modal';
 import { useEffect, useState } from 'react';
+import Modal from 'react-modal';
 
-import style from '../Modal/styles.module.scss';
-import { consumers } from 'stream';
-import { signIn } from 'next-auth/client';
-import { HiArrowNarrowLeft } from 'react-icons/hi';
+import style from './styles.module.scss';
+import axios from 'axios';
 import { BsGoogle } from 'react-icons/bs';
+import { signOut } from 'next-auth/client';
+import { HiArrowNarrowLeft } from 'react-icons/hi';
 
-interface ModalProps {
-  onOpenRegisterModal: () => void;
-  onRequestClose: () => void;
+interface RegisterModalProps {
+  onRequestClose(): void;
   isOpen: boolean;
 }
 
-let messageError = '';
+interface IRegisterUser {
+  username: string;
+  email: string;
+  password: string;
+}
 
-export default function ModalLogin(props: ModalProps) {
+let testes: any;
+export default function RegisterModal(props: RegisterModalProps) {
+  const [email, setEmail] = useState('');
   const [user, setUser] = useState('');
   const [password, setPassword] = useState('');
+  const [passwordConf, setPasswordConf] = useState('');
 
   function openModalClear() {
+    setEmail('');
     setPassword('');
     setUser('');
-    setMessage('Usuario não conseguio logar');
+    setMessage('');
+    setPasswordConf('');
   }
 
-  function handleLogin() {
-    signIn('credentials', {
-      redirect: false,
-      username: user,
-      password: password,
-    }).then((message) => {
-      if (message?.error) {
-        messageError = message?.error;
-        setMessage(messageError);
-      } else {
-        props.onRequestClose();
-        return true;
-      }
-    });
+  async function registerUser({ email, password, username }: IRegisterUser) {
+    const response = await axios
+      .post('https://deploy.techposts.com.br/users', {
+        email: email,
+        password: password,
+        username: username,
+      })
+      .then((response) => {
+        return response;
+      })
+      .catch((response) => {
+        return response;
+      });
+    if (response.data !== undefined) {
+      const responseSucess = {
+        data: 'Congrats the user register sucsess',
+        statusCode: 200,
+      };
+      return responseSucess;
+    } else {
+      const responseError = {
+        data: response.response.data.message,
+        statusCode: 400,
+      };
+      return responseError;
+    }
   }
 
-  const [message, setMessage] = useState('Usuraio não consegui logar');
+  const [message, setMessage] = useState('');
+  if (passwordConf !== password && message !== 'As Senhas sao diferentes') {
+    setMessage('As Senhas sao diferentes');
+  } else if (
+    passwordConf === password &&
+    message === 'As Senhas sao diferentes'
+  ) {
+    setMessage('');
+  }
 
+  async function teste() {
+    testes = await registerUser({ email, password, username: user });
+    if (testes.statusCode !== 200) {
+      setMessage(testes.data);
+      console.log(message);
+    } else {
+      alert('Usuario Cadastrado com sucesso Parabens!');
+      document.location = document.location;
+    }
+  }
   useEffect(() => {}, [message]);
 
-  if (message !== '') {
+  if (message === 'As Senhas sao diferentes') {
     return (
       <Modal
         isOpen={props.isOpen}
@@ -57,12 +95,8 @@ export default function ModalLogin(props: ModalProps) {
       >
         <div className={style['modal-container']}>
           <div className={style['content-left']}>
-            <h1>LOGIN</h1>
-            <button
-              className={style['google']}
-              type="submit"
-              onClick={() => signIn('google')}
-            >
+            <h1>Crie sua conta</h1>
+            <button className={style['google']} type="submit">
               <div className={style['logoGoogle']}>
                 <BsGoogle size={29} color="#FFFFFF" />
               </div>
@@ -80,6 +114,14 @@ export default function ModalLogin(props: ModalProps) {
               placeholder="Usuario"
             />
             <input
+              type="email"
+              value={email}
+              onChange={(event) => {
+                setEmail(event.target.value);
+              }}
+              placeholder="E-mail"
+            />
+            <input
               type="password"
               value={password}
               onChange={(event) => {
@@ -87,11 +129,23 @@ export default function ModalLogin(props: ModalProps) {
               }}
               placeholder="Senha"
             />
-            <small className={style['error']}>{messageError}</small>
+            <input
+              type="password"
+              value={passwordConf}
+              onChange={(event) => {
+                setPasswordConf(event.target.value);
+              }}
+              placeholder="Comfirme a Senha"
+            />
             <br />
-            <a> Esqueci minha senha</a>
-            <button onClick={handleLogin} className={style['loginError']}>
-              ENTRAR
+            <small className={style['error']}>{message}</small>
+            <button
+              className={style['loginError']}
+              onClick={() => {
+                alert('As senhas precisam ser iguais');
+              }}
+            >
+              Cadastrar
             </button>
           </div>
           <div className={style['content-right']}>
@@ -129,12 +183,8 @@ export default function ModalLogin(props: ModalProps) {
       >
         <div className={style['modal-container']}>
           <div className={style['content-left']}>
-            <h1>LOGIN</h1>
-            <button
-              className={style['google']}
-              type="submit"
-              onClick={() => signIn('google')}
-            >
+            <h1>Crie sua conta</h1>
+            <button className={style['google']} type="submit">
               <div className={style['logoGoogle']}>
                 <BsGoogle size={29} color="#FFFFFF" />
               </div>
@@ -152,6 +202,14 @@ export default function ModalLogin(props: ModalProps) {
               placeholder="Usuario"
             />
             <input
+              type="email"
+              value={email}
+              onChange={(event) => {
+                setEmail(event.target.value);
+              }}
+              placeholder="E-mail"
+            />
+            <input
               type="password"
               value={password}
               onChange={(event) => {
@@ -159,13 +217,21 @@ export default function ModalLogin(props: ModalProps) {
               }}
               placeholder="Senha"
             />
-            <small className={style['error']}>{messageError}</small>
+            <input
+              type="password"
+              value={passwordConf}
+              onChange={(event) => {
+                setPasswordConf(event.target.value);
+              }}
+              placeholder="Comfirme a Senha"
+            />
             <br />
-            <a> Esqueci minha senha</a>
-            <button onClick={handleLogin} className={style['loginError']}>
-              ENTRAR
+            <small className={style['error']}>{message}</small>
+            <button className={style['loginError']} onClick={teste}>
+              Cadastrar
             </button>
           </div>
+
           <div className={style['content-right']}>
             <button
               className={style['modal-close']}
@@ -179,10 +245,7 @@ export default function ModalLogin(props: ModalProps) {
             <img src="/img/group.svg" alt="Grupo" className={style['grupo']} />
             <p>Aqui cressemos juntos no seu carreira profissional.</p>
 
-            <button
-              onClick={props.onOpenRegisterModal}
-              className={style['register-button']}
-            >
+            <button onClick={teste} className={style['register-button']}>
               <div className={style['ArrowLeft']}>
                 <HiArrowNarrowLeft size={20} />
               </div>

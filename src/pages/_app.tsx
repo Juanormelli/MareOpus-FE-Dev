@@ -10,6 +10,7 @@ import Header from '../components/Header';
 import CliHeader from '../components/CliHeader';
 import Footer from '../components/Footer';
 import Modal from '../components/Modal';
+import RegisterModal from '../components/RegisterModal';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [session, setsession] = useState(false);
@@ -36,6 +37,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     console.log(session);
   }, [session]);
+
   Router.events.on('routeChangeStart', (url) => {
     console.log('testenado o loading...', url);
     setLoading(true);
@@ -75,6 +77,10 @@ function MyApp({ Component, pageProps }: AppProps) {
             onRequestClose={handleCloseNewLoginModal}
             onOpenRegisterModal={handleOpenNewRegisterModal}
           />
+          <RegisterModal
+            isOpen={isNewRegisterModalOpen}
+            onRequestClose={handleCloseNewRegisterModal}
+          ></RegisterModal>
           <Footer />
         </NextIntlProvider>
       </>

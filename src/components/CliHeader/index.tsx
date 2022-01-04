@@ -20,24 +20,19 @@ const CliHeader: React.FC<NavbarProps> = () => {
   const [open, setOpen] = useState<boolean>(false);
   const [isAside, setAside] = useState<number>(0);
 
-  const handleOpen = useCallback(
-    (close = false): void => {
-      if (close) {
-        setOpen(false);
-      } else {
-        setOpen(!open);
-      }
-    },
-    [open]
-  );
+  function handleOpen() {}
 
   return (
     <>
       <header className={styles.headerContainer}>
         {/* Menu na horizontal */}
         <nav className={styles.top}>
-          <div className={styles.logo} onClick={(): void => handleOpen()}>
-            <img src="/img/iconeLogo.svg" alt="Logo" />
+          <div className={styles.logo}>
+            <img
+              src="/img/iconeLogo.svg"
+              alt="Logo"
+              onClick={(): void => handleOpen()}
+            />
             <h2>AREO</h2>
           </div>
           <ul className={styles.navigation}>
@@ -78,8 +73,8 @@ const CliHeader: React.FC<NavbarProps> = () => {
 
         {/* Menu na vertical */}
         <div className={styles.Container}>
-          <aside>
-            <div className={styles.sidebar}>
+          <nav>
+            <u className={styles.sidebar}>
               <ActiveLink activateClassname={styles.active} href="/dashboard">
                 <a>
                   <AiOutlineHome size={26} />
@@ -143,8 +138,8 @@ const CliHeader: React.FC<NavbarProps> = () => {
                   <MdLogin size={20} />
                 </a>
               </ActiveLink>
-            </div>
-          </aside>
+            </u>
+          </nav>
         </div>
       </header>
     </>
