@@ -1,6 +1,6 @@
 import style from './styles.module.scss';
 import { useTranslation } from 'next-i18next';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   MdOutlineArrowBackIos,
   MdOutlineArrowForwardIos,
@@ -8,16 +8,36 @@ import {
 
 interface AvatarProps {
   //onOpenLoginModal: () => void;
+  idx: number;
 }
 const Avatar: React.FC<AvatarProps> = () => {
   const { t, i18n } = useTranslation();
 
+  const [activeIndex, setActiveIndex] = useState(0);
   const [index, setIndex] = useState(0);
   const [index1, setIndex1] = useState(1);
+
   const [transUp, setTransUp] = useState(false);
   const [transDown, setTransDown] = useState(false);
   const [transL, setTransL] = useState(false);
   const [transR, setTransR] = useState(false);
+
+  useEffect(() => {
+    if (transDown) {
+      setTimeout(() => {
+        setTransDown(false);
+        setIndex((index + 1) % foli.length);
+        setIndex1((index1 + 1) % foli.length);
+      }, 800);
+    }
+    if (transUp) {
+      setTimeout(() => {
+        setTransUp(false);
+        setIndex((index + 1) % foli.length);
+        setIndex1((index1 + 1) % foli.length);
+      }, 800);
+    }
+  }, [transUp, transDown]);
 
   const foli = [
     '/avatar/foli/foli.svg',
@@ -63,20 +83,51 @@ const Avatar: React.FC<AvatarProps> = () => {
     '/avatar/mare/mare250.svg',
   ];
 
+  const handlePrev = () => {
+    setTransDown(true);
+    setTransUp(false);
+
+    const nextIndex = index - 1;
+    const nextIndex1 = index1 - 1;
+
+    if (nextIndex < 0) {
+      setIndex(foli.length - 1);
+    } else {
+      setIndex(nextIndex);
+    }
+
+    if (nextIndex1 < 0) {
+      setIndex1(foli.length - 1);
+    } else {
+      setIndex1(nextIndex1);
+    }
+  };
+
   const handleNext = () => {
     setTransUp(true);
     setTransDown(false);
   };
 
-  const handlePrev = () => {
-    setIndex((index + 1) % foli.length);
-    setIndex1((index1 + 1) % foli.length);
+  const handleImgClick = (idx) => {
+    setActiveIndex(idx);
+
+    if (idx < index) {
+      setIndex(idx);
+      setIndex1(idx + 1);
+      setTransDown(true);
+      setTransUp(false);
+    } else {
+      setIndex((idx - 1) % foli.length);
+      setIndex1(idx % foli.length);
+      handleNext();
+    }
   };
+
   return (
     <>
       <div className={style['contentavatar']}>
         <button className={style['Prev']} onClick={handlePrev}>
-          <MdOutlineArrowBackIos />
+          <MdOutlineArrowBackIos size={20} />
         </button>
         <div className={style['imgBox']}>
           <div className={style['foli']}>
@@ -89,28 +140,25 @@ const Avatar: React.FC<AvatarProps> = () => {
               <img src={foli[index1]} className={style['intFoli']} />
             </div>
             <h3>FOLI</h3>
-
             <small>✅ Ganhe 10 pontos de energia</small>
           </div>
           <ul className={style['type']}>
-            <li>
-              <img src="/avatar/foli/foli.svg" alt="foli" />
-            </li>
-            <li>
-              <img src="/avatar/foli/foli10.svg" alt="foli10" />
-            </li>
-            <li>
-              <img src="/avatar/foli/foli50.svg" alt="foli50" />
-            </li>
-            <li>
-              <img src="/avatar/foli/foli100.svg" alt="foli100" />
-            </li>
-            <li>
-              <img src="/avatar/foli/foli250.svg" alt="foli250" />
-            </li>
+            {foli.map((el, idx) => {
+              return (
+                <li key={idx}>
+                  <img
+                    onClick={() => handleImgClick(idx)}
+                    src={el}
+                    alt="foli"
+                  />
+                </li>
+              );
+            })}
           </ul>
         </div>
-
+        <button className={style['Next']} onClick={handleNext}>
+          <MdOutlineArrowForwardIos size={20} />
+        </button>
         <ul className={style['category']}>
           <li>
             <input type="radio" name="foli" id="foli" />
@@ -137,9 +185,6 @@ const Avatar: React.FC<AvatarProps> = () => {
             <span className={style['checkmark']}></span>
           </li>
         </ul>
-        <button className={style['Next']} onClick={handleNext}>
-          <MdOutlineArrowForwardIos />
-        </button>
       </div>
     </>
   );

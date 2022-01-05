@@ -2,26 +2,48 @@
   width: 16rem;
   .Prev {
     height: auto;
-    width: 1rem;
+    width: 1.5rem;
     overflow: hidden;
     background: transparent;
     border: none;
     svg {
       color: var(--gray-200);
+    }
+    &:focus {
+      svg {
+        color: var(--cyan-500);
+      }
+    }
+    &:hover {
+      filter: blur(0.1rem);
+      svg {
+        color: var(--cyan-600);
+      }
     }
   }
   .Next {
     height: auto;
-    width: 1rem;
+    width: 1.5rem;
     overflow: hidden;
     background: transparent;
     border: none;
     svg {
       color: var(--gray-200);
     }
+    &:focus {
+      svg {
+        color: var(--cyan-500);
+      }
+    }
+    &:hover {
+      filter: blur(0.1rem);
+      svg {
+        color: var(--cyan-600);
+      }
+    }
   }
   .imgBox {
-    width: 100%;
+    width: 80%;
     display: flex;
     justify-content: center;
     .foli {
@@ -103,9 +125,13 @@
             }
           }
         }
+        span {
+          position: absolute;
+        }
       }
     }
     .type {
+      margin-top: 1rem;
       position: absolute;
       transform: translateY(-15%);
       height: 15rem;
@@ -124,8 +150,9 @@
   }
   .category {
     position: absolute;
+    margin-top: 1rem;
     left: 75%;
-    bottom: 13rem;
+    bottom: 12rem;
     transform: translateX(-50%);
     display: flex;
     li {

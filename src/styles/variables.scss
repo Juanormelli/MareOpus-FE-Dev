@@ -6,7 +6,63 @@
     }
   }
 }
+.sliderUP {
+  animation: sliderUp 500ms linear;
+  @keyframes sliderUp {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+}
 
+.sliderDown {
+  animation: sliderDown 500ms linear;
+  @keyframes sliderDown {
+    0% {
+      transform: translateX(50%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+}
+.sliderL {
+  animation: sliderL 500ms linear;
+  @keyframes sliderL {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+}
+.sliderR {
+  animation: sliderR 500ms linear;
+  @keyframes sliderR {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+}
+@mixin Up {
+  @extend .sliderUP;
+}
+@mixin Down {
+  @extend .sliderDown;
+}
+@mixin Left {
+  @extend .sliderL;
+}
+@mixin Right {
+  @extend .sliderR;
+}
 // spacing
 $spacing-md: 16px;
 $spacing-lg: 32px;
