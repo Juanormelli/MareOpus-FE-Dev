@@ -6,6 +6,7 @@ import axios from 'axios';
 import { BsGoogle } from 'react-icons/bs';
 import { signOut } from 'next-auth/client';
 import { HiArrowNarrowLeft } from 'react-icons/hi';
+import Avatar from '../Avatar';
 
 interface RegisterModalProps {
   onRequestClose(): void;
@@ -157,15 +158,15 @@ export default function RegisterModal(props: RegisterModalProps) {
               ✖
             </button>
             <img src="/img/Logo.svg" alt="Logo" className={style['imgLogin']} />
-            <h2>Bem-vindo</h2>
-            <img src="/img/group.svg" alt="Grupo" className={style['grupo']} />
+            <h2>Escolha o seu avatar</h2>
+            <Avatar />
             <p>Aqui cressemos juntos no seu carreira profissional.</p>
 
             <button className={style['register-button']}>
               <div className={style['ArrowLeft']}>
                 <HiArrowNarrowLeft size={20} />
               </div>
-              Cadastre-se
+              Voltar para Login
             </button>
           </div>
         </div>
@@ -241,15 +242,15 @@ export default function RegisterModal(props: RegisterModalProps) {
               ✖
             </button>
             <img src="/img/Logo.svg" alt="Logo" className={style['imgLogin']} />
-            <h2>Bem-vindo</h2>
-            <img src="/img/group.svg" alt="Grupo" className={style['grupo']} />
+            <h2>Escolha o seu avatar</h2>
+            <Avatar />
             <p>Aqui cressemos juntos no seu carreira profissional.</p>
 
             <button onClick={teste} className={style['register-button']}>
               <div className={style['ArrowLeft']}>
                 <HiArrowNarrowLeft size={20} />
               </div>
-              Cadastre-se
+              Voltar para Login
             </button>
           </div>
         </div>

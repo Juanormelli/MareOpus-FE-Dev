@@ -1,0 +1,194 @@
+.contentavatar {
+  width: 16rem;
+  .Prev {
+    height: auto;
+    width: 1rem;
+    overflow: hidden;
+    background: transparent;
+    border: none;
+    svg {
+      color: var(--gray-200);
+    }
+  }
+  .Next {
+    height: auto;
+    width: 1rem;
+    overflow: hidden;
+    background: transparent;
+    border: none;
+    svg {
+      color: var(--gray-200);
+    }
+  }
+  .imgBox {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .foli {
+      display: block;
+
+      .slider {
+        width: 10rem;
+        height: 15rem;
+        overflow: hidden;
+        .flame {
+          position: absolute;
+          bottom: 20rem;
+          border-radius: 50% 0 50% 50%;
+          transform: rotate(-45deg);
+          animation: burning 5ms ease-in infinite;
+          @keyframes burning {
+            0% {
+              transform: rotateY(0);
+            }
+            20% {
+              transform: rotateY(1deg);
+            }
+            40% {
+              transform: rotateY(2deg) scale(1);
+            }
+            60% {
+              transform: rotateY(-1deg) scale(1.07);
+            }
+          }
+          &:nth-child(1) {
+            width: 140px;
+            height: 140px;
+            background: var(--green-700);
+            box-shadow: 0 0 4.25rem 1rem var(--green-700);
+            filter: blur(0.6rem);
+          }
+          &:nth-child(2) {
+            right: 8.5rem;
+            width: 100px;
+            height: 100px;
+            background: var(--green-600);
+            box-shadow: 0 0 2.25rem 1rem var(--green-600);
+            filter: blur(0.3rem);
+          }
+          &:nth-child(3) {
+            right: 9.5rem;
+            width: 60px;
+            height: 60px;
+            background: var(--green-400);
+            box-shadow: 0 0 1.25rem 1rem var(--green-400);
+            filter: blur(0.4rem);
+          }
+          &:nth-child(4) {
+            right: 10rem;
+            width: 50px;
+            height: 50px;
+            background: var(--white);
+            box-shadow: 0 0 2rem 0.1rem var(--white);
+            filter: blur(0.5rem);
+          }
+        }
+        .intFoli {
+          padding: 0;
+          width: 10rem;
+          height: 100%;
+          max-width: 12rem;
+          filter: drop-shadow(0.4rem 0.8rem 0.5rem var(--gray-900));
+          animation: avatar 5s linear infinite;
+          transform: translateZ(2.5rem);
+          @keyframes avatar {
+            0% {
+              transform: translateY(0.1rem) rotateY(0);
+            }
+            50% {
+              transform: translateY(0.9rem) rotateY(-20deg);
+            }
+            100% {
+              transform: translateY(0.1rem) rotateY(10deg);
+            }
+          }
+        }
+      }
+    }
+    .type {
+      position: absolute;
+      transform: translateY(-15%);
+      height: 15rem;
+      left: 90%;
+      li {
+        list-style: none;
+        display: inline-block;
+        cursor: pointer;
+        transition: 0.5s;
+        img {
+          width: 3rem;
+          height: 3rem;
+        }
+      }
+    }
+  }
+  .category {
+    position: absolute;
+    left: 75%;
+    bottom: 13rem;
+    transform: translateX(-50%);
+    display: flex;
+    li {
+      list-style: none;
+      margin-left: 0.5rem;
+      display: inline-block;
+      filter: contrast(100%);
+      cursor: pointer;
+      transition: 0.5s;
+
+      &:hover {
+        transform: translateY(-0.3rem);
+        -webkit-transform: scale(1.2);
+        filter: contrast(200%);
+        transform: scale(1.2);
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+      }
+      input {
+        width: 1.5rem;
+        height: 1.5rem;
+        opacity: 0.5;
+        cursor: pointer;
+      }
+
+      /* Create a custom radio button */
+      .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+      }
+
+      .checkmark:after {
+        content: '';
+        position: absolute;
+        display: none;
+      }
+      &:nth-child(1) {
+        background-color: var(--green-500);
+        border-radius: 50%;
+      }
+      &:nth-child(2) {
+        background-color: var(--red-500);
+        border-radius: 50%;
+      }
+      &:nth-child(3) {
+        background-color: var(--lilac-500);
+        border-radius: 50%;
+      }
+      &:nth-child(4) {
+        background-color: var(--yellow-500);
+        border-radius: 50%;
+      }
+      &:nth-child(5) {
+        background-color: var(--black-500);
+        border-radius: 50%;
+      }
+      &:nth-child(6) {
+        background-color: var(--blue-500);
+        border-radius: 50%;
+      }
+    }
+  }
+}

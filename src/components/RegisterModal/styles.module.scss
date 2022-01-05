@@ -146,27 +146,24 @@
     justify-content: center;
     background: var(--gray-840);
     padding: 3rem;
+    text-align: center;
     border-radius: 0 0.8rem 0.8rem 0;
-    .grupo {
-      width: 15rem;
-      height: 12rem;
+    .imgLogin {
+      position: relative;
+      display: inline-block;
+      margin: 0.2rem 0;
+      width: 192px;
+      height: 59px;
     }
     h2 {
       margin-bottom: 1rem;
       font-size: 1.5rem;
       line-height: 1.9rem;
     }
-    .imgLogin {
-      position: relative;
-      display: inline-block;
-      img {
-        width: 100px;
-        height: 59px;
-      }
-    }
 
     p {
       color: var(--gray-200);
+      margin-top: 4rem;
     }
     .register-button {
       position: relative;

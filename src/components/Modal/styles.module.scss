@@ -147,6 +147,13 @@
     background: var(--gray-840);
     padding: 3rem;
     border-radius: 0 0.8rem 0.8rem 0;
+    .imgLogin {
+      position: relative;
+      display: inline-block;
+      margin: 0.2rem 0;
+      width: 192px;
+      height: 59px;
+    }
     .grupo {
       width: 15rem;
       height: 12rem;
@@ -155,14 +162,6 @@
       margin-bottom: 1rem;
       font-size: 1.5rem;
       line-height: 1.9rem;
-    }
-    .imgLogin {
-      position: relative;
-      display: inline-block;
-      img {
-        width: 100px;
-        height: 59px;
-      }
     }
 
     p {
