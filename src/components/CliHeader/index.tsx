@@ -15,7 +15,7 @@ interface NavbarProps {
   //onOpenLoginModal: () => void;
 }
 const CliHeader: React.FC<NavbarProps> = () => {
-  const { t, i18n } = useTranslation();
+  //const { t, i18n } = useTranslation();
 
   const [open, setOpen] = useState<boolean>(false);
   const [isAside, setAside] = useState<number>(0);

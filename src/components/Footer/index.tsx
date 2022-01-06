@@ -26,7 +26,7 @@ export default function Footer() {
                 </h1>
               </div>
               <span className={styles.copy}>
-                Mareo 2021 <br /> Todos os direitos reservados
+                Mareo&copy; 2021 <br /> Todos os direitos reservados
               </span>
             </a>
           </div>

@@ -139,6 +139,7 @@ const Avatar: React.FC<AvatarProps> = () => {
               <img src={foli[index]} className={style['intFoli']} />
               <img src={foli[index1]} className={style['intFoli']} />
             </div>
+
             <h3>FOLI</h3>
             <small>✅ Ganhe 10 pontos de energia</small>
           </div>
@@ -150,6 +151,11 @@ const Avatar: React.FC<AvatarProps> = () => {
                     onClick={() => handleImgClick(idx)}
                     src={el}
                     alt="foli"
+                    className={`${
+                      foli[activeIndex] === foli[idx]
+                        ? 'border: none'
+                        : 'opacity: 0'
+                    }`}
                   />
                 </li>
               );
