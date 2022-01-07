@@ -1,3 +1,10 @@
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
 .FooterConteiner {
   position: relative;
   display: block;
@@ -30,7 +37,7 @@
     margin-bottom: 1.5rem;
     h1 {
       margin-left: 0.5rem;
-      font-size: 1.3rem;
+
       line-height: 1.5rem;
       font-weight: 400;
       font-family: 'Roboto', sans-serif;
@@ -152,6 +159,19 @@
       background: var(--green-500);
       filter: drop-shadow(1rem 16px 3rem var(--green-500));
       transform: translateY(-0.2rem);
+    }
+  }
+}
+@media screen and (max-width: 720px) {
+  .container {
+    font-size: 1rem;
+    padding: 0;
+    margin: 0;
+    h1 {
+      font-size: 0.9rem;
+    }
+    img {
+      width: 3rem;
     }
   }
 }

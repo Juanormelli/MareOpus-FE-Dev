@@ -7,7 +7,7 @@ body {
 }
 
 h1 {
-  font-size: 1.8rem;
+  font-size: 1.2rem;
 }
 
 h2 {
@@ -39,6 +39,9 @@ a {
   padding: 0;
   box-sizing: border-box;
 }
+main {
+  margin-top: 3rem;
+}
 
 :root {
   --white: #ffffff;
@@ -54,6 +57,7 @@ a {
   --gray-750: #202020;
   --gray-760: #202024;
   --gray-800: #0b0c0d;
+  --gray-810: #0b0c0dd5;
   --gray-840: #131315;
   --gray-850: #141414;
   --gray-900: #000000;

@@ -11,7 +11,7 @@
   flex: 1;
   height: 1rem;
   border-radius: 1rem;
-  background: var(--gray-line);
+  background: var(--gray-900);
   margin: 0 1.5rem;
   position: relative;
 }
@@ -19,13 +19,24 @@
 .experienceBar > div > div {
   height: 1rem;
   border-radius: 1rem;
-  background: var(--green);
-  box-shadow: 0 0 50px var(--green);
-  -webkit-box-shadow: 0 0 50px var(--green);
+  background: var(--green-500);
+  box-shadow: 0 0 50px var(--green-500);
+  -webkit-box-shadow: 0 0 50px var(--green-500);
 }
 
 span.currentExperience {
   position: absolute;
   top: 12px;
   transform: translateX(-50%);
+}
+
+.avatar {
+  position: relative;
+  img {
+    width: 2rem;
+    height: 2rem;
+    background: var(--gray-900);
+    padding: 0.2rem;
+    border-radius: 50%;
+  }
 }

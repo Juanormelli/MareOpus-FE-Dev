@@ -9,17 +9,20 @@ export function ExperienceBar() {
     Math.round(currentExperience * 100) / experienceToNextLevel;
   return (
     <header className={styles.experienceBar}>
-      <span>0 xp</span>
       <div>
         <div style={{ width: `${percentToNextLevel}%` }} />
         <span
           className={styles.currentExperience}
           style={{ left: `${percentToNextLevel}%` }}
         >
-          {currentExperience} xp
+          {currentExperience}
         </span>
       </div>
-      <span>{experienceToNextLevel} xp</span>
+
+      <span className={styles.avatar}>
+        {experienceToNextLevel}
+        <img src="/avatar/foli/foli10.svg" alt="" />
+      </span>
     </header>
   );
 }
