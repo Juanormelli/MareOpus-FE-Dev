@@ -30,7 +30,7 @@
         border: 1px solid var(--gray-700);
         .statusHeader {
           display: flex;
-          padding: 2rem;
+
           .perfil {
             width: 9.25rem;
             height: 9.25rem;
@@ -87,7 +87,7 @@
         }
         footer {
           width: 100%;
-          padding: 2rem;
+          border-top: 1px solid var(--gray-700);
           h2 {
             font-weight: 400;
             font-size: 1.2rem;
@@ -97,15 +97,71 @@
         }
         &:nth-child(1) {
           background: var(--gray-400);
-          max-width: 33rem;
+          max-width: 34rem;
+          .statusHeader {
+            padding: 2rem;
+          }
+          footer {
+            width: 100%;
+            padding: 2rem;
+          }
         }
         &:nth-child(2) {
           background: var(--gray-760);
-          max-width: 25rem;
+          max-width: 28rem;
+          .statusHeader {
+            padding: 2rem;
+          }
         }
         &:nth-child(3) {
           background: var(--gray-760);
-          max-width: 25rem;
+          max-width: 28rem;
+          .statusHeader {
+            padding: 0.5rem;
+            .categoria {
+              display: flex;
+            }
+            .medalha {
+              display: flex;
+              height: 50%;
+              ul {
+                list-style: none;
+                li {
+                  display: inline-block;
+                }
+              }
+            }
+          }
+          footer {
+            width: 100%;
+            padding: 1rem;
+            .categoria {
+              display: flex;
+            }
+            .trofel {
+              display: flex;
+              ul {
+                list-style: none;
+                li {
+                  display: inline-block;
+                  width: 4rem;
+                  height: 4rem;
+                  background: var(--gray-400);
+                  clip-path: polygon(
+                    6% 23%,
+                    50% 0,
+                    95% 23%,
+                    95% 70%,
+                    50% 95%,
+                    6% 71%
+                  );
+                  svg {
+                    margin: 1rem;
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }

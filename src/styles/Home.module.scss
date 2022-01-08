@@ -1,114 +1,148 @@
 .pageConteiner {
-  height: 100vh;
+  padding-top: 3rem;
   .Conteiner {
-    min-height: 20rem;
-    width: 10rem;
+    max-height: 50rem;
+    width: 20rem;
+    min-width: none;
     height: auto;
     padding: 0;
     margin: 0;
-
-    .CallToActionSection {
-      position: relative;
-      display: flex;
-      width: 100vw;
-      padding: 4rem 0 0 10rem;
-      background: var(--gray-500);
-
-      .TitleConteriner {
+    @media screen and (min-width: 789px) {
+      padding-top: 32px;
+    }
+    .conteinerTop {
+      justify-content: space-between;
+      .CallToActionSection {
         position: relative;
-        max-width: 27rem;
-        margin-right: 5rem;
-        .textStyles {
-          display: flexbox;
-          width: 30rem;
-          margin-bottom: 3rem;
-          line-height: 3rem;
-          font-size: 3.5rem;
-          font-weight: 700;
+        display: flex;
+        width: 100vw;
+        padding: 5rem 0 0 8rem;
+        background: transparent;
+        @media screen and (min-width: 789px) {
+          padding: 1rem 0 0 2rem;
         }
-        .dynamicText {
-          padding: 0;
-          margin-top: 1rem;
-          line-height: 5.6rem;
-          height: 5.6rem;
-          overflow: hidden;
-        }
-
-        .dynamicText li {
-          list-style: none;
-          background: -webkit-linear-gradient(
-            160deg,
-            var(--cyan-600) 80%,
-            var(--green-500) 100%
-          );
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          font-family: Roboto;
-          font-style: normal;
-          font-weight: bold;
-          font-size: 5rem;
-          top: 0;
+        .TitleConteriner {
           position: relative;
-          animation: slide 18s steps(3) infinite;
-        }
+          max-width: 30rem;
+          margin-right: 5rem;
+          .textStyles {
+            display: flexbox;
+            width: 30rem;
+            margin-bottom: 3rem;
+            line-height: 3rem;
+            font-size: 3.5rem;
+            font-weight: 700;
 
-        @keyframes slide {
-          100% {
-            top: -18.5rem;
-          }
-        }
-        .dynamicText li {
-          position: relative;
-        }
+            .dynamicText {
+              padding: 0;
+              margin-top: 1rem;
+              line-height: 5.6rem;
+              height: 5.7rem;
+              overflow: hidden;
+            }
 
-        .button {
-          position: relative;
-          padding-left: 4rem;
-          padding-top: 1rem;
-          margin-top: 3rem;
-          width: 23rem;
-          height: 3.5rem;
-          border-radius: 8px;
-          display: flex;
-          background: linear-gradient(
-            278deg,
-            var(--green-500) 10%,
-            var(--cyan-600) 100%
-          );
-          transition: 0.2s ease-in-out;
-          .ArrowRight {
-            position: absolute;
-            top: 0.7rem;
-            right: 1rem;
-            width: 2.2rem;
-            height: 2.2rem;
-            padding: 0.5rem;
-            border-radius: 0.5rem;
-            background: var(--green-600);
-            transition: all 0.3s ease;
-            &:hover {
-              transform: translateX(0.5rem);
+            .dynamicText li {
+              list-style: none;
+              background: -webkit-linear-gradient(
+                160deg,
+                var(--green-400) 60%,
+                var(--cyan-600) 100%
+              );
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              font-family: Roboto;
+              font-style: normal;
+              font-weight: bold;
+              font-size: 5rem;
+              top: 0;
+              position: relative;
+              animation: slide 18s steps(3) infinite;
+            }
+
+            @keyframes slide {
+              100% {
+                top: -18.5rem;
+              }
+            }
+            .dynamicText li {
+              position: relative;
             }
           }
-          &:hover {
-            filter: contrast(0.8);
-            transform: translateY(-0.6rem);
-            box-shadow: 0.2rem 0.6rem 0.9rem var(--green-600);
+          p {
+            font-size: 1.2rem;
+          }
+          .button {
+            position: relative;
+            padding-left: 4rem;
+            padding-top: 1rem;
+            margin-top: 3rem;
+            width: 23rem;
+            height: 3.5rem;
+            border-radius: 8px;
+            display: flex;
+            background: linear-gradient(
+              278deg,
+              var(--green-400) 5%,
+              var(--cyan-600) 100%
+            );
+            transition: 0.2s ease-in-out;
+            .ArrowRight {
+              position: absolute;
+              top: 0.7rem;
+              right: 1rem;
+              width: 2.2rem;
+              height: 2.2rem;
+              padding: 0.5rem;
+              border-radius: 0.5rem;
+              background: var(--green-600);
+              transition: all 0.3s ease;
+              &:hover {
+                transform: translateX(0.5rem);
+              }
+            }
+            &:hover {
+              filter: contrast(0.9);
+              transform: translateX(0.4rem);
+              box-shadow: 0.2rem 0.6rem 1rem var(--gray-900);
+            }
           }
         }
+        img {
+          filter: drop-shadow(0.5rem 0.6rem 0.9rem var(--cyan-700));
+        }
+      }
+      .contVideo {
+        width: 100%;
+        height: auto;
+        border: 2px solid transparent;
+        border-radius: 0.8rem;
+        background: linear-gradient(to bottom, var(--gray-510), var(--gray-510)),
+          linear-gradient(to top, var(--gray-900), var(--green-400));
+        background-clip: padding-box, border-box;
+        background-origin: padding-box, border-box;
+
+        max-width: 1110px;
+        max-height: 627px;
+        overflow: auto;
+        z-index: 1;
+        position: absolute;
+        bottom: 0;
+        -webkit-transform: translate(-webkit-calc(50vw - 50%), 50%);
+        transform: translate(calc(50vw - 50%), 50%);
       }
     }
+
     .Content {
       position: relative;
       display: flex;
       width: 100vw;
-      height: 20vh;
-      padding: 3rem 0 0 10rem;
+      height: 50rem;
+      padding: 1rem 0 0 1rem;
       background: var(--gray-510);
       border-bottom: 1px solid var(--gray-750);
       .Title {
         text-align: center;
-        position: absolute;
+
         justify-content: center;
         align-items: center;
       }

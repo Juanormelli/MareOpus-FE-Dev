@@ -1,8 +1,10 @@
 import type { GetStaticPropsContext, NextPage } from 'next';
 //import { useTranslations } from 'next-intl';
 import Head from 'next/head';
+import Link from 'next/link';
 import React from 'react';
 import { AiOutlineArrowRight } from 'react-icons/ai';
+import Planos from '../components/Plane';
 //import { ActiveLink } from '../components/ActiveLink';
 import styles from '../styles/Home.module.scss';
 
@@ -27,38 +29,87 @@ const Home: NextPage = () => {
       </Head>
       <main className={styles.pageConteiner}>
         <section className={styles.Conteiner} id="hero">
-          <section className={styles.CallToActionSection}>
-            <div className={styles.TitleConteriner}>
-              <h1 className={styles.textStyles}>
-                <ul className={styles.dynamicText}>
-                  <li>
-                    <span>Crie</span>
-                  </li>
-                  <li>
-                    <span>Desenvolva</span>
-                  </li>
-                  <li>
-                    <span>Programe</span>
-                  </li>
-                </ul>
-                a formula do seu futuro agora!
-              </h1>
-              <p>
-                Aqui e seu ponto incial do crecimento profissonal que tanto
-                domindo as principais tecinologias utilizadas no mercado,
-                evoluindo a cada passo.
-              </p>
-              <a className={styles.button}>
-                VENHA FAZER PARTE
-                <div className={styles.ArrowRight}>
-                  <AiOutlineArrowRight color="#FFFFFF" />
-                </div>
-              </a>
-            </div>
-            <div className={styles.Hidden}>
-              <img src="/img/capainit.svg" alt="Treinamento" />
-            </div>
-          </section>
+          <div
+            style={{
+              display: 'block',
+              overflow: 'hidden',
+              position: 'absolute',
+              top: '0',
+              left: '0',
+              bottom: '0',
+              right: '0',
+              boxSizing: 'border-box',
+              margin: '0',
+            }}
+          >
+            <img
+              style={{
+                position: 'absolute',
+                top: '0',
+                left: '0',
+                bottom: '0',
+                right: '0',
+                boxSizing: 'border-box',
+                padding: '0',
+                border: 'none',
+                margin: 'auto',
+                display: 'block',
+                width: '0',
+                height: '0',
+                minWidth: '100%',
+                maxWidth: '100%',
+                minHeight: '100%',
+                maxHeight: '100%',
+                objectFit: 'cover',
+                objectPosition: 'bottom',
+              }}
+              src="/img/fundo.jpg"
+              alt="Fundo"
+            />
+          </div>
+          <div className={styles.conteinerTop}>
+            <section className={styles.CallToActionSection}>
+              <div className={styles.TitleConteriner}>
+                <h1 className={styles.textStyles}>
+                  <ul className={styles.dynamicText}>
+                    <li>
+                      <span>Crie</span>
+                    </li>
+                    <li>
+                      <span>Desenvolva</span>
+                    </li>
+                    <li>
+                      <span>Programe</span>
+                    </li>
+                  </ul>
+                  a formula do seu futuro agora!
+                </h1>
+                <p>
+                  Aqui e seu ponto incial do crecimento profissonal que tanto
+                  domindo as principais tecinologias utilizadas no mercado,
+                  evoluindo a cada passo.
+                </p>
+                <Link
+                  href={{
+                    pathname: '/planos',
+                    query: { name: 'test' },
+                  }}
+                >
+                  <a className={styles.button}>
+                    VENHA FAZER PARTE
+                    <div className={styles.ArrowRight}>
+                      <AiOutlineArrowRight color="#FFFFFF" />
+                    </div>
+                  </a>
+                </Link>
+              </div>
+              <div className={styles.Hidden}>
+                <img src="/img/capainit.svg" alt="Treinamento" />
+              </div>
+            </section>
+            {/** entenção video */}
+            <img className={styles.contVideo} src="/img/equipe.gif" />
+          </div>
         </section>
 
         <section className={styles.Conteiner}>
@@ -68,6 +119,7 @@ const Home: NextPage = () => {
             </div>
           </section>
         </section>
+        <Planos />
       </main>
     </>
   );

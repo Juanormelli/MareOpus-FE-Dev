@@ -9,6 +9,7 @@
   left: 0;
   background: var(--gray-810);
   border-bottom: 1px solid var(--gray-760);
+  box-shadow: 0.2rem 0.6rem 0.9rem var(--gray-800);
   @include breakpoint(md) {
     padding: 0 5rem;
   }
@@ -72,7 +73,7 @@
             padding: 0.75rem 1.25rem;
             height: 5rem;
             line-height: 5rem;
-            color: var(--gray-300);
+            color: var(--gray-100);
             transition: color 0.2s;
             text-decoration: none;
             user-select: none;
@@ -170,7 +171,7 @@
           var(--green-500),
           var(--cyan-500)
         );
-        background: var(--gray-800);
+        background: transparent;
 
         display: flex;
         align-items: center;
