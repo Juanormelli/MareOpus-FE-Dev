@@ -79,7 +79,7 @@ export default function Header(props: HeaderProps) {
                     activateClassname={styles.active}
                     href="/dashboard"
                   >
-                    <a>Aceleração</a>
+                    <a>Formações</a>
                   </ActiveLink>
                 </li>
 
@@ -156,7 +156,7 @@ export default function Header(props: HeaderProps) {
                     activateClassname={styles.active}
                     href="/dashboard"
                   >
-                    <a>Aceleração</a>
+                    <a>Formações</a>
                   </ActiveLink>
                 </li>
                 <li>

@@ -7,6 +7,7 @@ import { BsGoogle } from 'react-icons/bs';
 import { signOut } from 'next-auth/client';
 import { HiArrowNarrowLeft } from 'react-icons/hi';
 import Avatar from '../Avatar';
+import { ActiveLink } from '../ActiveLink';
 
 interface RegisterModalProps {
   onRequestClose(): void;
@@ -140,6 +141,7 @@ export default function RegisterModal(props: RegisterModalProps) {
             />
             <br />
             <small className={style['error']}>{message}</small>
+
             <button
               className={style['loginError']}
               onClick={() => {

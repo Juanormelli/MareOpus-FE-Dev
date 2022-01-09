@@ -24,8 +24,14 @@ import {
 import CliHeader from '../../components/CliHeader';
 import { ExperienceBar } from '../../components/ExperienceBar';
 import styles from '../../styles/Dashboard.module.scss';
+import { useParams } from 'react-router-dom';
 
+type RoomParams = {
+  id: string;
+};
 export default function Dashboard() {
+  const params = useParams<RoomParams>();
+  const roomId = params.id;
   return (
     <>
       <main className={styles.pageConteiner}>
