@@ -96,7 +96,7 @@ export default function Footer() {
           <div className={styles.Bottom}>
             <div className={styles.Social}>
               <li className={styles.SocialIcon}>
-                <ActiveLink activateClassname={styles.Icons} href="/planos">
+                <ActiveLink activateClassname={styles.Icons} href="/dashboard">
                   <IoLogoYoutube size={30} />
                 </ActiveLink>
               </li>

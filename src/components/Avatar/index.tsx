@@ -83,6 +83,7 @@ const Avatar: React.FC<AvatarProps> = () => {
     '/avatar/mare/mare250.svg',
   ];
 
+  const avatres = [foli, ignis, casia, aurum, nox, mare];
   const handlePrev = () => {
     setTransDown(true);
     setTransUp(false);

@@ -14,7 +14,12 @@ export default class MyDocument extends Document {
           ></link>
 
           <link
-            href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;800&family=Montserrat:wght@400;600;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Catamaran:wght@400;800&family=Montserrat:wght@400;600;700&display=swap"
+            rel="stylesheet"
+          ></link>
+
+          <link
+            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bowlby+One+SC&family=Rampart+One&family=Staatliches&display=swap"
             rel="stylesheet"
           ></link>
           <link rel="shortcut icon" href="/icon/favicon.ico" />

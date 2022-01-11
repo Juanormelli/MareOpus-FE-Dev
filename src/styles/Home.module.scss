@@ -1,12 +1,13 @@
 .pageConteiner {
-  padding-top: 3rem;
+  width: 100%;
   .Conteiner {
     max-height: 50rem;
-    width: 20rem;
+    width: 90%;
     min-width: none;
     height: auto;
     padding: 0;
     margin: 0;
+
     @media screen and (min-width: 789px) {
       padding-top: 32px;
     }
@@ -14,30 +15,26 @@
       justify-content: space-between;
       .CallToActionSection {
         position: relative;
-        display: flex;
-        width: 100vw;
-        padding: 5rem 0 0 8rem;
         background: transparent;
-        @media screen and (min-width: 789px) {
-          padding: 1rem 0 0 2rem;
-        }
+        height: 100vh;
         .TitleConteriner {
           position: relative;
-          max-width: 30rem;
-          margin-right: 5rem;
+
+          text-align: center;
           .textStyles {
             display: flexbox;
-            width: 30rem;
+            width: 40rem;
             margin-bottom: 3rem;
+
             line-height: 3rem;
-            font-size: 3.5rem;
+            font-size: 4rem;
             font-weight: 700;
 
             .dynamicText {
               padding: 0;
               margin-top: 1rem;
               line-height: 5.6rem;
-              height: 5.7rem;
+              height: 5.8rem;
               overflow: hidden;
             }
 
@@ -45,15 +42,15 @@
               list-style: none;
               background: -webkit-linear-gradient(
                 160deg,
-                var(--green-400) 60%,
+                var(--green-400) 40%,
                 var(--cyan-600) 100%
               );
               -webkit-background-clip: text;
               -webkit-text-fill-color: transparent;
-              font-family: Roboto;
+              font-family: 'Staatliches', cursive;
               font-style: normal;
               font-weight: bold;
-              font-size: 5rem;
+              font-size: 5.6rem;
               top: 0;
               position: relative;
               animation: slide 18s steps(3) infinite;
@@ -61,7 +58,7 @@
 
             @keyframes slide {
               100% {
-                top: -18.5rem;
+                top: -17.5rem;
               }
             }
             .dynamicText li {
@@ -69,46 +66,51 @@
             }
           }
           p {
-            font-size: 1.2rem;
+            color: var(--gray-100);
+            max-width: 30rem;
+            font-size: 1.3rem;
           }
-          .button {
-            position: relative;
-            padding-left: 4rem;
-            padding-top: 1rem;
-            margin-top: 3rem;
-            width: 23rem;
-            height: 3.5rem;
-            border-radius: 8px;
-            display: flex;
-            background: linear-gradient(
-              278deg,
-              var(--green-400) 5%,
-              var(--cyan-600) 100%
-            );
-            transition: 0.2s ease-in-out;
-            .ArrowRight {
-              position: absolute;
-              top: 0.7rem;
-              right: 1rem;
-              width: 2.2rem;
-              height: 2.2rem;
-              padding: 0.5rem;
-              border-radius: 0.5rem;
-              background: var(--green-600);
-              transition: all 0.3s ease;
+          .conetButton {
+            max-width: 30rem;
+            padding: 4rem;
+            .button {
+              position: relative;
+              padding-left: 6rem;
+              padding-top: 1.2rem;
+
+              width: 100%;
+              height: 3.5rem;
+              border-radius: 8px;
+              display: flex;
+              background: linear-gradient(
+                278deg,
+                var(--green-400) 5%,
+                var(--cyan-600) 100%
+              );
+              transition: 0.2s ease-in-out;
+              .ArrowRight {
+                position: absolute;
+                top: 0.7rem;
+                right: 1rem;
+                width: 2.2rem;
+                height: 2.2rem;
+                padding: 0.5rem;
+                border-radius: 0.5rem;
+                background: var(--green-600);
+                transition: all 0.3s ease;
+                &:hover {
+                  transform: translateX(0.5rem);
+
+                  filter: contrast(80%);
+                }
+              }
               &:hover {
-                transform: translateX(0.5rem);
+                filter: contrast(140%);
+                transform: translateX(0.4rem);
+                box-shadow: 0.2rem 0.6rem 1rem var(--gray-900);
               }
             }
-            &:hover {
-              filter: contrast(0.9);
-              transform: translateX(0.4rem);
-              box-shadow: 0.2rem 0.6rem 1rem var(--gray-900);
-            }
           }
-        }
-        img {
-          filter: drop-shadow(0.5rem 0.6rem 0.9rem var(--cyan-700));
         }
       }
       .contVideo {

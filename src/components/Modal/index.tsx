@@ -105,7 +105,7 @@ export default function ModalLogin(props: ModalProps) {
             <img src="/img/Logo.svg" alt="Logo" className={style['imgLogin']} />
             <h2>Bem-vindo</h2>
             <img src="/img/group.svg" alt="Grupo" className={style['grupo']} />
-            <p>Aqui cressemos juntos no seu carreira profissional.</p>
+            <p>Aqui crescemos juntos na sua carreira profissional.</p>
 
             <button className={style['register-button']}>
               <div className={style['ArrowLeft']}>
@@ -177,7 +177,7 @@ export default function ModalLogin(props: ModalProps) {
             <img src="/img/Logo.svg" alt="Logo" className={style['imgLogin']} />
             <h2>Bem-vindo</h2>
             <img src="/img/group.svg" alt="Grupo" className={style['grupo']} />
-            <p>Aqui cressemos juntos no seu carreira profissional.</p>
+            <p>Aqui crescemos juntos na sua carreira profissional.</p>
 
             <button
               onClick={props.onOpenRegisterModal}

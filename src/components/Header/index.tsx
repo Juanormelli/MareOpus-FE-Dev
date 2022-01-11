@@ -154,7 +154,7 @@ export default function Header(props: HeaderProps) {
                 <li>
                   <ActiveLink
                     activateClassname={styles.active}
-                    href="/dashboard"
+                    href="/formacoes"
                   >
                     <a>Formações</a>
                   </ActiveLink>

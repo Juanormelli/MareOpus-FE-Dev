@@ -12,8 +12,10 @@
       contrast(200%);
     border-radius: 5rem;
     margin: auto;
-    width: 20.62rem;
-    height: 15.5rem;
+    width: 100%;
+    max-width: 15rem;
+    max-height: 12rem;
+    height: 100%;
     z-index: 999;
   }
 }
