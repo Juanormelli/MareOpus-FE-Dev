@@ -1,7 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 import styles from './styles.module.scss';
 import { ActiveLink } from '../ActiveLink';
-//import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
 import { signOut, useSession } from 'next-auth/client';
 import { useEffect, useState } from 'react';
 //import Link from 'next/link';
@@ -51,7 +53,8 @@ export default function Header(props: HeaderProps) {
 
   useEffect(() => {}, [session]);
 
-  //const { t, i18n } = useTranslation();
+  const { t } = useTranslation('common');
+
   if (session) {
     return (
       <>
@@ -69,12 +72,12 @@ export default function Header(props: HeaderProps) {
               <ul className={styles.navigation}>
                 <li>
                   <ActiveLink activateClassname={styles.active} href="/">
-                    <a>Home</a>
+                    <a>{t('header.home')}</a>
                   </ActiveLink>
                 </li>
                 <li>
                   <ActiveLink activateClassname={styles.active} href="/planos">
-                    <a>Planos</a>
+                    <a>{t('header.plans')}</a>
                   </ActiveLink>
                 </li>
                 <li>
@@ -293,3 +296,12 @@ export default function Header(props: HeaderProps) {
     );
   }
 }
+
+/*export const getStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
+};
+*/

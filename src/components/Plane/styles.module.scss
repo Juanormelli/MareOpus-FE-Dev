@@ -1,7 +1,7 @@
 .plano {
   position: relative;
   .TitleConteriner {
-    left: 0;
+    left: -5rem;
     text-align: left;
     position: relative;
     max-width: 40rem;
@@ -30,7 +30,8 @@
       }
     }
     p {
-      font-size: 1.3rem;
+      margin: 2rem 0 4rem 0;
+      font-size: 1.1rem;
       color: var(--gray-200);
     }
   }

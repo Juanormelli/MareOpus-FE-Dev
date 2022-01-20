@@ -1,5 +1,8 @@
 import Layout from '@/src/components/Layout';
+import Link from 'next/link';
 import React from 'react';
+import { AiOutlineCode } from 'react-icons/ai';
+import { FaLaptopCode } from 'react-icons/fa';
 
 import styles from '../../styles/Formacoes.module.scss';
 export default function Planos() {
@@ -90,11 +93,119 @@ export default function Planos() {
                             textShadow: '#970000 2px 5px 6px 3px',
                           }}
                         >
-                          DATA SCIENCE
+                          DEVOPS
+                        </span>
+                      </li>
+                      <li>
+                        <span
+                          style={{
+                            color: '#b23cfd',
+                            textShadow: '#6900aa 2px 6px 3px',
+                          }}
+                        >
+                          Inovação & Gestão
+                        </span>
+                      </li>
+                      <li>
+                        <span
+                          style={{
+                            color: '#f7ad19',
+                            textShadow: '#d19215 2px 6px 3px',
+                          }}
+                        >
+                          UX & DESIGN
                         </span>
                       </li>
                     </ul>
                   </h1>
+                  <nav className={styles.categorias_home}>
+                    <div className={styles.categorias_elementos}>
+                      <div className={styles.categorias_wrapper_links}>
+                        <a className={styles.categorias_link} href="">
+                          <div className={styles.categorias_img}>
+                            <FaLaptopCode />
+                          </div>
+                          <div className={styles.categorias_texts}>
+                            <span>Trilha</span>
+                            <h4>PROGRAMAÇÃO</h4>
+                          </div>
+                        </a>
+                        <nav className={styles.categorias_home}>
+                          <Link href="/planos">Logica,</Link>
+                        </nav>
+                      </div>
+                      <div className={styles.categorias_wrapper_links}>
+                        <a className={styles.categorias_link} href="">
+                          <div className={styles.categorias_img}>
+                            <FaLaptopCode />
+                          </div>
+                          <div className={styles.categorias_texts}>
+                            <span>Trilha</span>
+                            <h4>PROGRAMAÇÃO</h4>
+                          </div>
+                        </a>
+                        <nav className={styles.categorias_home}>
+                          <Link href="/planos">Logica,</Link>
+                        </nav>
+                      </div>
+                      <div className={styles.categorias_wrapper_links}>
+                        <a className={styles.categorias_link} href="">
+                          <div className={styles.categorias_img}>
+                            <FaLaptopCode />
+                          </div>
+                          <div className={styles.categorias_texts}>
+                            <span>Trilha</span>
+                            <h4>PROGRAMAÇÃO</h4>
+                          </div>
+                        </a>
+                        <nav className={styles.categorias_home}>
+                          <Link href="/planos">Logica,</Link>
+                        </nav>
+                      </div>
+                      <div className={styles.categorias_wrapper_links}>
+                        <a className={styles.categorias_link} href="">
+                          <div className={styles.categorias_img}>
+                            <FaLaptopCode />
+                          </div>
+                          <div className={styles.categorias_texts}>
+                            <span>Trilha</span>
+                            <h4>PROGRAMAÇÃO</h4>
+                          </div>
+                        </a>
+                        <nav className={styles.categorias_home}>
+                          <Link href="/planos">Logica,</Link>
+                        </nav>
+                      </div>
+                      <div className={styles.categorias_wrapper_links}>
+                        <a className={styles.categorias_link} href="">
+                          <div className={styles.categorias_img}>
+                            <FaLaptopCode />
+                          </div>
+                          <div className={styles.categorias_texts}>
+                            <span>Trilha</span>
+                            <h4>PROGRAMAÇÃO</h4>
+                          </div>
+                        </a>
+                        <nav className={styles.categorias_home}>
+                          <Link href="/planos">Logica,</Link>
+                        </nav>
+                      </div>
+                      <div className={styles.categorias_wrapper_links}>
+                        <a className={styles.categorias_link} href="">
+                          <div className={styles.categorias_img}>
+                            <FaLaptopCode />
+                          </div>
+                          <div className={styles.categorias_texts}>
+                            <span>Trilha</span>
+                            <h4>PROGRAMAÇÃO</h4>
+                          </div>
+                        </a>
+                        <nav className={styles.categorias_home}>
+                          <Link href="/planos">Logica,</Link>
+                        </nav>
+                      </div>
+                    </div>
+                  </nav>
                 </div>
                 <div className={styles.Hidden}>
                   <img src="/img/capainit.svg" alt="Treinamento" />

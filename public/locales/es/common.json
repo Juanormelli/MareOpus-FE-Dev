@@ -1,0 +1,29 @@
+{
+    "header": {
+        "about": "Sobre mí",
+        "plans": "Planes",
+        "home": "Home",
+        "skipToContent": "Ir al contenido"
+    },
+    "home": {
+        "create": "¡Crear",
+        "develop": "¡Desarrollar",
+        "program": "¡Programa",
+        "title": "la fórmula de tu futuro ahora!",
+        "description": "Aquí está tu punto de partida para el crecimiento profesional que estabas esperando. Dominar las principales tecnologías utilizadas en el mercado, evolucionando a cada paso.",
+        "goPlans": "VEN A SER PARTE"
+    },
+    "footer": {
+        "rights": "Todos los derechos reservados",
+        "nowPlaying": {
+          "notPlaying": "No escuchando"
+        }
+    },
+    "404": {
+        "oops": "UPS",
+        "subtitle": "Página no encontrada",
+        "error": "ERROR:",
+        "message": "No pudimos encontrar la página que estás buscando...",
+        "goHome": "VUELTA A HOME"
+    }
+}

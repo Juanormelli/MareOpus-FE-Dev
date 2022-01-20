@@ -9,18 +9,14 @@ import Planos from '../components/Plane';
 import { motion } from 'framer-motion';
 //import { ActiveLink } from '../components/ActiveLink';
 import styles from '../styles/Home.module.scss';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 // pages/index.js
-//export async function getStaticProps({ locale }: GetStaticPropsContext) {
-//  return {
-//    props: {
-// You can get the messages from anywhere you like, but the recommended
-// pattern is to put them in JSON files separated by language and read
-// the desired one based on the `locale` received from Next.js.
-//messages: await import(`../../public/static/locales/${locale}.json`),
-//    },
-//  };
-//}
+//export const getStaticProps = async ({ locale }: { locale: string }) => ({
+//props: {
+//  ...(await serverSideTranslations(locale, ['common'])),
+//},
+//});
 
 const Home: NextPage = () => {
   //const t = useTranslations('home');
@@ -29,6 +25,7 @@ const Home: NextPage = () => {
     damping: 20,
     stiffness: 100,
   };
+
   return (
     <>
       <Layout pageTitle="Home">

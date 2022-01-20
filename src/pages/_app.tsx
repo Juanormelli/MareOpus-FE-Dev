@@ -12,6 +12,8 @@ import Footer from '../components/Footer';
 import Modal from '../components/Modal';
 import RegisterModal from '../components/RegisterModal';
 
+import { appWithTranslation } from 'next-i18next';
+
 function MyApp({ Component, pageProps }: AppProps) {
   const [session, setsession] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -89,4 +91,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   }
 }
 
-export default MyApp;
+export default appWithTranslation(MyApp);
