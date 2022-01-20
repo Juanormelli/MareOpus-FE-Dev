@@ -1,7 +1,82 @@
 import React from 'react';
 import styles from './styles.module.scss';
-import { GiAngelWings, GiSpikedSnail, GiThreeLeaves } from 'react-icons/gi';
+import { GiRingedPlanet } from 'react-icons/gi';
+import { HiCheck, HiOutlineInformationCircle } from 'react-icons/hi';
+import { BiCheckShield } from 'react-icons/bi';
+import { IoHelpCircleOutline } from 'react-icons/io5';
+import { motion, useTransform, useViewportScroll } from 'framer-motion';
+import { FaGrav, FaUserAstronaut } from 'react-icons/fa';
 export default function Planos() {
+  function NoobList(props) {
+    const cursos = props.cursos;
+    const listCourse = cursos.map((text) => (
+      <>
+        <li>
+          <HiCheck size={26} color="#00bd55" />
+          {text}
+          <IoHelpCircleOutline size={20} />
+        </li>
+      </>
+    ));
+    return <ul>{listCourse}</ul>;
+  }
+  function ProList(props) {
+    const cursos = props.cursos;
+    const listCourse = cursos.map((text) => (
+      <>
+        <li>
+          <HiCheck size={26} color="#485bff" />
+          {text}
+          <IoHelpCircleOutline size={20} />
+        </li>
+      </>
+    ));
+    return <ul>{listCourse}</ul>;
+  }
+
+  function UltimateList(props) {
+    const cursos = props.cursos;
+    const listCourse = cursos.map((text) => (
+      <>
+        <li>
+          <HiCheck size={26} color="#e02525" />
+          {text}
+          <IoHelpCircleOutline size={20} />
+        </li>
+      </>
+    ));
+    return <ul>{listCourse}</ul>;
+  }
+  const cursos = [
+    'StartCode',
+    'Atualizações inclusas',
+    'Oportunidades de trabalho',
+    'Desafios práticos',
+  ];
+  const cursoPro = [
+    'StartCode',
+    'Atualizações inclusas',
+    'Oportunidades de trabalho',
+    'Desafios práticos',
+    'Acesso a TODOS os cursos',
+    'Suporte prioritário',
+    'Encontros ao vivo',
+    'Acesso ao código fonte do projeto',
+    'Certificado',
+  ];
+  const cursoUlt = [
+    'StartCode',
+    'Atualizações inclusas',
+    'Oportunidades de trabalho',
+    'Desafios práticos',
+    'Acesso a TODOS os cursos',
+    'Suporte prioritário',
+    'Encontros ao vivo',
+    'Acesso ao código fonte do projeto',
+    'Construção de portfólio',
+    'Certificado',
+  ];
+
   return (
     <>
       <div className={styles.plano}>
@@ -16,13 +91,20 @@ export default function Planos() {
           </p>
         </div>
         <div className={styles.cards}>
-          <section className={styles.card}>
+          <motion.section
+            whileHover={{ scale: 1.1 }}
+            transition={{ delay: 0, duration: 0.5 }}
+            whileTap={{
+              scale: 0.3,
+            }}
+            className={styles.card}
+          >
             <header>
               <div className={styles.Top}>
                 <div className={styles.icon}>
-                  <GiThreeLeaves size={50} color="#00bd55" />
+                  <FaGrav size={50} color="#00bd55" />
                 </div>
-                <h3>Noob</h3>
+                <h3>NOOB</h3>
               </div>
               <span>
                 Acesse todo o conteúdo da formação Inova e suas atualizações.
@@ -40,22 +122,25 @@ export default function Planos() {
             </header>
             <footer>
               <ul>
-                <li>Curso de proramação</li>
-                <li>Curso de proramação</li>
-                <li>Curso de proramação</li>
-                <li>Curso de proramação</li>
-                <li>Curso de proramação</li>
+                <NoobList cursos={cursos} />
               </ul>
             </footer>
-          </section>
+          </motion.section>
 
-          <section className={styles.card}>
+          <motion.section
+            whileHover={{ scale: 1.1 }}
+            transition={{ delay: 0, duration: 0.5 }}
+            whileTap={{
+              scale: 0.3,
+            }}
+            className={styles.card}
+          >
             <header>
               <div className={styles.Top}>
                 <div className={styles.icon}>
-                  <GiAngelWings size={50} color="#485bff" />
+                  <FaUserAstronaut size={50} color="#485bff" />
                 </div>
-                <h3>PRO</h3>
+                <h3>PRO DEV</h3>
               </div>
               <span>
                 Acesse todo o conteúdo da formação Inova e suas atualizações.
@@ -75,25 +160,24 @@ export default function Planos() {
             </header>
             <footer>
               <ul>
-                <li>Curso de proramação</li>
-                <li>Curso de proramação</li>
-                <li>Curso de proramação</li>
-                <li>Curso de proramação</li>
-                <li>Curso de proramação</li>
-                <li>Curso de proramação</li>
-                <li>Curso de proramação</li>
-                <li>Curso de proramação</li>
-                <li>Curso de proramação</li>
-                <li>Curso de proramação</li>
+                <ProList cursos={cursoPro} />
               </ul>
             </footer>
-          </section>
+          </motion.section>
 
-          <section className={styles.card}>
+          <motion.section
+            whileHover={{ scale: 1.1 }}
+            transition={{ delay: 0, duration: 0.5 }}
+            whileTap={{
+              scale: 1,
+            }}
+            className={styles.card}
+          >
+            <span className={styles.recommended}>Recomendado para você</span>
             <header>
               <div className={styles.Top}>
                 <div className={styles.icon}>
-                  <GiSpikedSnail size={50} color="#e02525" />
+                  <GiRingedPlanet size={50} color="#e02525" />
                 </div>
                 <br />
                 <h3>ULTIMATE</h3>
@@ -116,22 +200,50 @@ export default function Planos() {
             </header>
             <footer>
               <ul>
-                <li>Curso de proramação</li>
-                <li>Curso de proramação</li>
-                <li>Curso de proramação</li>
-                <li>Curso de proramação</li>
-                <li>Curso de proramação</li>
-                <li>Curso de proramação</li>
-                <li>Curso de proramação</li>
-                <li>Curso de proramação</li>
-                <li>Curso de proramação</li>
-                <li>Curso de proramação</li>
-                <li>Curso de proramação</li>
-                <li>Curso de proramação</li>
-                <li>Curso de proramação</li>
+                <UltimateList cursos={cursoUlt} />
               </ul>
             </footer>
-          </section>
+          </motion.section>
+        </div>
+        <div className={styles.waring}>
+          <div className={styles.iconInfo}>
+            <HiOutlineInformationCircle size={25} color="#00bd55" />
+          </div>
+          <span>Todos os planos são de assinatura anual.</span>
+        </div>
+        <div className={styles.paymentMathods}>
+          <strong>Formas de pagamento</strong>
+          <ul>
+            <li>
+              <div className={styles.methodLogo}>
+                <div className={styles.methodCont}>
+                  <img src="/icon/Visa.svg" alt="visa" />
+                </div>
+              </div>
+            </li>
+            <li>
+              <div className={styles.methodLogo}>
+                <div className={styles.methodCont}>
+                  <img src="/icon/mastercard.svg" alt="mastercard" />
+                </div>
+              </div>
+            </li>
+            <li>
+              <div className={styles.methodLogo}>
+                <div className={styles.methodCont}>
+                  <img src="/icon/paypal.svg" alt="" />
+                </div>
+              </div>
+            </li>
+          </ul>
+          <div className={styles.safeBuy}>
+            <div className={styles.iconInfo}>
+              <BiCheckShield size={50} color="#00bd55" />
+            </div>
+            <strong>
+              Compra <b>100% segura</b>
+            </strong>
+          </div>
         </div>
       </div>
     </>

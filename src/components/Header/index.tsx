@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 //import Link from 'next/link';
 import { BiMenuAltRight } from 'react-icons/bi';
 import { AiOutlineClose } from 'react-icons/ai';
+import { IoIosArrowDown } from 'react-icons/io';
 //import { Link, useHistory } from 'react-router-dom';
 
 interface HeaderProps {
@@ -16,6 +17,8 @@ interface HeaderProps {
 }
 
 export default function Header(props: HeaderProps) {
+  const [toogleMenu, setToogleMenu] = useState(false);
+  const handleOpenMenuToggle = () => setToogleMenu(!toogleMenu);
   // Abrir Meu
   //const history = useHistory();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -79,7 +82,49 @@ export default function Header(props: HeaderProps) {
                     activateClassname={styles.active}
                     href="/dashboard"
                   >
-                    <a>Formações</a>
+                    <a>
+                      Formações
+                      <div className={styles.action}>
+                        <span className={styles.boxArrow}>
+                          <b
+                            onAbort={handleOpenMenuToggle}
+                            className={
+                              toogleMenu === false
+                                ? styles.ArrowDown
+                                : styles.ArrowDown + ' ' + styles.activemenu
+                            }
+                          >
+                            <IoIosArrowDown />
+                          </b>
+                        </span>
+
+                        <div
+                          className={
+                            toogleMenu === false
+                              ? styles.menuPerfil
+                              : styles.menuPerfil + ' ' + styles.activemenu
+                          }
+                        >
+                          <ul>
+                            <li>
+                              <a>Meu perfil</a>
+                            </li>
+                            <li>
+                              <a href=""> Meus Dados</a>
+                            </li>
+                            <li>
+                              <a href="">Pedir ajuda</a>
+                            </li>
+                            <li>
+                              <a href="">Histórico</a>
+                            </li>
+                            <li>
+                              <a href="">Sai da Plataforma</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </a>
                   </ActiveLink>
                 </li>
 
@@ -156,7 +201,49 @@ export default function Header(props: HeaderProps) {
                     activateClassname={styles.active}
                     href="/formacoes"
                   >
-                    <a>Formações</a>
+                    <a>
+                      Formações
+                      <div className={styles.action}>
+                        <span className={styles.boxArrow}>
+                          <b
+                            onAbort={handleOpenMenuToggle}
+                            className={
+                              toogleMenu === false
+                                ? styles.ArrowDown
+                                : styles.ArrowDown + ' ' + styles.activemenu
+                            }
+                          >
+                            <IoIosArrowDown />
+                          </b>
+                        </span>
+
+                        <div
+                          className={
+                            toogleMenu === false
+                              ? styles.menuPerfil
+                              : styles.menuPerfil + ' ' + styles.activemenu
+                          }
+                        >
+                          <ul>
+                            <li>
+                              <a>Meu perfil</a>
+                            </li>
+                            <li>
+                              <a href=""> Meus Dados</a>
+                            </li>
+                            <li>
+                              <a href="">Pedir ajuda</a>
+                            </li>
+                            <li>
+                              <a href="">Histórico</a>
+                            </li>
+                            <li>
+                              <a href="">Sai da Plataforma</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </a>
                   </ActiveLink>
                 </li>
                 <li>

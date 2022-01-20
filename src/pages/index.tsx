@@ -6,6 +6,7 @@ import React from 'react';
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import Layout from '../components/Layout';
 import Planos from '../components/Plane';
+import { motion } from 'framer-motion';
 //import { ActiveLink } from '../components/ActiveLink';
 import styles from '../styles/Home.module.scss';
 
@@ -23,6 +24,11 @@ import styles from '../styles/Home.module.scss';
 
 const Home: NextPage = () => {
   //const t = useTranslations('home');
+  const config = {
+    type: 'spring',
+    damping: 20,
+    stiffness: 100,
+  };
   return (
     <>
       <Layout pageTitle="Home">
@@ -70,7 +76,13 @@ const Home: NextPage = () => {
             <div className={styles.conteinerTop}>
               <section className={styles.CallToActionSection}>
                 <div className={styles.TitleConteriner}>
-                  <h1 className={styles.textStyles}>
+                  <motion.h1
+                    transition={config}
+                    initial={{ scale: 0, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    exit={{ x: 0, opacity: 0 }}
+                    className={styles.textStyles}
+                  >
                     <ul className={styles.dynamicText}>
                       <li>
                         <span>Crie</span>
@@ -83,7 +95,7 @@ const Home: NextPage = () => {
                       </li>
                     </ul>
                     a formula do seu futuro agora!
-                  </h1>
+                  </motion.h1>
                   <p>
                     Aqui e seu ponto inicial do crescimento profissional que
                     você tanto esperava. Dominando as principais tecnologias
