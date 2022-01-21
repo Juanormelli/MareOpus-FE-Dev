@@ -96,14 +96,18 @@
         .Social {
           margin-top: 1.2rem;
           display: flex;
+          ul {
+            display: flex;
+            li {
+              display: block;
+              list-style: none;
+              margin-left: 1rem;
+              .Icons {
+                padding: 1rem;
+              }
+            }
+          }
 
-          li {
-            list-style: none;
-            margin-left: 1rem;
-          }
-          .Icons {
-            padding: 1rem;
-          }
           .SocialIcon {
             display: inline-block;
             width: 3rem;
@@ -149,7 +153,7 @@
               opacity: 1;
             }
             100% {
-              opacity: 0;
+              opacity: 1.5;
               transform: translateY(-1rem);
             }
           }

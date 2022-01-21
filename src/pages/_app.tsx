@@ -13,7 +13,7 @@ import Modal from '../components/Modal';
 import RegisterModal from '../components/RegisterModal';
 
 import { appWithTranslation } from 'next-i18next';
-
+import nextI18NextConfig from '../../next-i18next.config';
 function MyApp({ Component, pageProps }: AppProps) {
   const [session, setsession] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -91,4 +91,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   }
 }
 
-export default appWithTranslation(MyApp);
+export default appWithTranslation(MyApp, nextI18NextConfig);

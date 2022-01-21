@@ -10,8 +10,18 @@ import {
   AiOutlineGithub,
   AiOutlineTwitter,
 } from 'react-icons/ai';
+import { useEffect, useState } from 'react';
 
 export default function Footer() {
+  const [btnUp, setBtnUp] = useState(false);
+  useEffect(() => {
+    if (btnUp) {
+      window.scrollTo(0, 0);
+    }
+  }, [btnUp]);
+  const handleBtnUp = () => {
+    setBtnUp(true);
+  };
   return (
     <div className={styles.container}>
       <footer className={styles.FooterConteiner}>
@@ -32,60 +42,60 @@ export default function Footer() {
               </a>
             </div>
             <nav className={styles.Right}>
-              <ul>
+              <ul role={'list'}>
                 <span>Programas</span>
-                <li>
+                <li role={'listitem'}>
                   <ActiveLink activateClassname={styles.active} href="/">
                     <a>Plano 1</a>
                   </ActiveLink>
                 </li>
-                <li>
+                <li role={'listitem'}>
                   <ActiveLink activateClassname={styles.active} href="/planos">
                     <a>Plano 3</a>
                   </ActiveLink>
                 </li>
-                <li>
+                <li role={'listitem'}>
                   <ActiveLink activateClassname={styles.active} href="/">
                     <a>Plano 3</a>
                   </ActiveLink>
                 </li>
-                <li>
+                <li role={'listitem'}>
                   <Link href="/planos">
                     <a>Plano 4</a>
                   </Link>
                 </li>
               </ul>
-              <ul>
+              <ul role={'list'}>
                 <span>Sobre</span>
-                <li>
+                <li role={'listitem'}>
                   <Link href="/planos">
                     <a>O Mareo</a>
                   </Link>
                 </li>
-                <li>
+                <li role={'listitem'}>
                   <Link href="/planos">
                     <a>Direitos autorais</a>
                   </Link>
                 </li>
-                <li>
+                <li role={'listitem'}>
                   <ActiveLink activateClassname={styles.active} href="/terms">
                     <a>Termos de uso</a>
                   </ActiveLink>
                 </li>
-                <li>
+                <li role={'listitem'}>
                   <Link href="/privacy">
                     <a>Políticas de privacidade</a>
                   </Link>
                 </li>
               </ul>
-              <ul>
+              <ul role={'list'}>
                 <span>Dúvidas</span>
-                <li>
+                <li role={'listitem'}>
                   <Link href="/planos">
                     <a>Comunidade</a>
                   </Link>
                 </li>
-                <li>
+                <li role={'listitem'}>
                   <Link href="/planos">
                     <a>Suporte</a>
                   </Link>
@@ -95,38 +105,58 @@ export default function Footer() {
           </div>
           <div className={styles.Bottom}>
             <div className={styles.Social}>
-              <li className={styles.SocialIcon}>
-                <ActiveLink activateClassname={styles.Icons} href="/dashboard">
-                  <IoLogoYoutube size={30} />
-                </ActiveLink>
-              </li>
-              <li className={styles.SocialIcon}>
-                <ActiveLink activateClassname={styles.Icons} href="/planos">
-                  <AiFillInstagram size={30} />
-                </ActiveLink>
-              </li>
-              <li className={styles.SocialIcon}>
-                <ActiveLink activateClassname={styles.Icons} href="/planos">
-                  <AiFillFacebook size={30} />
-                </ActiveLink>
-              </li>
-              <li className={styles.SocialIcon}>
-                <ActiveLink activateClassname={styles.Icons} href="/planos">
-                  <AiOutlineTwitter size={30} />
-                </ActiveLink>
-              </li>
-              <li className={styles.SocialIcon}>
-                <ActiveLink activateClassname={styles.Icons} href="/planos">
-                  <AiOutlineGithub size={30} />
-                </ActiveLink>
-              </li>
-              <li className={styles.SocialIcon}>
-                <ActiveLink activateClassname={styles.Icons} href="/planos">
-                  <AiFillLinkedin size={30} />
-                </ActiveLink>
-              </li>
+              <ul>
+                <li className={styles.SocialIcon}>
+                  <ActiveLink
+                    activateClassname={styles.Icons}
+                    href="https://www.youtube.com/channel/UCbJIGH7tKHJSbkJ8Mc_OX7A"
+                  >
+                    <IoLogoYoutube size={30} />
+                  </ActiveLink>
+                </li>
+                <li className={styles.SocialIcon}>
+                  <ActiveLink activateClassname={styles.Icons} href="/sobre">
+                    <AiFillInstagram size={30} />
+                  </ActiveLink>
+                </li>
+                <li className={styles.SocialIcon}>
+                  <ActiveLink
+                    activateClassname={styles.Icons}
+                    href="https://mail.google.com/"
+                  >
+                    <AiFillFacebook size={30} />
+                  </ActiveLink>
+                </li>
+                <li className={styles.SocialIcon}>
+                  <ActiveLink activateClassname={styles.Icons} href="/privacy">
+                    <AiOutlineTwitter size={30} />
+                  </ActiveLink>
+                </li>
+                <li className={styles.SocialIcon}>
+                  <ActiveLink
+                    activateClassname={styles.Icons}
+                    href="https://github.com/Juanormelli/MareOpus-FE-Dev"
+                  >
+                    <AiOutlineGithub size={30} />
+                  </ActiveLink>
+                </li>
+                <li className={styles.SocialIcon}>
+                  <ActiveLink
+                    activateClassname={styles.Icons}
+                    href="/dashboard"
+                  >
+                    <AiFillLinkedin size={30} />
+                  </ActiveLink>
+                </li>
+              </ul>
             </div>
-            <button type="button">
+            <button
+              onClick={handleBtnUp}
+              tabIndex={0}
+              aria-label="top"
+              role="button"
+              aria-pressed="false"
+            >
               <IoIosArrowUp />
             </button>
           </div>

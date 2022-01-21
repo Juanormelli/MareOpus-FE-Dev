@@ -10,7 +10,7 @@ export default function Planos() {
     <>
       <Layout pageTitle="Formações">
         <div className={styles.pageConteiner}>
-          <section className={styles.Conteiner} id="hero">
+          <section className={styles.Conteiner}>
             <div
               style={{
                 display: 'block',

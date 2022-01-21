@@ -9,17 +9,24 @@ import Planos from '../components/Plane';
 import { motion } from 'framer-motion';
 //import { ActiveLink } from '../components/ActiveLink';
 import styles from '../styles/Home.module.scss';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-// pages/index.js
-//export const getStaticProps = async ({ locale }: { locale: string }) => ({
-//props: {
-//  ...(await serverSideTranslations(locale, ['common'])),
-//},
+//import { useTranslation } from 'next-i18next';
+//import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+//import { useRouter } from 'next/router';
+
+interface locale {
+  locale: string;
+}
+
+//export const getStaticProps = async ({ locale }: locale) => ({
+//  props: {
+//    ...(await serverSideTranslations(locale, ['common'])),
+//  },
 //});
-
 const Home: NextPage = () => {
-  //const t = useTranslations('home');
+  //const { t } = useTranslation('common');
+  //const { locale, locales, defaultLocale, asPath } = useRouter();
+
   const config = {
     type: 'spring',
     damping: 20,
@@ -30,7 +37,7 @@ const Home: NextPage = () => {
     <>
       <Layout pageTitle="Home">
         <div className={styles.pageConteiner}>
-          <section className={styles.Conteiner} id="hero">
+          <section className={styles.Conteiner}>
             <div
               style={{
                 display: 'block',
@@ -82,7 +89,7 @@ const Home: NextPage = () => {
                   >
                     <ul className={styles.dynamicText}>
                       <li>
-                        <span>Crie</span>
+                        <span>Cire</span>
                       </li>
                       <li>
                         <span>Desenvolva</span>
@@ -116,7 +123,11 @@ const Home: NextPage = () => {
                 </div>
               </section>
               {/** entenção video */}
-              <img className={styles.contVideo} src="/img/equipe.gif" />
+              <img
+                className={styles.contVideo}
+                src="/img/equipe.gif"
+                alt="Equipe"
+              />
             </div>
           </section>
 

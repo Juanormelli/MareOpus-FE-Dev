@@ -81,7 +81,7 @@ export default function Planos() {
     <>
       <div className={styles.plano}>
         <div className={styles.TitleConteriner}>
-          <h1 className={styles.textStyles}>
+          <h1 role={'heading'} className={styles.textStyles}>
             Aceleramos a sua <br /> <span>carreira através da educação</span>
           </h1>
           <p>

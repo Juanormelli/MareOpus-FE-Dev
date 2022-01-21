@@ -1,5 +1,5 @@
 import style from './styles.module.scss';
-import { useTranslation } from 'next-i18next';
+//import { useTranslation } from 'next-i18next';
 import { useEffect, useState } from 'react';
 import {
   MdOutlineArrowBackIos,
@@ -11,7 +11,7 @@ interface AvatarProps {
   idx: number;
 }
 const Avatar: React.FC<AvatarProps> = () => {
-  const { t, i18n } = useTranslation();
+  //const { t } = useTranslation();
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [index, setIndex] = useState(0);

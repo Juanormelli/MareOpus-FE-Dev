@@ -1,17 +1,16 @@
 import styles from '../../styles/Sobre.module.scss';
-import '../../../i18n';
-import { useTranslation } from 'react-i18next';
-import { availableLanguages } from '../../../i18n';
+//import '../../../i18n';
+//import { useTranslation } from 'react-i18next';
 import { FaChalkboardTeacher } from 'react-icons/fa';
 import { AiOutlineArrowDown } from 'react-icons/ai';
 import Layout from '@/src/components/Layout';
 export default function Sobre() {
-  const { t, i18n } = useTranslation();
+  //const { t } = useTranslation();
   return (
     <>
       <Layout pageTitle="Sobre">
         <div className={styles.pageConteiner}>
-          <section className={styles.Conteiner} id="hero">
+          <section className={styles.Conteiner}>
             <section className={styles.CallToActionSection}>
               <div className={styles.Hidden}>
                 <img src="/img/about.svg" alt="About" />
