@@ -1,10 +1,4 @@
-{
-    "header": {
-        "about": "Sobre mí",
-        "plans": "Planes",
-        "home": "Home",
-        "skipToContent": "Ir al contenido"
-    },
+{ 
     "home": {
         "create": "¡Crear",
         "develop": "¡Desarrollar",
@@ -18,12 +12,5 @@
         "nowPlaying": {
           "notPlaying": "No escuchando"
         }
-    },
-    "404": {
-        "oops": "UPS",
-        "subtitle": "Página no encontrada",
-        "error": "ERROR:",
-        "message": "No pudimos encontrar la página que estás buscando...",
-        "goHome": "VUELTA A HOME"
     }
 }

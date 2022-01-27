@@ -71,6 +71,7 @@
             display: inline-block;
             position: relative;
             padding: 0.75rem 1.25rem;
+            width: 120px;
             height: 5rem;
             line-height: 5rem;
             color: var(--gray-100);
@@ -186,10 +187,10 @@
         }
       }
       .navbar_link {
-        width: 100%;
+        width: 250px;
         height: 2.8rem;
         padding: 0 3rem;
-        margin-left: 4rem;
+        margin-left: 2rem;
         cursor: pointer;
 
         font-size: 12px;
@@ -211,28 +212,9 @@
           padding: 0px;
         }
       }
-
-      .lengButton {
-        border-radius: 50%;
-        margin-left: 5px;
-        transition: 0.2s;
-        cursor: pointer;
-
-        img {
-          width: 40px;
-          height: 40px;
-          filter: grayscale(1);
-          &:hover {
-            filter: grayscale(0);
-          }
-          &:active {
-            filter: grayscale(0);
-          }
-        }
-      }
       .signinButton {
         height: 2.8rem;
-        width: 100%;
+        width: 150px;
         max-width: 12rem;
         padding: 0 0.3rem;
         cursor: pointer;
@@ -261,10 +243,12 @@
         text-transform: uppercase;
         -webkit-transition: all 0.3s ease;
         transition: all 0.3s ease;
-        a {
-          margin-bottom: 1.5rem;
+        b {
+          color: var(--gray-300);
+          &:hover {
+            color: var(--gray-900);
+          }
         }
-
         img {
           width: 20px;
         }

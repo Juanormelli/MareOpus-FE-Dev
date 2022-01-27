@@ -1,7 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from 'next/link';
 import { ActiveLink } from '../ActiveLink';
 import styles from './styles.module.scss';
-
+import { useTranslation } from 'next-i18next';
 import { IoIosArrowUp, IoLogoYoutube } from 'react-icons/io';
 import {
   AiFillFacebook,
@@ -22,6 +23,10 @@ export default function Footer() {
   const handleBtnUp = () => {
     setBtnUp(true);
   };
+
+  // Tionalization
+  const { t } = useTranslation('footer');
+
   return (
     <div className={styles.container}>
       <footer className={styles.FooterConteiner}>
@@ -37,67 +42,67 @@ export default function Footer() {
                   </h1>
                 </div>
                 <span className={styles.copy}>
-                  Mareo&copy; 2021 <br /> Todos os direitos reservados
+                  Mareo&copy; 2021 <br /> {t('rights')}
                 </span>
               </a>
             </div>
             <nav className={styles.Right}>
               <ul role={'list'}>
-                <span>Programas</span>
+                <span>{t('program')}</span>
                 <li role={'listitem'}>
                   <ActiveLink activateClassname={styles.active} href="/">
-                    <a>Plano 1</a>
+                    <a>{t('learner')}</a>
                   </ActiveLink>
                 </li>
                 <li role={'listitem'}>
                   <ActiveLink activateClassname={styles.active} href="/planos">
-                    <a>Plano 3</a>
+                    <a>{t('spark')}</a>
                   </ActiveLink>
                 </li>
                 <li role={'listitem'}>
                   <ActiveLink activateClassname={styles.active} href="/">
-                    <a>Plano 3</a>
+                    <a>{t('sage')}</a>
                   </ActiveLink>
                 </li>
                 <li role={'listitem'}>
                   <Link href="/planos">
-                    <a>Plano 4</a>
+                    <a>{t('news')}</a>
                   </Link>
                 </li>
               </ul>
               <ul role={'list'}>
-                <span>Sobre</span>
+                <span>{t('about')}</span>
                 <li role={'listitem'}>
                   <Link href="/planos">
-                    <a>O Mareo</a>
+                    <a>{t('abouts')}</a>
                   </Link>
                 </li>
                 <li role={'listitem'}>
                   <Link href="/planos">
-                    <a>Direitos autorais</a>
+                    <a>{t('copyright')}</a>
                   </Link>
                 </li>
                 <li role={'listitem'}>
                   <ActiveLink activateClassname={styles.active} href="/terms">
-                    <a>Termos de uso</a>
+                    <a>{t('terms')}</a>
                   </ActiveLink>
                 </li>
                 <li role={'listitem'}>
                   <Link href="/privacy">
-                    <a>Políticas de privacidade</a>
+                    <a>{t('privacy')}</a>
                   </Link>
                 </li>
               </ul>
               <ul role={'list'}>
-                <span>Dúvidas</span>
+                <span>{t('doubt')}</span>
                 <li role={'listitem'}>
                   <Link href="/planos">
-                    <a>Comunidade</a>
+                    <a>{t('community')}</a>
                   </Link>
                 </li>
                 <li role={'listitem'}>
                   <Link href="/planos">
-                    <a>Suporte</a>
+                    <a>{t('support')}</a>
                   </Link>
                 </li>
               </ul>

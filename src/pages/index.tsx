@@ -1,32 +1,17 @@
-import type { GetStaticPropsContext, NextPage } from 'next';
-//import { useTranslations } from 'next-intl';
-import Head from 'next/head';
+/* eslint-disable @next/next/no-img-element */
 import Link from 'next/link';
 import React from 'react';
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import Layout from '../components/Layout';
 import Planos from '../components/Plane';
 import { motion } from 'framer-motion';
-//import { ActiveLink } from '../components/ActiveLink';
 import styles from '../styles/Home.module.scss';
 
-//import { useTranslation } from 'next-i18next';
-//import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-//import { useRouter } from 'next/router';
-
-interface locale {
-  locale: string;
-}
-
-//export const getStaticProps = async ({ locale }: locale) => ({
-//  props: {
-//    ...(await serverSideTranslations(locale, ['common'])),
-//  },
-//});
-const Home: NextPage = () => {
-  //const { t } = useTranslation('common');
-  //const { locale, locales, defaultLocale, asPath } = useRouter();
-
+import { useTranslation, withTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+function Home() {
+  const { t } = useTranslation('home');
+  const description = t('description');
   const config = {
     type: 'spring',
     damping: 20,
@@ -49,6 +34,7 @@ const Home: NextPage = () => {
                 right: '0',
                 boxSizing: 'border-box',
                 margin: '0',
+                zIndex: '-5',
                 filter: 'blur(3px) contrast(110%)',
               }}
             >
@@ -89,22 +75,18 @@ const Home: NextPage = () => {
                   >
                     <ul className={styles.dynamicText}>
                       <li>
-                        <span>Cire</span>
+                        <span>{t('create')}</span>
                       </li>
                       <li>
-                        <span>Desenvolva</span>
+                        <span>{t('develop')}</span>
                       </li>
                       <li>
-                        <span>Programe</span>
+                        <span>{t('program')}</span>
                       </li>
                     </ul>
-                    a formula do seu futuro agora!
+                    {t('title')}
                   </motion.h1>
-                  <p>
-                    Aqui e seu ponto inicial do crescimento profissional que
-                    você tanto esperava. Dominando as principais tecnologias
-                    utilizadas no mercado, evoluindo a cada passo.
-                  </p>
+                  <p>{description}</p>
                   <div className={styles.conetButton}>
                     <Link
                       href={{
@@ -113,7 +95,7 @@ const Home: NextPage = () => {
                       }}
                     >
                       <a className={styles.button}>
-                        VENHA FAZER PARTE
+                        {t('goPlans')}
                         <div className={styles.ArrowRight}>
                           <AiOutlineArrowRight color="#FFFFFF" />
                         </div>
@@ -143,14 +125,11 @@ const Home: NextPage = () => {
       </Layout>
     </>
   );
-};
-
-export async function getServerSideProps() {
-  await new Promise((resolve) => {
-    setTimeout(resolve, 5000);
-  });
-  return {
-    props: {},
-  };
 }
-export default Home;
+export const getStaticProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['home', 'menu', 'footer'])),
+  },
+});
+
+export default withTranslation(['home', 'menu', 'footer'])(Home);

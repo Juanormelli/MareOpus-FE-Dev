@@ -1,10 +1,5 @@
 {
-    "header": {
-        "about": "Sobre mí",
-        "plans": "Plans",
-        "home": "Home",
-        "skipToContent": "Ir al contenido"
-    },
+    
     "home": {
         "create": "Create",
         "develop": "Develop",
@@ -12,18 +7,5 @@
         "title": "the formula of your future now!",
         "description": "Here is your starting point for the professional growth you've been waiting for. Mastering the main technologies used in the market, evolving at every step.",
         "goPlans": "COME BE A PART"
-    },
-    "footer": {
-        "rights": "All rights reserved",
-        "nowPlaying": {
-          "notPlaying": "No escuchando"
-        }
-    },
-    "404": {
-        "oops": "OOPS",
-        "subtitle": "Page not found",
-        "error": "ERROR:",
-        "message": "We couldn't find the page you're looking for...",
-        "goHome": "BACK TO HOME"
     }
 }

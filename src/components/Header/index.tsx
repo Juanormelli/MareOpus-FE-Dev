@@ -1,21 +1,27 @@
+/* eslint-disable @next/next/link-passhref */
 /* eslint-disable @next/next/no-img-element */
 import styles from './styles.module.scss';
 import { ActiveLink } from '../ActiveLink';
-import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+//import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-import { signOut, useSession } from 'next-auth/client';
+import { useSession } from 'next-auth/client';
 import { useEffect, useState } from 'react';
 //import Link from 'next/link';
-import { BiMenuAltRight } from 'react-icons/bi';
-import { AiOutlineClose } from 'react-icons/ai';
+
+import { GrClose } from 'react-icons/gr';
 import { IoIosArrowDown } from 'react-icons/io';
+
+import { useTranslation } from 'next-i18next';
+import { LangSwitcher } from '../LangSwitcher';
+//import { i18n } from '../../../i18n';
+//import { i18n } from '../../../next-i18next.config';
 //import { Link, useHistory } from 'react-router-dom';
 
 interface HeaderProps {
   onOpenLoginModal: () => void;
   onOpenRegisterModal: () => void;
   onOpenSession: () => void;
+  //changeLanguage: string;
 }
 
 export default function Header(props: HeaderProps) {
@@ -53,7 +59,12 @@ export default function Header(props: HeaderProps) {
 
   useEffect(() => {}, [session]);
 
-  const { t } = useTranslation('common');
+  // Tionalization
+
+  const { t } = useTranslation('menu');
+
+  const [langMenu, setLangMenu] = useState(true);
+  const handleOpenMenuLang = () => setLangMenu(!langMenu);
 
   if (session) {
     return (
@@ -72,12 +83,12 @@ export default function Header(props: HeaderProps) {
               <ul className={styles.navigation}>
                 <li>
                   <ActiveLink activateClassname={styles.active} href="/">
-                    <a>{t('header.home')}</a>
+                    <a>{t('home')}</a>
                   </ActiveLink>
                 </li>
                 <li>
                   <ActiveLink activateClassname={styles.active} href="/planos">
-                    <a>{t('header.plans')}</a>
+                    <a>{t('plans')}</a>
                   </ActiveLink>
                 </li>
                 <li>
@@ -86,7 +97,7 @@ export default function Header(props: HeaderProps) {
                     href="/dashboard"
                   >
                     <a>
-                      Formações
+                      {t('formation')}
                       <div className={styles.action}>
                         <span className={styles.boxArrow}>
                           <b
@@ -133,7 +144,7 @@ export default function Header(props: HeaderProps) {
 
                 <li>
                   <ActiveLink activateClassname={styles.active} href="/sobre">
-                    <a>O Mareo</a>
+                    <a>{t('about')}</a>
                   </ActiveLink>
                 </li>
                 <li>
@@ -142,7 +153,7 @@ export default function Header(props: HeaderProps) {
                     onClick={props.onOpenLoginModal}
                   >
                     <img src="/icon/entar.svg" alt="entrar" />
-                    ENTRAR
+                    {t('login')}
                   </a>
                 </li>
                 <li>
@@ -151,25 +162,17 @@ export default function Header(props: HeaderProps) {
                     className={styles.signinButton}
                     onClick={props.onOpenRegisterModal}
                   >
-                    <a>REGISTRAR</a>
+                    <a>{t('register')}</a>
                   </button>
                 </li>
               </ul>
-              <a className={styles.lengButton}>
-                <img src="/icon/PORTUGUES.svg" alt="Portugues" />
-              </a>
-              <a className={styles.lengButton}>
-                <img src="/icon/INGLES.svg" alt="Inglês" />
-              </a>
-              <a className={styles.lengButton}>
-                <img src="/icon/ESPANHOL.svg" alt="Espanhol" />
-              </a>
+              <LangSwitcher />
             </nav>
             <div className={styles.__content__toggle}>
               {!menuOpen ? (
                 <img src="/icon/menu.svg" alt="open" />
               ) : (
-                <AiOutlineClose onClick={menuToggleHandler} />
+                <GrClose onClick={menuToggleHandler} />
               )}
             </div>
           </div>
@@ -191,12 +194,12 @@ export default function Header(props: HeaderProps) {
               <ul className={styles.navigation}>
                 <li>
                   <ActiveLink activateClassname={styles.active} href="/">
-                    <a>Home</a>
+                    <a>{t('home')}</a>
                   </ActiveLink>
                 </li>
                 <li>
                   <ActiveLink activateClassname={styles.active} href="/planos">
-                    <a>Planos</a>
+                    <a>{t('plans')}</a>
                   </ActiveLink>
                 </li>
                 <li>
@@ -205,8 +208,8 @@ export default function Header(props: HeaderProps) {
                     href="/formacoes"
                   >
                     <a>
-                      Formações
-                      <div className={styles.action}>
+                      {t('formation')}
+                      {/*<div className={styles.action}>
                         <span className={styles.boxArrow}>
                           <b
                             onAbort={handleOpenMenuToggle}
@@ -245,13 +248,13 @@ export default function Header(props: HeaderProps) {
                             </li>
                           </ul>
                         </div>
-                      </div>
+                        </div>*/}
                     </a>
                   </ActiveLink>
                 </li>
                 <li>
                   <ActiveLink activateClassname={styles.active} href="/sobre">
-                    <a>O Mareo</a>
+                    <a>{t('about')}</a>
                   </ActiveLink>
                 </li>
                 <li>
@@ -260,7 +263,7 @@ export default function Header(props: HeaderProps) {
                     onClick={props.onOpenLoginModal}
                   >
                     <img src="/icon/entar.svg" alt="entrar" />
-                    ENTRAR
+                    {t('login')}
                   </a>
                 </li>
                 <li>
@@ -269,25 +272,17 @@ export default function Header(props: HeaderProps) {
                     onClick={props.onOpenRegisterModal}
                     className={styles.signinButton}
                   >
-                    <a>REGISTRAR</a>
+                    <b>{t('register')}</b>
                   </button>
                 </li>
               </ul>
-              <a className={styles.lengButton} onClick={props.onOpenSession}>
-                <img src="/icon/PORTUGUES.svg" alt="Portugues" />
-              </a>
-              <a className={styles.lengButton}>
-                <img src="/icon/INGLES.svg" alt="Inglês" />
-              </a>
-              <a className={styles.lengButton}>
-                <img src="/icon/ESPANHOL.svg" alt="Espanhol" />
-              </a>
+              <LangSwitcher />
             </nav>
             <div className={styles.__content__toggle}>
               {!menuOpen ? (
                 <img src="/icon/menu.svg" alt="open" />
               ) : (
-                <AiOutlineClose onClick={menuToggleHandler} />
+                <GrClose onClick={menuToggleHandler} />
               )}
             </div>
           </div>
@@ -296,12 +291,3 @@ export default function Header(props: HeaderProps) {
     );
   }
 }
-
-/*export const getStaticProps = async ({ locale }) => {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ['common'])),
-    },
-  };
-};
-*/

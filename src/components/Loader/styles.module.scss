@@ -1,9 +1,9 @@
 .loaderContainer {
   display: flex;
-  position: absolute;
-  top: 0;
-  height: 100%;
+  position: fixed;
+
   width: 100vw;
+  height: 100vh;
   z-index: 1500;
   background: rgba(18, 18, 20, 0.95);
   img {
