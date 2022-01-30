@@ -3,16 +3,16 @@
   .content-left {
     justify-content: center;
     background: var(--gray-760);
-    padding: 3rem;
+    padding: 2.5rem;
+    width: 30rem;
     border-radius: 0.8rem 0 0 0.8rem;
     text-align: center;
     .google {
       position: relative;
       display: flex;
-      margin-top: 1rem;
-      margin-bottom: 3rem;
+      margin: 0.5rem 0 1rem 0;
 
-      padding-left: 4rem;
+      padding-left: 3rem;
       padding-top: 1rem;
 
       height: 3.2rem;
@@ -23,21 +23,32 @@
       .logoGoogle {
         position: absolute;
         top: 0.1rem;
-        right: 13rem;
+        left: 2rem;
         padding-top: 0.5rem;
       }
       b {
         font-weight: 500;
+        font-size: 0.9rem;
         color: var(--white);
       }
     }
-    span {
-      position: relative;
-      width: 100%;
-      height: 1rem;
-      top: 0;
-      b {
-        font-weight: 400;
+    .line {
+      display: flex;
+      flex-direction: row;
+      hr {
+        margin: 12px 0px 20px;
+        flex: 1 1 0%;
+        border-top: 1px solid var(--gray-750);
+      }
+      span {
+        flex: 0.3 1 0%;
+        align-self: center;
+        text-align: center;
+        line-height: 1px;
+        font-weight: 700;
+        font-size: 12px;
+        background: transparent;
+        text-transform: uppercase;
       }
     }
     h1 {
@@ -48,64 +59,127 @@
       font-size: 2.25rem;
       color: var(--white);
     }
-
-    input {
-      border-radius: 5px;
-      height: 3.3rem;
-      width: 100%;
-
-      background: var(--gray-840);
-      color: var(--gray-100);
-      margin: 0.3rem 0;
-
-      border: none;
-
-      text-indent: 1.5rem;
-      text-align: start;
-      font-size: 1rem;
-      font-weight: 400;
-
-      &:hover {
-        border-radius: 10px;
-        border: 0.6rem solid;
-        border-image-slice: 1;
-        border-width: 2px;
-        border-image-source: linear-gradient(
-          to left,
-          var(--green-500),
-          var(--cyan-500)
-        );
+    .inputform {
+      position: relative;
+      flex: 1 1 0%;
+      .iconinput {
+        position: absolute;
+        top: 50%;
+        left: 16px;
+        transform: translateY(-50%);
+        fill: rgb(40, 39, 44);
+        font-size: 14px;
+        transition: fill 0.2s ease 0s;
       }
-
-      &:focus-visible {
-        background: var(--gray-700);
-        color: var(--gray-900);
-      }
-      & + button {
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-
-        height: 3.2rem;
-        background: var(--green-600);
-        width: 100%;
+      input {
         border-radius: 5px;
+        height: 50px;
+        width: 100%;
 
-        font-weight: 900;
+        background: var(--gray-840);
+        color: var(--gray-100);
+        margin: 0.3rem 0;
 
-        border: none;
-        transition: 0.2s;
+        border: 1 solid var(--gray-840);
+
+        text-indent: 1.5rem;
+        text-align: start;
+        font-size: 1rem;
+        font-weight: 400;
+
+        -webkit-flow-from: horizontal-tb !important;
+        letter-spacing: normal;
+        word-spacing: normal;
+        text-rendering: auto;
+        text-transform: none;
+        text-indent: 45px;
+        text-shadow: none;
+        display: inline-block;
+        text-align: start;
+        appearance: auto;
+        -webkit-rtl-ordering: logical;
+        cursor: text;
+
+        &:hover {
+          border-radius: 10px;
+          border: 0.6rem solid;
+          border-image-slice: 1;
+          border-width: 2px;
+          border-image-source: linear-gradient(
+            to left,
+            var(--green-500),
+            var(--cyan-500)
+          );
+        }
+
+        &:focus-visible {
+          background: var(--gray-700);
+          color: var(--gray-900);
+          outline: 1px solid var(--green-600);
+        }
+        & + button {
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+
+          height: 3.2rem;
+          background: var(--green-600);
+          width: 100%;
+          border-radius: 5px;
+
+          font-weight: 900;
+
+          border: none;
+          transition: 0.2s;
+        }
+      }
+      a {
+        display: block;
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+
+        cursor: pointer;
       }
     }
+
     small {
       color: red;
       margin-bottom: 1rem;
     }
-    a {
+    .boxbottton {
       margin-top: 1rem;
-      text-align: center;
-      text-decoration: underline;
-      color: var(--green-500);
+      padding: 0;
+      display: block;
+      text-align: left;
+      a {
+        margin-top: 3rem;
+        text-align: center;
+        color: var(--gray-200);
+        &:hover {
+          color: var(--green-500);
+          text-decoration: underline;
+        }
+      }
+      .checkbox {
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-box-align: center;
+        align-items: center;
+        display: flex;
+        padding-bottom: 4px;
+        padding-top: 4px;
+        position: relative;
+        min-height: 32px;
+        input {
+          width: 16px;
+        }
+        label {
+          margin: 0 1rem 0 0;
+        }
+      }
     }
+
     .loginError {
       margin-top: 1rem;
       margin-bottom: 1rem;
@@ -145,7 +219,8 @@
   .content-right {
     justify-content: center;
     background: var(--gray-840);
-    padding: 3rem;
+    padding: 2.5rem;
+    width: 25rem;
     border-radius: 0 0.8rem 0.8rem 0;
     .imgLogin {
       position: relative;
@@ -167,44 +242,50 @@
     p {
       color: var(--gray-200);
     }
-    .register-button {
-      position: relative;
-      padding-left: 4rem;
-      padding-top: 1rem;
-      margin-top: 2rem;
-      width: 23rem;
-      height: 3.5rem;
-      border-radius: 8px;
-      display: flex;
-      height: 3.2rem;
+    .contentBottom {
+      margin-top: 3rem;
       width: 100%;
-
-      background: transparent;
-      border-radius: 5px;
-
-      color: var(--green-600);
-      font-size: 1.1rem;
-      font-weight: 400;
-
-      border: none;
-      transition: 0.2s;
-      &:hover {
-        transform: translateX(-0.2rem);
-        color: var(--green-400);
+      display: block;
+      text-align: center;
+      span {
+        text-align: center;
       }
-      .ArrowLeft {
-        position: absolute;
-        top: 0.5rem;
-        right: 11.5rem;
-        width: 2.2rem;
-        height: 2.2rem;
-        padding: 0.5rem;
-        transition: all 0.3s ease;
+      .register-button {
+        position: relative;
+
+        padding-top: 1rem;
+        margin: 0.5rem 0 0.4rem 0;
+
+        border-radius: 8px;
+        display: flex;
+        height: 3.2rem;
+        width: 100%;
+
+        background: transparent;
+        border-radius: 5px;
+
+        color: var(--green-600);
+        font-size: 16px;
+        font-weight: 400;
+        text-align: center;
+
+        border: none;
+        transition: 0.2s;
         &:hover {
-          transform: translateX(-0.2rem);
+          transform: translateX(0.2rem);
+          color: var(--green-400);
+        }
+        .ArrowRight {
+          position: absolute;
+          top: 0.5rem;
+          left: 200px;
+          width: 2.2rem;
+          height: 2.2rem;
+          padding: 0.5rem;
         }
       }
     }
+
     .modal-close {
       position: absolute;
       right: 1.5rem;

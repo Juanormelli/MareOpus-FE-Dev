@@ -18,7 +18,7 @@ interface NavbarProps {
   //onOpenLoginModal: () => void;
 }
 const CliHeader: React.FC<NavbarProps> = () => {
-  //const { t, i18n } = useTranslation();
+  const { t } = useTranslation('menu');
 
   const [leftMenu, setLeftMenu] = useState(false);
   const handleOpenMenuLeft = () => setLeftMenu(!leftMenu);
@@ -48,12 +48,12 @@ const CliHeader: React.FC<NavbarProps> = () => {
             <ul className={styles.navigation}>
               <li>
                 <ActiveLink activateClassname={styles.active} href="/dashboard">
-                  <b>Home</b>
+                  <b>{t('home')}</b>
                 </ActiveLink>
               </li>
               <li>
                 <ActiveLink activateClassname={styles.active} href="/planos">
-                  <b>Planos</b>
+                  <b>{t('plans')}</b>
                 </ActiveLink>
               </li>
               <li className={styles.space}>
@@ -94,23 +94,23 @@ const CliHeader: React.FC<NavbarProps> = () => {
                     <ul>
                       <li>
                         <FaUser />
-                        <a>Meu perfil</a>
+                        <a>{t('myprofile')}</a>
                       </li>
                       <li>
                         <FaDatabase />
-                        <a href=""> Meus Dados</a>
+                        <a href="">{t('mydata')}</a>
                       </li>
                       <li>
                         <MdLiveHelp />
-                        <a href="">Pedir ajuda</a>
+                        <a href="">{t('help')}</a>
                       </li>
                       <li>
                         <IoIosTimer />
-                        <a href="">Histórico</a>
+                        <a href="">{t('historic')}</a>
                       </li>
                       <li>
                         <HiOutlineLogin />
-                        <a href="">Sai da Plataforma</a>
+                        <a href="">{t('exit')}</a>
                       </li>
                     </ul>
                   </div>
@@ -133,34 +133,34 @@ const CliHeader: React.FC<NavbarProps> = () => {
               <ActiveLink activateClassname={styles.active} href="/dashboard">
                 <a>
                   <AiOutlineHome size={26} />
-                  <h3>Início</h3>
+                  <h3>{t('home')}</h3>
                 </a>
               </ActiveLink>
               <ActiveLink activateClassname={styles.active} href="/planos">
                 <a>
                   <MdOutlineExplore size={26} />
-                  <h3>Explorar</h3>
+                  <h3>{t('explore')}</h3>
                 </a>
               </ActiveLink>
 
               <ActiveLink activateClassname={styles.active} href="/planos">
                 <a>
                   <AiOutlineUser size={26} />
-                  <h3>Meu Perfil</h3>
+                  <h3>{t('myprofile')}</h3>
                 </a>
               </ActiveLink>
 
               <ActiveLink activateClassname={styles.active} href="/planos">
                 <a>
                   <GoChecklist size={26} />
-                  <h3>Meus Cursos</h3>
+                  <h3>{t('mycourses')}</h3>
                 </a>
               </ActiveLink>
 
               <ActiveLink activateClassname={styles.active} href="/planos">
                 <a>
                   <SiCodeigniter size={26} />
-                  <h3>Meus Programas</h3>
+                  <h3>{t('myprograms')}</h3>
                 </a>
               </ActiveLink>
 
@@ -168,7 +168,7 @@ const CliHeader: React.FC<NavbarProps> = () => {
                 <a>
                   <TiMessages size={26} />
                   <h3>
-                    Notificações
+                    {t('notifications')}
                     <span className={styles.materialIconsSharp}>25</span>
                   </h3>
                 </a>
@@ -177,19 +177,19 @@ const CliHeader: React.FC<NavbarProps> = () => {
               <ActiveLink activateClassname={styles.active} href="/planos">
                 <a>
                   <GoReport size={26} />
-                  <h3>Treinamentos</h3>
+                  <h3>{t('trainings')}</h3>
                 </a>
               </ActiveLink>
 
               <ActiveLink activateClassname={styles.active} href="/planos">
                 <a>
                   <AiFillSetting size={26} />
-                  <h3>Histórico</h3>
+                  <h3>{t('historic')}</h3>
                 </a>
               </ActiveLink>
               <ActiveLink activateClassname={styles.active} href="/">
                 <a>
-                  <h3>Logout</h3>
+                  <h3>{t('logout')}</h3>
                   <MdLogin size={20} />
                 </a>
               </ActiveLink>

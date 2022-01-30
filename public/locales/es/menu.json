@@ -4,5 +4,16 @@
     "formation": "Formaciones",
     "about": "El Mareo",
     "login": "INICIAR",
-    "register": "REGISTRARSE"
+    "register": "REGISTRARSE",
+    "myprofile": "Mi perfil",
+    "mydata": "Mis datos",
+    "help": "Pedir ayuda",
+    "historic": "Histórico",
+    "exit": "Deja la plataforma",
+    "explore": "Explorar",
+    "mycourses": "Mis cursos",
+    "myprograms": "Mis programas",
+    "notifications": "Notificaciones",
+    "trainings": "Entrenamientos",
+    "logout": "Salir"
 }

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import style from './styles.module.scss';
 //import { useTranslation } from 'next-i18next';
 import { useEffect, useState } from 'react';
@@ -5,6 +6,7 @@ import {
   MdOutlineArrowBackIos,
   MdOutlineArrowForwardIos,
 } from 'react-icons/md';
+import { useTranslation } from 'next-i18next';
 
 interface AvatarProps {
   //onOpenLoginModal: () => void;
@@ -124,6 +126,10 @@ const Avatar: React.FC<AvatarProps> = () => {
     }
   };
 
+  // Tionalization
+
+  const { t } = useTranslation('common');
+
   return (
     <>
       <div className={style['contentavatar']}>
@@ -140,57 +146,35 @@ const Avatar: React.FC<AvatarProps> = () => {
               <img src={foli[index]} className={style['intFoli']} />
               <img src={foli[index1]} className={style['intFoli']} />
             </div>
-
-            <h3>FOLI</h3>
-            <small>✅ Ganhe 10 pontos de energia</small>
           </div>
-          <ul className={style['type']}>
-            {foli.map((el, idx) => {
-              return (
-                <li key={idx}>
-                  <img
-                    onClick={() => handleImgClick(idx)}
-                    src={el}
-                    alt="foli"
-                    className={`${
-                      foli[activeIndex] === foli[idx]
-                        ? 'border: none'
-                        : 'opacity: 0'
-                    }`}
-                  />
-                </li>
-              );
-            })}
-          </ul>
+          <div className={style['data']}>
+            <h3>FOLI</h3>
+            <small>✅ {t('points10')}</small>
+          </div>
         </div>
         <button className={style['Next']} onClick={handleNext}>
           <MdOutlineArrowForwardIos size={20} />
         </button>
+
         <ul className={style['category']}>
-          <li>
-            <input type="radio" name="foli" id="foli" />
-            <span className={style['checkmark']}></span>
-          </li>
-          <li>
-            <input type="radio" name="ignes" id="ignes" />
-            <span className={style['checkmark']}></span>
-          </li>
-          <li>
-            <input type="radio" name="casia" id="casia" />
-            <span className={style['checkmark']}></span>
-          </li>
-          <li>
-            <input type="radio" name="aurum" id="aurum" />
-            <span className={style['checkmark']}></span>
-          </li>
-          <li>
-            <input type="radio" name="nox" id="nox" />
-            <span className={style['checkmark']}></span>
-          </li>
-          <li>
-            <input type="radio" name="mare" id="mare" />
-            <span className={style['checkmark']}></span>
-          </li>
+          {foli.map((el, idx) => {
+            return (
+              <li key={idx}>
+                <input
+                  className={`${
+                    foli[activeIndex] === foli[idx]
+                      ? 'border: none'
+                      : 'opacity: 0'
+                  }`}
+                  type="radio"
+                  onClick={() => handleImgClick(idx)}
+                  name="foli"
+                  id={el}
+                />
+                <span className={style['checkmark']}></span>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </>

@@ -19,7 +19,8 @@
   font-weight: 700;
   line-height: 3.75rem;
   max-width: 37rem;
-  margin-bottom: 2.5rem;
+  padding: 0;
+  margin: 0 0 2.5rem 0;
   color: var(--white);
 }
 
@@ -28,7 +29,16 @@
   line-height: 2rem;
   text-align: justify;
   p {
+    margin: 0;
     color: var(--gray-100);
+    a {
+      color: var(--gray-300);
+      font-weight: bold;
+      content: ' ';
+      &:hover {
+        color: var(--gray-700);
+      }
+    }
   }
   ol {
     counter-reset: item;
@@ -38,8 +48,13 @@
       color: var(--gray-100);
       display: block;
       text-indent: 0;
-      .letra {
-        list-style-type: upper-roman;
+      a {
+        color: var(--gray-300);
+        font-weight: bold;
+        content: ' ';
+        &:hover {
+          color: var(--gray-700);
+        }
       }
     }
     li {
@@ -50,6 +65,9 @@
       counter-increment: item;
       position: absolute;
       left: -2.5rem;
+      .letra {
+        list-style-type: georgian;
+      }
     }
   }
 }

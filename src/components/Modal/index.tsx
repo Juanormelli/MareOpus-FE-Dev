@@ -1,11 +1,15 @@
+/* eslint-disable @next/next/no-img-element */
 import Modal from 'react-modal';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 
 import style from '../Modal/styles.module.scss';
 import { consumers } from 'stream';
 import { signIn } from 'next-auth/client';
 import { HiArrowNarrowLeft } from 'react-icons/hi';
-import { BsGoogle } from 'react-icons/bs';
+import { BsFillEyeFill, BsFillEyeSlashFill, BsGoogle } from 'react-icons/bs';
+import { useTranslation } from 'next-i18next';
+import { FaArrowRight, FaLock } from 'react-icons/fa';
+import { MdEmail } from 'react-icons/md';
 
 interface ModalProps {
   onOpenRegisterModal: () => void;
@@ -16,8 +20,16 @@ interface ModalProps {
 let messageError = '';
 
 export default function ModalLogin(props: ModalProps) {
-  const [user, setUser] = useState('');
+  const [email, setUser] = useState('');
   const [password, setPassword] = useState('');
+  const [passwordShown, setPasswordShown] = useState(false);
+
+  const togglePasswordVisiblity = () => {
+    setPasswordShown(passwordShown ? false : true);
+  };
+
+  const eye = <BsFillEyeFill size={16} color="#00bd55" />;
+  const eyeslash = <BsFillEyeSlashFill size={16} color="#00bd55" />;
 
   function openModalClear() {
     setPassword('');
@@ -28,7 +40,7 @@ export default function ModalLogin(props: ModalProps) {
   function handleLogin() {
     signIn('credentials', {
       redirect: false,
-      username: user,
+      emailname: email,
       password: password,
     }).then((message) => {
       if (message?.error) {
@@ -44,6 +56,10 @@ export default function ModalLogin(props: ModalProps) {
   const [message, setMessage] = useState('Usuraio não consegui logar');
 
   useEffect(() => {}, [message]);
+
+  // Tionalization
+
+  const { t } = useTranslation('popups');
 
   if (message !== '') {
     return (
@@ -66,32 +82,59 @@ export default function ModalLogin(props: ModalProps) {
               <div className={style['logoGoogle']}>
                 <BsGoogle size={29} color="#FFFFFF" />
               </div>
-              <b>Entar com Google</b>
+              <b>{t('logingoogle')}</b>
             </button>
-            <span>
-              <b>ou</b>
-            </span>
-            <input
-              type="text"
-              value={user}
-              onChange={(event) => {
-                setUser(event.target.value);
-              }}
-              placeholder="Usuario"
-            />
-            <input
-              type="password"
-              value={password}
-              onChange={(event) => {
-                setPassword(event.target.value);
-              }}
-              placeholder="Senha"
-            />
+            <div className={style['line']}>
+              <hr />
+              <span>{t('or')}</span>
+              <hr />
+            </div>
+            <div className={style['inputform']}>
+              <div className={style['iconinput']}>
+                <MdEmail size={16} color="#202024" />
+              </div>
+              <input
+                type="email"
+                value={email}
+                onChange={(event) => {
+                  setUser(event.target.value);
+                }}
+                placeholder={t('email')}
+              />
+            </div>
+            <div className={style['inputform']}>
+              <div className={style['iconinput']}>
+                <FaLock size={16} color="#202024" />
+              </div>
+              <input
+                type={passwordShown ? 'text' : 'password'}
+                value={password}
+                onChange={(event) => {
+                  setPassword(event.target.value);
+                }}
+                placeholder={t('password')}
+              />
+              <a tabIndex={-1} onClick={togglePasswordVisiblity}>
+                {passwordShown ? eyeslash : eye}
+              </a>
+            </div>
             <small className={style['error']}>{messageError}</small>
-            <br />
-            <a> Esqueci minha senha</a>
+            <div className={style['boxbottton']}>
+              <a>{t('forgot')}</a>
+              <div className={style['checkbox']}>
+                <input
+                  type="checkbox"
+                  name="remeber"
+                  id="login-remeber"
+                  color="#00bd55"
+                  data-testid="login-remeber"
+                />
+                <label htmlFor="login-remeber">{t('remember')}</label>
+              </div>
+            </div>
+
             <button onClick={handleLogin} className={style['loginError']}>
-              ENTRAR
+              {t('login')}
             </button>
           </div>
           <div className={style['content-right']}>
@@ -103,16 +146,18 @@ export default function ModalLogin(props: ModalProps) {
               ✖
             </button>
             <img src="/img/Logo.svg" alt="Logo" className={style['imgLogin']} />
-            <h2>Bem-vindo</h2>
+            <h2>{t('welcome')}</h2>
             <img src="/img/group.svg" alt="Grupo" className={style['grupo']} />
-            <p>Aqui crescemos juntos na sua carreira profissional.</p>
-
-            <button className={style['register-button']}>
-              <div className={style['ArrowLeft']}>
-                <HiArrowNarrowLeft size={20} />
-              </div>
-              Cadastre-se
-            </button>
+            <p>{t('description')}</p>
+            <div className={style['contentBottom']}>
+              <span>{t('text')}</span>
+              <button className={style['register-button']}>
+                {t('goSubscribe')}
+                <div className={style['ArrowRight']}>
+                  <FaArrowRight size={20} />
+                </div>
+              </button>
+            </div>
           </div>
         </div>
       </Modal>
@@ -138,32 +183,59 @@ export default function ModalLogin(props: ModalProps) {
               <div className={style['logoGoogle']}>
                 <BsGoogle size={29} color="#FFFFFF" />
               </div>
-              <b>Entar com Google</b>
+              <b>{t('logingoogle')}</b>
             </button>
-            <span>
-              <b>ou</b>
-            </span>
-            <input
-              type="text"
-              value={user}
-              onChange={(event) => {
-                setUser(event.target.value);
-              }}
-              placeholder="Usuario"
-            />
-            <input
-              type="password"
-              value={password}
-              onChange={(event) => {
-                setPassword(event.target.value);
-              }}
-              placeholder="Senha"
-            />
+            <div className={style['line']}>
+              <hr />
+              <span>{t('or')}</span>
+              <hr />
+            </div>
+            <div className={style['inputform']}>
+              <div className={style['iconinput']}>
+                <MdEmail size={16} />
+              </div>
+              <input
+                type="email"
+                value={email}
+                onChange={(event) => {
+                  setUser(event.target.value);
+                }}
+                placeholder={t('email')}
+              />
+            </div>
+            <div className={style['inputform']}>
+              <div className={style['iconinput']}>
+                <FaLock size={16} />
+              </div>
+              <input
+                type={passwordShown ? 'text' : 'password'}
+                value={password}
+                onChange={(event) => {
+                  setPassword(event.target.value);
+                }}
+                placeholder={t('password')}
+              />
+
+              <a tabIndex={-1} onClick={togglePasswordVisiblity}>
+                {passwordShown ? eyeslash : eye}
+              </a>
+            </div>
             <small className={style['error']}>{messageError}</small>
-            <br />
-            <a> Esqueci minha senha</a>
+            <div className={style['boxbottton']}>
+              <a>{t('forgot')}</a>
+              <div className={style['checkbox']}>
+                <input
+                  type="checkbox"
+                  name="remeber"
+                  id="login-remeber"
+                  data-testid="login-remeber"
+                  checked
+                />
+                <label htmlFor="login-remeber">{t('remember')}</label>
+              </div>
+            </div>
             <button onClick={handleLogin} className={style['loginError']}>
-              ENTRAR
+              {t('login')}
             </button>
           </div>
           <div className={style['content-right']}>
@@ -175,19 +247,22 @@ export default function ModalLogin(props: ModalProps) {
               ✖
             </button>
             <img src="/img/Logo.svg" alt="Logo" className={style['imgLogin']} />
-            <h2>Bem-vindo</h2>
+            <h2>{t('welcome')}</h2>
             <img src="/img/group.svg" alt="Grupo" className={style['grupo']} />
-            <p>Aqui crescemos juntos na sua carreira profissional.</p>
+            <p>{t('description')}</p>
 
-            <button
-              onClick={props.onOpenRegisterModal}
-              className={style['register-button']}
-            >
-              <div className={style['ArrowLeft']}>
-                <HiArrowNarrowLeft size={20} />
-              </div>
-              Cadastre-se
-            </button>
+            <div className={style['contentBottom']}>
+              <span>{t('text')}</span>
+              <button
+                onClick={props.onOpenRegisterModal}
+                className={style['register-button']}
+              >
+                {t('goSubscribe')}
+                <div className={style['ArrowRight']}>
+                  <FaArrowRight size={20} />
+                </div>
+              </button>
+            </div>
           </div>
         </div>
       </Modal>

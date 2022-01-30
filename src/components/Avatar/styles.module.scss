@@ -1,5 +1,9 @@
 .contentavatar {
-  width: 16rem;
+  flex: 1 1 0%;
+  display: flex;
+
+  width: 100%;
+  max-width: 600px;
   .Prev {
     height: auto;
     width: 1.5rem;
@@ -44,14 +48,16 @@
   }
   .imgBox {
     width: 80%;
-    display: flex;
+    display: block;
     justify-content: center;
     .foli {
-      display: block;
-
+      display: flex;
+      left: 5rem;
       .slider {
-        width: 10rem;
-        height: 15rem;
+        display: flex;
+        width: 14rem;
+        height: 17rem;
+
         overflow: hidden;
         .flame {
           position: absolute;
@@ -130,29 +136,15 @@
         }
       }
     }
-    .type {
-      margin-top: 1rem;
-      position: absolute;
-      transform: translateY(-15%);
-      height: 15rem;
-      left: 90%;
-      li {
-        list-style: none;
-        display: inline-block;
-        cursor: pointer;
-        transition: 0.5s;
-        img {
-          width: 3rem;
-          height: 3rem;
-        }
-      }
+    .data {
+      text-align: center;
     }
   }
   .category {
     position: absolute;
-    margin-top: 1rem;
-    left: 75%;
-    bottom: 12rem;
+
+    right: -10rem;
+    bottom: 17rem;
     transform: translateX(-50%);
     display: flex;
     li {

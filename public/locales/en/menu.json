@@ -4,5 +4,16 @@
     "formation": "Formation",
     "about": "The Mareo",
     "login": "LOG IN",
-    "register": "REGISTER"
+    "register": "REGISTER",
+    "myprofile": "My profile",
+    "mydata": "My Data",
+    "help": "Ask for help",
+    "historic": "Historic",
+    "exit": "Explore",
+    "explore": "Explorar",
+    "mycourses": "My Courses",
+    "myprograms": "My Programs",
+    "notifications": "Notifications",
+    "trainings": "Trainings",
+    "logout": "Logout"
 }

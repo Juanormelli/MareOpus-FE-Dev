@@ -4,5 +4,16 @@
     "formation": "Formações",
     "about": "O Mareo",
     "login": "CONECTE-SE",
-    "register": "REGISTRAR"
+    "register": "REGISTRAR",
+    "myprofile": "Meu perfil",
+    "mydata": "Meus Dados",
+    "help": "Pedir ajuda",
+    "historic": "Histórico",
+    "exit": "Sair da Plataforma",
+    "explore": "Explorar",
+    "mycourses": "Meus Cursos",
+    "myprograms": "Meus Programas",
+    "notifications": "Notificações",
+    "trainings": "Treinamentos",
+    "logout": "Sair"
 }

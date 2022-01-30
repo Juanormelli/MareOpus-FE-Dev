@@ -1,11 +1,3 @@
 {
-    
-    "home": {
-        "create": "Create",
-        "develop": "Develop",
-        "program": "Program",
-        "title": "the formula of your future now!",
-        "description": "Here is your starting point for the professional growth you've been waiting for. Mastering the main technologies used in the market, evolving at every step.",
-        "goPlans": "COME BE A PART"
-    }
+    "points10": "Gain 10 energy points"
 }

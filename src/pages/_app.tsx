@@ -7,7 +7,6 @@ import Router from 'next/router';
 import { useEffect, useState } from 'react';
 import Loader from '../components/Loader';
 import Header from '../components/Header';
-import CliHeader from '../components/CliHeader';
 import Footer from '../components/Footer';
 import Modal from '../components/Modal';
 import RegisterModal from '../components/RegisterModal';
@@ -58,7 +57,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       <>
         <NextIntlProvider messages={pageProps.messages}>
           {loading && <Loader />}
-          <CliHeader></CliHeader>
           <Component {...pageProps} />
           <Footer />
         </NextIntlProvider>

@@ -4,14 +4,14 @@ import Link from 'next/link';
 import styles from '../styles/404.module.scss';
 //src/pages/404.tsx
 export default function Custom404() {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('404');
   return (
     <>
       <div className={styles.content404}>
         <div className={styles.Conteiner}>
           <h1>
-            <b>{t('404.oops')}... </b>
-            <br /> {t('404.subtitle')}
+            <b>{t('oops')}... </b>
+            <br /> {t('subtitle')}
           </h1>
           <section className={styles.errorContainer}>
             <span className={styles.four}>
@@ -25,11 +25,11 @@ export default function Custom404() {
             </span>
           </section>
           <p className={styles.zoomArea}>
-            <b>{t('404.error')} </b> {t('404.message')}
+            <b>{t('error')} </b> {t('message')}
           </p>
           <div className={styles.linkContainer}>
             <Link href="/">
-              <a className={styles.moreLink}>{t('404.goHome')}</a>
+              <a className={styles.moreLink}>{t('goHome')}</a>
             </Link>
           </div>
         </div>
