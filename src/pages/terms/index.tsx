@@ -5,6 +5,32 @@ import styles from '../../styles/Terms.module.scss';
 
 import { useTranslation, withTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { ParsedUrlQuery } from 'querystring';
+import { GetServerSidePropsResult, PreviewData } from 'next';
+import { IncomingMessage, ServerResponse } from 'http';
+import { NextApiRequestCookies } from 'next/dist/server/api-utils';
+
+type CustomGetServerSideProps<
+  P extends { [key: string]: any } = { [key: string]: any },
+  Q extends ParsedUrlQuery = ParsedUrlQuery
+> = (
+  context: GetServerSidePropsContext<Q>
+) => Promise<GetServerSidePropsResult<P>>;
+
+type GetServerSidePropsContext<Q extends ParsedUrlQuery = ParsedUrlQuery> = {
+  req: IncomingMessage & {
+    cookies: NextApiRequestCookies;
+  };
+  res: ServerResponse;
+  params?: Q;
+  query: ParsedUrlQuery;
+  preview?: boolean;
+  previewData?: PreviewData;
+  resolvedUrl: string;
+  locale: string; // This is where the magic happens.
+  locales?: string[];
+  defaultLocale?: string;
+};
 function Terms() {
   const { t } = useTranslation('terms');
   return (
@@ -206,7 +232,9 @@ function Terms() {
   );
 }
 
-export const getStaticProps = async ({ locale }) => ({
+export const getServerSideProps: CustomGetServerSideProps = async ({
+  locale,
+}) => ({
   props: {
     ...(await serverSideTranslations(locale, [
       'terms',

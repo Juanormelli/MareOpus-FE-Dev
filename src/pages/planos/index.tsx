@@ -1,9 +1,37 @@
 import Layout from '@/src/components/Layout';
-import { useTranslation } from 'next-i18next';
 import React from 'react';
 import Plane from '../../components/Plane';
 import styles from '../../styles/Planos.module.scss';
-export default function Planos() {
+
+import { useTranslation, withTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { ParsedUrlQuery } from 'querystring';
+import { GetServerSidePropsResult, PreviewData } from 'next';
+import { IncomingMessage, ServerResponse } from 'http';
+import { NextApiRequestCookies } from 'next/dist/server/api-utils';
+
+type CustomGetServerSideProps<
+  P extends { [key: string]: any } = { [key: string]: any },
+  Q extends ParsedUrlQuery = ParsedUrlQuery
+> = (
+  context: GetServerSidePropsContext<Q>
+) => Promise<GetServerSidePropsResult<P>>;
+
+type GetServerSidePropsContext<Q extends ParsedUrlQuery = ParsedUrlQuery> = {
+  req: IncomingMessage & {
+    cookies: NextApiRequestCookies;
+  };
+  res: ServerResponse;
+  params?: Q;
+  query: ParsedUrlQuery;
+  preview?: boolean;
+  previewData?: PreviewData;
+  resolvedUrl: string;
+  locale: string; // This is where the magic happens.
+  locales?: string[];
+  defaultLocale?: string;
+};
+function Planos() {
   const { t } = useTranslation('planos');
   return (
     <>
@@ -15,9 +43,7 @@ export default function Planos() {
           <div className={styles.faqbox} id="faq">
             <div className={styles.faqcontainer} id="faqcontainer">
               <section className={styles.faqheadline}>
-                <h3 className={styles.subtitle}>
-                  Pregunats e respostas mais frequentes
-                </h3>
+                <h3 className={styles.subtitle}>{t('subtitle')}</h3>
                 <p>
                   <strong>Dificulade com um dos serviços?</strong>
                   Entre em contato com nosso time
@@ -54,3 +80,29 @@ export default function Planos() {
     </>
   );
 }
+
+export const getServerSideProps: CustomGetServerSideProps = async ({
+  locale,
+}) => ({
+  props: {
+    ...(await serverSideTranslations(locale, [
+      'planos',
+      'menu',
+      'footer',
+      'common',
+      'popups',
+      '404',
+      '500',
+    ])),
+  },
+});
+
+export default withTranslation([
+  'planos',
+  'menu',
+  'footer',
+  'common',
+  'popups',
+  '404',
+  '500',
+])(Planos);

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import styles from './styles.module.scss';
 import { GiRingedPlanet } from 'react-icons/gi';
@@ -7,9 +8,9 @@ import { IoHelpCircleOutline } from 'react-icons/io5';
 import { motion, useTransform, useViewportScroll } from 'framer-motion';
 import { FaGrav, FaUserAstronaut } from 'react-icons/fa';
 export default function Planos() {
-  function NoobList(props) {
+  function NoobList(props: { cursos: any }) {
     const cursos = props.cursos;
-    const listCourse = cursos.map((text) => (
+    const listCourse = cursos.map((text: { cursos: any }) => (
       <>
         <li>
           <HiCheck size={26} color="#00bd55" />
@@ -20,9 +21,9 @@ export default function Planos() {
     ));
     return <ul>{listCourse}</ul>;
   }
-  function ProList(props) {
+  function ProList(props: { cursos: any }) {
     const cursos = props.cursos;
-    const listCourse = cursos.map((text) => (
+    const listCourse = cursos.map((text: { cursos: any }) => (
       <>
         <li>
           <HiCheck size={26} color="#485bff" />
@@ -34,9 +35,9 @@ export default function Planos() {
     return <ul>{listCourse}</ul>;
   }
 
-  function UltimateList(props) {
+  function UltimateList(props: { cursos: any }) {
     const cursos = props.cursos;
-    const listCourse = cursos.map((text) => (
+    const listCourse = cursos.map((text: { cursos: any }) => (
       <>
         <li>
           <HiCheck size={26} color="#e02525" />

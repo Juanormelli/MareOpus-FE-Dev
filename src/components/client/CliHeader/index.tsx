@@ -7,7 +7,7 @@ import { SiCodeigniter } from 'react-icons/si';
 import { AiOutlineHome, AiFillSetting, AiOutlineUser } from 'react-icons/ai';
 import { GoChecklist, GoReport, GoSearch } from 'react-icons/go';
 import { TiMessages } from 'react-icons/ti';
-import { ActiveLink } from '../ActiveLink';
+import { ActiveLink } from '../../ActiveLink';
 import { useCallback, useEffect, useState } from 'react';
 import { FiUserPlus } from 'react-icons/fi';
 import { FaDatabase, FaUser } from 'react-icons/fa';

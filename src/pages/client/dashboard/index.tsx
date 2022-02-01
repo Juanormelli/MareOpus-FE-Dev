@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import {
   GiAbdominalArmor,
   GiAlgae,
@@ -18,11 +19,40 @@ import {
   GiTechnoHeart,
   GiWorld,
 } from 'react-icons/gi';
-import { ExperienceBar } from '../../components/ExperienceBar';
-import styles from '../../styles/Dashboard.module.scss';
+import { ExperienceBar } from '../../../components/ExperienceBar';
+import styles from '../../../styles/Dashboard.module.scss';
 import { useSession } from 'next-auth/client';
 import { useEffect } from 'react';
 import Layout from '@/src/components/Layout';
+
+import { useTranslation, withTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { ParsedUrlQuery } from 'querystring';
+import { GetServerSidePropsResult, PreviewData } from 'next';
+import { IncomingMessage, ServerResponse } from 'http';
+import { NextApiRequestCookies } from 'next/dist/server/api-utils';
+
+type CustomGetServerSideProps<
+  P extends { [key: string]: any } = { [key: string]: any },
+  Q extends ParsedUrlQuery = ParsedUrlQuery
+> = (
+  context: GetServerSidePropsContext<Q>
+) => Promise<GetServerSidePropsResult<P>>;
+
+type GetServerSidePropsContext<Q extends ParsedUrlQuery = ParsedUrlQuery> = {
+  req: IncomingMessage & {
+    cookies: NextApiRequestCookies;
+  };
+  res: ServerResponse;
+  params?: Q;
+  query: ParsedUrlQuery;
+  preview?: boolean;
+  previewData?: PreviewData;
+  resolvedUrl: string;
+  locale: string; // This is where the magic happens.
+  locales?: string[];
+  defaultLocale?: string;
+};
 
 type ClientParams = {
   name: string;

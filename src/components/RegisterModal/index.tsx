@@ -235,7 +235,7 @@ export default function RegisterModal(props: RegisterModalProps) {
                 className={style['imgLogin']}
               />
               <h2>Escolha o seu avatar</h2>
-              <Avatar />
+              <Avatar idx={0} />
               <p>Aqui cressemos juntos no seu carreira profissional.</p>
 
               <button className={style['register-button']}>
@@ -365,7 +365,7 @@ export default function RegisterModal(props: RegisterModalProps) {
                 className={style['imgLogin']}
               />
               <h2>Escolha o seu avatar</h2>
-              <Avatar />
+              <Avatar idx={0} />
               <p>Aqui cressemos juntos no seu carreira profissional.</p>
 
               <button onClick={teste} className={style['register-button']}>

@@ -17,7 +17,7 @@ type AuthContextProviderProps = {
 
 const AuthContext = createContext({} as AuthContextType);
 
-export function AuthProvider({ children }: AuthContextProviderProps) {
+/*export function AuthProvider({ children }: AuthContextProviderProps) {
     const [user, setUser] = useState<User>();
   
     useEffect(() => {
@@ -77,7 +77,7 @@ export function AuthProvider({ children }: AuthContextProviderProps) {
       {children}
     </AuthContext.Provider>
   );
-}
+}*/
 
 export const AuthConsumer = AuthContext.Consumer;
 

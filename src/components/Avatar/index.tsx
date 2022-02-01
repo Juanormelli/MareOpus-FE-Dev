@@ -111,7 +111,7 @@ const Avatar: React.FC<AvatarProps> = () => {
     setTransDown(false);
   };
 
-  const handleImgClick = (idx) => {
+  const handleImgClick = (idx = 0) => {
     setActiveIndex(idx);
 
     if (idx < index) {
