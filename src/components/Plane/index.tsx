@@ -14,7 +14,7 @@ export default function Planos() {
         <li>
           <HiCheck size={26} color="#00bd55" />
           {text}
-          <IoHelpCircleOutline size={20} />
+          <IoHelpCircleOutline size={20} color="#343a3d" />
         </li>
       </>
     ));
@@ -27,7 +27,7 @@ export default function Planos() {
         <li>
           <HiCheck size={26} color="#485bff" />
           {text}
-          <IoHelpCircleOutline size={20} />
+          <IoHelpCircleOutline size={20} color="#343a3d" />
         </li>
       </>
     ));
@@ -41,7 +41,7 @@ export default function Planos() {
         <li>
           <HiCheck size={26} color="#e02525" />
           {text}
-          <IoHelpCircleOutline size={20} />
+          <IoHelpCircleOutline size={20} color="#343a3d" />
         </li>
       </>
     ));
@@ -92,10 +92,10 @@ export default function Planos() {
         </div>
         <div className={styles.cards}>
           <motion.section
-            whileHover={{ scale: 1.1 }}
+            whileHover={{ opacity: 1 }}
             transition={{ delay: 0, duration: 0.5 }}
             whileTap={{
-              scale: 0.3,
+              opacity: 0,
             }}
             className={styles.card}
           >
@@ -128,10 +128,10 @@ export default function Planos() {
           </motion.section>
 
           <motion.section
-            whileHover={{ scale: 1.1 }}
+            whileHover={{ opacity: 1 }}
             transition={{ delay: 0, duration: 0.5 }}
             whileTap={{
-              scale: 0.3,
+              opacity: 0,
             }}
             className={styles.card}
           >
@@ -166,10 +166,10 @@ export default function Planos() {
           </motion.section>
 
           <motion.section
-            whileHover={{ scale: 1.1 }}
+            whileHover={{ opacity: 1 }}
             transition={{ delay: 0, duration: 0.5 }}
             whileTap={{
-              scale: 1,
+              opacity: 0,
             }}
             className={styles.card}
           >

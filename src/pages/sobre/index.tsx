@@ -1,11 +1,13 @@
+/* eslint-disable @next/next/no-img-element */
 import styles from '../../styles/Sobre.module.scss';
-//import '../../../i18n';
-//import { useTranslation } from 'react-i18next';
 import { FaChalkboardTeacher } from 'react-icons/fa';
 import { AiOutlineArrowDown } from 'react-icons/ai';
 import Layout from '@/src/components/Layout';
-export default function Sobre() {
-  //const { t } = useTranslation();
+
+import { useTranslation, withTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+function Sobre() {
+  const { t } = useTranslation('sobre');
   return (
     <>
       <Layout pageTitle="Sobre">
@@ -21,20 +23,17 @@ export default function Sobre() {
                     <FaChalkboardTeacher size={35} />
                   </div>
                   <h3>
-                    Somos uma <br /> <b>Programmers training</b>
+                    {t('title')}
+                    <br /> <b>Programmers training</b>
                   </h3>
                 </div>
                 <h1 className={styles.textStyles}>
-                  Aceleramos a sua <br />{' '}
-                  <span>carreira através da educação</span>
+                  {t('texte')}
+                  <br /> <span>{t('textedesct')}</span>
                 </h1>
-                <p>
-                  Aqui você dominará as principais tecnologias de uma forma
-                  diferente podendo alcançar a sonhada carreira através de
-                  nossos colaboradores construindo a sua jornada profissional.
-                </p>
+                <p>{t('description')}</p>
                 <a className={styles.button}>
-                  Saiba mais
+                  {t('know')}
                   <div className={styles.ArrowDown}>
                     <AiOutlineArrowDown size={23} />
                   </div>
@@ -47,3 +46,27 @@ export default function Sobre() {
     </>
   );
 }
+
+export const getStaticProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, [
+      'sobre',
+      'menu',
+      'footer',
+      'common',
+      'popups',
+      '404',
+      '500',
+    ])),
+  },
+});
+
+export default withTranslation([
+  'sobre',
+  'menu',
+  'footer',
+  'common',
+  'popups',
+  '404',
+  '500',
+])(Sobre);

@@ -88,11 +88,11 @@ export default function RegisterModal(props: RegisterModalProps) {
   }
 
   const [message, setMessage] = useState('');
-  if (passwordConf !== password && message !== 'As Senhas sao diferentes') {
-    setMessage('As Senhas sao diferentes');
+  if (passwordConf !== password && message !== '⚠ As senhas não correspondem') {
+    setMessage('⚠ As senhas não correspondem');
   } else if (
     passwordConf === password &&
-    message === 'As Senhas sao diferentes'
+    message === '⚠ É necessário uma senha.'
   ) {
     setMessage('');
   }
@@ -103,7 +103,7 @@ export default function RegisterModal(props: RegisterModalProps) {
       setMessage(testes.data);
       console.log(message);
     } else {
-      alert('Usuario Cadastrado com sucesso Parabens!');
+      alert('✔ Usuario Cadastrado com sucesso Parabens!');
       document.location = document.location;
     }
   }
@@ -113,7 +113,7 @@ export default function RegisterModal(props: RegisterModalProps) {
 
   const { t } = useTranslation('popups');
 
-  if (message === 'As Senhas sao diferentes') {
+  if (message === '⚠ As Senhas sao diferentes') {
     return (
       <Modal
         isOpen={props.isOpen}

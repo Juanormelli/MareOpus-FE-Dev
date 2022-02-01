@@ -1,9 +1,10 @@
 import Layout from '@/src/components/Layout';
-import { useTranslation, withTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
 import Link from 'next/link';
 import styles from '../../styles/Terms.module.scss';
 
+import { useTranslation, withTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 function Terms() {
   const { t } = useTranslation('terms');
   return (

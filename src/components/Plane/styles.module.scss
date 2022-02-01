@@ -1,10 +1,16 @@
 .plano {
   position: relative;
+
   .TitleConteriner {
-    left: -5rem;
+    flex: 1;
+    display: flex;
+    margin-left: 15rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: left;
     position: relative;
-    max-width: 40rem;
+    max-width: 700px;
     .textStyles {
       display: flexbox;
       width: 45rem;
@@ -31,6 +37,7 @@
     }
     p {
       margin: 2rem 0 4rem 0;
+      line-height: 2rem;
       font-size: 1.1rem;
       color: var(--gray-200);
     }
@@ -324,7 +331,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 0 10rem 0 10rem;
+    margin: 0 10rem 11rem 10rem;
     strong {
       margin-left: 0;
 

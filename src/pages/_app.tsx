@@ -11,6 +11,7 @@ import Footer from '../components/Footer';
 import Modal from '../components/Modal';
 import RegisterModal from '../components/RegisterModal';
 
+import VLibras from '@djpfs/react-vlibras';
 import { appWithTranslation } from 'next-i18next';
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -84,6 +85,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           ></RegisterModal>
           <Footer />
         </NextIntlProvider>
+        <VLibras />
       </>
     );
   }

@@ -34,7 +34,7 @@ export default function ModalLogin(props: ModalProps) {
   function openModalClear() {
     setPassword('');
     setUser('');
-    setMessage('Usuario não conseguio logar');
+    setMessage('⚠ Usuario não conseguio logar');
   }
 
   function handleLogin() {
@@ -53,7 +53,7 @@ export default function ModalLogin(props: ModalProps) {
     });
   }
 
-  const [message, setMessage] = useState('Usuraio não consegui logar');
+  const [message, setMessage] = useState('⚠ Usuraio não consegui logar');
 
   useEffect(() => {}, [message]);
 

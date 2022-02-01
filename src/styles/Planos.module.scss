@@ -1,5 +1,25 @@
-.pageConteiner {
-  position: relative;
-  width: 100%;
-  text-align: center;
+.SectionContaine {
+  background: darkcyan;
+  .faqbox {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    #faqcontainer {
+      display: flex;
+      justify-content: space-between;
+    }
+    .faqcontainer {
+      align-items: center;
+      flex-direction: column;
+      .faqheadline {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--gray-700);
+        .subtitle {
+          font-size: 4.5rem;
+        }
+      }
+    }
+  }
 }

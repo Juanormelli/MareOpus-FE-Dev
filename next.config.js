@@ -17,7 +17,7 @@ module.exports = withNextPlugins([
     [
       withPWA,
       {
-        : {
+        pwa: {
           disable: process.env.NODE_ENV !== "production",
           register: true,
           scope: "/",
