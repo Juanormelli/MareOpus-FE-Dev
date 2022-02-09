@@ -120,7 +120,10 @@ export default function Footer() {
                   </ActiveLink>
                 </li>
                 <li className={styles.SocialIcon}>
-                  <ActiveLink activateClassname={styles.Icons} href="/sobre">
+                  <ActiveLink
+                    activateClassname={styles.Icons}
+                    href="https://github.com/Juanormelli/MareOpus-FE-Dev"
+                  >
                     <AiFillInstagram size={30} />
                   </ActiveLink>
                 </li>
@@ -133,7 +136,10 @@ export default function Footer() {
                   </ActiveLink>
                 </li>
                 <li className={styles.SocialIcon}>
-                  <ActiveLink activateClassname={styles.Icons} href="/privacy">
+                  <ActiveLink
+                    activateClassname={styles.Icons}
+                    href="https://github.com/Juanormelli/MareOpus-FE-Dev"
+                  >
                     <AiOutlineTwitter size={30} />
                   </ActiveLink>
                 </li>
@@ -148,7 +154,7 @@ export default function Footer() {
                 <li className={styles.SocialIcon}>
                   <ActiveLink
                     activateClassname={styles.Icons}
-                    href="/dashboard"
+                    href="https://github.com/Juanormelli/MareOpus-FE-Dev"
                   >
                     <AiFillLinkedin size={30} />
                   </ActiveLink>

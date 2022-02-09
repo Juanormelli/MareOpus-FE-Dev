@@ -13,6 +13,7 @@ import { IoIosArrowDown } from 'react-icons/io';
 
 import { useTranslation } from 'next-i18next';
 import { LangSwitcher } from '../LangSwitcher';
+import { BiSearchAlt } from 'react-icons/bi';
 //import { i18n } from '../../../i18n';
 //import { i18n } from '../../../next-i18next.config';
 //import { Link, useHistory } from 'react-router-dom';
@@ -21,12 +22,11 @@ interface HeaderProps {
   onOpenLoginModal: () => void;
   onOpenRegisterModal: () => void;
   onOpenSession: () => void;
+  onOpenSearch: () => void;
   //changeLanguage: string;
 }
 
 export default function Header(props: HeaderProps) {
-  const [toogleMenu, setToogleMenu] = useState(false);
-  const handleOpenMenuToggle = () => setToogleMenu(!toogleMenu);
   // Abrir Meu
   //const history = useHistory();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -91,55 +91,46 @@ export default function Header(props: HeaderProps) {
                     <a>{t('plans')}</a>
                   </ActiveLink>
                 </li>
-                <li>
-                  <ActiveLink
-                    activateClassname={styles.active}
-                    href="/dashboard"
-                  >
-                    <a>
-                      {t('formation')}
-                      <div className={styles.action}>
-                        <span className={styles.boxArrow}>
-                          <b
-                            onAbort={handleOpenMenuToggle}
-                            className={
-                              toogleMenu === false
-                                ? styles.ArrowDown
-                                : styles.ArrowDown + ' ' + styles.activemenu
-                            }
-                          >
-                            <IoIosArrowDown />
-                          </b>
-                        </span>
+                <li className={styles.action}>
+                  <a className={styles.formationtxt}>
+                    <p>{t('formation')}</p>
+                    <span>
+                      <IoIosArrowDown />
+                    </span>
+                  </a>
 
-                        <div
-                          className={
-                            toogleMenu === false
-                              ? styles.menuPerfil
-                              : styles.menuPerfil + ' ' + styles.activemenu
-                          }
+                  <ul className={styles.menuformation}>
+                    <li className={styles.cardformation}>
+                      <span>
+                        <ActiveLink
+                          activateClassname={styles.active}
+                          href="/sobre"
                         >
-                          <ul>
-                            <li>
-                              <a>Meu perfil</a>
-                            </li>
-                            <li>
-                              <a href=""> Meus Dados</a>
-                            </li>
-                            <li>
-                              <a href="">Pedir ajuda</a>
-                            </li>
-                            <li>
-                              <a href="">Histórico</a>
-                            </li>
-                            <li>
-                              <a href="">Sai da Plataforma</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </a>
-                  </ActiveLink>
+                          <a>{t('about')}</a>
+                        </ActiveLink>
+                      </span>
+                    </li>
+                    <li className={styles.cardformation}>
+                      <span>
+                        <ActiveLink
+                          activateClassname={styles.active}
+                          href="/sobre"
+                        >
+                          <a>{t('about')}</a>
+                        </ActiveLink>
+                      </span>
+                    </li>
+                    <li className={styles.cardformation}>
+                      <span>
+                        <ActiveLink
+                          activateClassname={styles.active}
+                          href="/sobre"
+                        >
+                          <a>{t('about')}</a>
+                        </ActiveLink>
+                      </span>
+                    </li>
+                  </ul>
                 </li>
 
                 <li>
@@ -167,6 +158,17 @@ export default function Header(props: HeaderProps) {
                 </li>
               </ul>
               <LangSwitcher />
+              <div className={styles.Aside}>
+                <button
+                  className={styles.ButtonHeader}
+                  type="button"
+                  aria-label="Command"
+                  onClick={props.onOpenSearch}
+                  style={{ padding: '0 8px' }}
+                >
+                  <BiSearchAlt size={30} />
+                </button>
+              </div>
             </nav>
             <div className={styles.__content__toggle}>
               {!menuOpen ? (
@@ -202,55 +204,46 @@ export default function Header(props: HeaderProps) {
                     <a>{t('plans')}</a>
                   </ActiveLink>
                 </li>
-                <li>
-                  <ActiveLink
-                    activateClassname={styles.active}
-                    href="/formacoes"
-                  >
-                    <a>
-                      {t('formation')}
-                      {/*<div className={styles.action}>
-                        <span className={styles.boxArrow}>
-                          <b
-                            onAbort={handleOpenMenuToggle}
-                            className={
-                              toogleMenu === false
-                                ? styles.ArrowDown
-                                : styles.ArrowDown + ' ' + styles.activemenu
-                            }
-                          >
-                            <IoIosArrowDown />
-                          </b>
-                        </span>
+                <li className={styles.action}>
+                  <a className={styles.formationtxt}>
+                    <p>{t('formation')}</p>
+                    <span>
+                      <IoIosArrowDown />
+                    </span>
+                  </a>
 
-                        <div
-                          className={
-                            toogleMenu === false
-                              ? styles.menuPerfil
-                              : styles.menuPerfil + ' ' + styles.activemenu
-                          }
+                  <ul className={styles.menuformation}>
+                    <li className={styles.cardformation}>
+                      <span>
+                        <ActiveLink
+                          activateClassname={styles.active}
+                          href="/sobre"
                         >
-                          <ul>
-                            <li>
-                              <a>Meu perfil</a>
-                            </li>
-                            <li>
-                              <a href=""> Meus Dados</a>
-                            </li>
-                            <li>
-                              <a href="">Pedir ajuda</a>
-                            </li>
-                            <li>
-                              <a href="">Histórico</a>
-                            </li>
-                            <li>
-                              <a href="">Sai da Plataforma</a>
-                            </li>
-                          </ul>
-                        </div>
-                        </div>*/}
-                    </a>
-                  </ActiveLink>
+                          <a>{t('about')}</a>
+                        </ActiveLink>
+                      </span>
+                    </li>
+                    <li className={styles.cardformation}>
+                      <span>
+                        <ActiveLink
+                          activateClassname={styles.active}
+                          href="/sobre"
+                        >
+                          <a>{t('about')}</a>
+                        </ActiveLink>
+                      </span>
+                    </li>
+                    <li className={styles.cardformation}>
+                      <span>
+                        <ActiveLink
+                          activateClassname={styles.active}
+                          href="/sobre"
+                        >
+                          <a>{t('about')}</a>
+                        </ActiveLink>
+                      </span>
+                    </li>
+                  </ul>
                 </li>
                 <li>
                   <ActiveLink activateClassname={styles.active} href="/sobre">
@@ -277,6 +270,17 @@ export default function Header(props: HeaderProps) {
                 </li>
               </ul>
               <LangSwitcher />
+              <div className={styles.Aside}>
+                <button
+                  className={styles.ButtonHeader}
+                  type="button"
+                  aria-label="Command"
+                  onClick={props.onOpenSearch}
+                  style={{ padding: '0 8px' }}
+                >
+                  <BiSearchAlt size={30} />
+                </button>
+              </div>
             </nav>
             <div className={styles.__content__toggle}>
               {!menuOpen ? (

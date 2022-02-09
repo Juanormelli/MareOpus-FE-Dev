@@ -10,6 +10,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Modal from '../components/Modal';
 import RegisterModal from '../components/RegisterModal';
+import Search from '../components/Search';
 
 import VLibras from '@djpfs/react-vlibras';
 import { appWithTranslation } from 'next-i18next';
@@ -17,6 +18,7 @@ import { appWithTranslation } from 'next-i18next';
 function MyApp({ Component, pageProps }: AppProps) {
   const [session, setsession] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [isNewOpenSearch, setIsNewOpenSearch] = useState(false);
   const [isNewLoginModalOpen, setIsNewLoginModalOpen] = useState(false);
   const [isNewRegisterModalOpen, setIsNewRegisterModalOpen] = useState(false);
 
@@ -36,6 +38,14 @@ function MyApp({ Component, pageProps }: AppProps) {
     setIsNewRegisterModalOpen(false);
   }
 
+  function handleCloseNewOpenSearch() {
+    setIsNewOpenSearch(false);
+  }
+
+  function handleOpenNewOpenSearch() {
+    setIsNewOpenSearch(true);
+  }
+
   useEffect(() => {
     console.log(session);
   }, [session]);
@@ -53,6 +63,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   function onOpenSession() {
     setsession(true);
   }
+
   if (session) {
     return (
       <>
@@ -70,6 +81,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           {loading && <Loader />}
           <Header
             onOpenSession={onOpenSession}
+            onOpenSearch={handleOpenNewOpenSearch}
             onOpenLoginModal={handleOpenNewLoginModal}
             onOpenRegisterModal={handleOpenNewRegisterModal}
           ></Header>
@@ -82,7 +94,11 @@ function MyApp({ Component, pageProps }: AppProps) {
           <RegisterModal
             isOpen={isNewRegisterModalOpen}
             onRequestClose={handleCloseNewRegisterModal}
-          ></RegisterModal>
+          />
+          <Search
+            isOpen={isNewOpenSearch}
+            onRequestClose={handleCloseNewOpenSearch}
+          />
           <Footer />
         </NextIntlProvider>
         <VLibras />

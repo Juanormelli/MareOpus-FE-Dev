@@ -6,12 +6,12 @@
 
 <h1 align="center">MAREO</h1>
 <p align="center">Projeto realizado de criar e desnvolver Web plataforma</p>
+[![Deploy with Vercel](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fvercel%2Ftree%2Fmain%2Fexamples%2Fsuccess)
 
 <p align="center">
   <img src="https://img.shields.io/static/v1?label=next&message=6.14.6&color=C53534&style=flat-square&logo=next"/>
   <img src="https://img.shields.io/static/v1?label=typescript&message=^4.17.1&color=000000&style=flat-square&logo=typescript"/>
   <img src="https://img.shields.io/static/v1?label=scss&message=^3.6.5&color=94C10C&style=flat-square&logo=scss"/>
-  <img src="https://img.shields.io/static/v1?label=nodemon&message=^2.0.7&color=76d04b&style=flat-square&logo=nodemon"/>
 </p>
 
 <p align="center">
@@ -21,20 +21,43 @@
 </p>
 
 # 📖 Sobre
-<p>Este repoistorio tem como objetivo criar uma plataforma de estudos e treinamento para profissionais da aréa da tecinologia da informação:</p>
+<p>Este repoistorio tem como objetivo criar uma plataforma de **estudos e treinamento** para profissionais da aréa da tecinologia da informação:</p>
 
-<h1>🛠 Tecnologias</h1    
+<h1>🛠 Tecnologias - Technology stack</h1>    
 
-- Front-end:
-  - Typescript
-- Back-end:
-  - ?
-  
-# Instalação
+- **Front-end:** [React](https://reactjs.org/) 
+  - [Typescript](https://www.typescriptlang.org/) 
+  - [SCSS](https://sass-lang.com/) 
+- **Back-end:** 
+  - [Next.js](https://nextjs.org/)
+  - [Prisma](https://prismic.io/)
+- **Deployment:** [Vercel](https://vercel.com/)
 
-First, run the development server:
+## Instalação - Running locally 
 
-```bash
+1. Clone this repo:
+   
+```sh
+$ git clone https://github.com/Juanormelli/MareOpus-FE-Dev.git
+```
+
+2. Then go to the project's folder:
+
+```sh
+  $ cd MareOpus-FE-Dev.git
+```
+
+3. Then go to the project's folder:
+
+```sh
+npm install
+# or
+yarn
+```
+
+4. Run locally:
+
+```sh
 npm run dev
 # or
 yarn dev
@@ -44,18 +67,29 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## File structure
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+The basic file structure for the project is organized in the following way:
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```
+.
+|-- prisma
+|-- public
+|        |-- audio
+|        |-- avatar
+|        |-- icon
+|        |-- img
+|        |-- locales
+|        `-- video
+`-- src
+      |-- components
+      |-- contexts
+      |-- hooks
+      |-- pages
+      |-- services
+      |-- styles
+      `-- types
+```
 
 ## Deploy on Vercel
 

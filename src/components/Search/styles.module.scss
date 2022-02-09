@@ -1,0 +1,11 @@
+.modal-container {
+  display: flex;
+  .content {
+    justify-content: center;
+    background: var(--gray-760);
+    padding: 2.5rem;
+    width: 100%;
+    border-radius: 0.8rem;
+    text-align: center;
+  }
+}

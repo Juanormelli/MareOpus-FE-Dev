@@ -51,8 +51,8 @@ video {
   --white: #ffffff;
   --gray-100: #b2b6bb;
   --gray-200: #a8a8b3;
-  --gray-250: rgba(11, 11, 240, 0.7);
   --gray-300: #9ea5ad;
+  --gray-350: #44475a;
   --gray-400: #1a1a1d;
   --gray-500: #121214;
   --gray-510: #080808;
@@ -67,6 +67,7 @@ video {
   --gray-850: #141414;
   --gray-900: #000000;
 
+  --cyan-400: #8be9fd;
   --cyan-500: #00f0e2;
   --cyan-550: #1266f1;
   --cyan-600: #485bff;
@@ -77,16 +78,18 @@ video {
   --yellow-600: #eba417;
   --yellow-700: #d19215;
 
+  --green-300: #50fa7b;
   --green-400: #02e96a;
   --green-500: #04d361;
   --green-600: #00bd55;
   --green-700: #003d1c;
 
+  --red-400: #ff5555;
   --red-500: #e02525;
   --red-600: #ec0000;
   --red-700: #970000;
 
-  --lilac-400: #b73288;
+  --lilac-400: #bd93f9;
   --lilac-500: #b23cfd;
   --lilac-600: #9800f7;
   --lilac-700: #6900aa;
@@ -191,8 +194,6 @@ hr {
 .react-modal-content {
   width: 44rem;
   min-width: 400px;
-  background: var(--gray-700);
-
   position: relative;
   border: none;
   border-radius: 0.7rem;
