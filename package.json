@@ -10,6 +10,7 @@
   "dependencies": {
     "@djpfs/react-vlibras": "^2.0.0",
     "@prismicio/client": "^5.1.0",
+    "@stitches/react": "^1.2.6",
     "@types/prismic-dom": "^2.1.1",
     "@types/react-dom": "^17.0.11",
     "@types/react-modal": "^3.13.1",

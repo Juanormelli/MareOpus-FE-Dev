@@ -58,6 +58,7 @@ video {
   --gray-510: #080808;
   --gray-600: #121314;
   --gray-700: #343a3d;
+  --gray-720: #232629ea;
   --gray-740: #29292e;
   --gray-750: #202020;
   --gray-760: #202024;
@@ -178,7 +179,7 @@ hr {
   }
 }
 .react-modal-overlay {
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.84);
   z-index: 5000;
   position: fixed;
   top: 0;

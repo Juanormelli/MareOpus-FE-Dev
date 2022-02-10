@@ -10,13 +10,15 @@
     margin-left: 5px;
     transition: 0.2s;
     cursor: pointer;
-
+    .activeLeng {
+      filter: drop-shadow(0 0 5px var(--gray-350)) grayscale(0);
+    }
     .lengFlag {
       width: 40px;
       height: 40px;
-      filter: grayscale(1);
+      filter: drop-shadow(0 0 5px var(--gray-350)) grayscale(1);
       &:hover {
-        filter: grayscale(0);
+        filter: drop-shadow(0 0 5px var(--white)) grayscale(0);
       }
       &:active {
         filter: grayscale(0);

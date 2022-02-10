@@ -14,6 +14,7 @@ import { IoIosArrowDown } from 'react-icons/io';
 import { useTranslation } from 'next-i18next';
 import { LangSwitcher } from '../LangSwitcher';
 import { BiSearchAlt } from 'react-icons/bi';
+import { GoSearch } from 'react-icons/go';
 //import { i18n } from '../../../i18n';
 //import { i18n } from '../../../next-i18next.config';
 //import { Link, useHistory } from 'react-router-dom';
@@ -166,7 +167,7 @@ export default function Header(props: HeaderProps) {
                   onClick={props.onOpenSearch}
                   style={{ padding: '0 8px' }}
                 >
-                  <BiSearchAlt size={30} />
+                  <GoSearch size={30} />
                 </button>
               </div>
             </nav>
@@ -278,7 +279,7 @@ export default function Header(props: HeaderProps) {
                   onClick={props.onOpenSearch}
                   style={{ padding: '0 8px' }}
                 >
-                  <BiSearchAlt size={30} />
+                  <GoSearch size={30} />
                 </button>
               </div>
             </nav>
